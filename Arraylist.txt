@@ -1,0 +1,418 @@
+arraylist :user input 
+
+all wrapper classes 
+
+5 data insert 
+
+Ans)
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Exc{
+    public static void main(String[] args) throws Exception{
+        ArrayList<Integer> al1 = new ArrayList<>();
+        al1.add(32);
+        al1.add(23);
+        al1.add(9);
+        al1.add(5);
+        System.out.println(al1);
+        ArrayList<Float> al2 = new ArrayList<>();
+        al2.add(2.3f);
+        al2.add(3.2f);
+        al2.add(8.3f);
+        al2.add(2.1f);
+        System.out.println(al2);
+        ArrayList<Boolean> al3 = new ArrayList<>();
+        al3.add(true);
+        al3.add(false);
+        al3.add(true);
+        al3.add(false);
+        System.out.println(al3);
+        ArrayList<Character> al4 = new ArrayList<>();
+        al4.add('e');
+        al4.add('r');
+        al4.add('i');
+        al4.add('o');
+        System.out.println(al4);
+        ArrayList<String> al5 = new ArrayList<>();
+        al5.add("Hello");
+        al5.add("I am");
+        al5.add("Rahul");
+        al5.add("Singh");
+        System.out.println(al5);
+    }
+}
+-----------------------------------------------------------
+arraylist :al1
+
+al2
+
+al3
+
+al4
+
+al1 add al4
+
+al2 add al3
+
+al3 add al1 
+
+Ans)
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Exc{
+    public static void main(String[] args) throws Exception{
+        ArrayList<Integer> al1 = new ArrayList<>();
+        al1.add(32);
+        al1.add(23);
+        al1.add(9);
+        al1.add(5);
+        ArrayList<Integer> al2 = new ArrayList<>();
+        al2.add(22);
+        al2.add(13);
+        al2.add(90);
+        al2.add(25);
+        ArrayList<Integer> al3 = new ArrayList<>();
+        al3.add(2);
+        al3.add(63);
+        al3.add(96);
+        al3.add(15);
+        ArrayList<Integer> al4 = new ArrayList<>();
+        al4.add(52);
+        al4.add(63);
+        al4.add(19);
+        al4.add(53);
+        al1.addAll(al4);   
+        al2.addAll(al3);
+        al3.addAll(al1);
+        System.out.println("al1 "+al1);     
+        System.out.println("al2 "+al2);     
+        System.out.println("al3 "+al3);     
+    }
+}
+-------------------------------------------------------
+write one one example of the code : 
+ add
+addAll
+get(int index)
+ isEmpty()
+lastIndexOf(Object o)
+contains(Object o)
+ indexOf(Object o)
+remove(int index)
+removeAll(Collection<?> c)
+set(int index, E element)
+size()
+
+Ans)
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Exc{
+    public static void main(String[] args) throws Exception{
+        ArrayList<Integer> al1 = new ArrayList<>();
+        al1.add(32);
+        al1.add(23);
+        al1.add(9);
+        al1.add(5);
+        ArrayList<Integer> al2 = new ArrayList<>();
+        al2.add(22);
+        al2.add(13);
+        al2.add(90);
+        al2.add(25);
+        ArrayList<Integer> al3 = new ArrayList<>();
+        al3.add(2);
+        al3.add(63);
+        al3.add(96);
+        al3.add(15);
+        ArrayList<Integer> al4 = new ArrayList<>();
+        al4.add(52);
+        al4.add(63);
+        al4.add(19);
+        al4.add(53);
+        al1.addAll(al4);   
+        al2.addAll(al3);
+        al3.addAll(al1);
+        System.out.println("al1 "+al1);     
+        System.out.println(al1.get(1));
+        System.out.println(al2.isEmpty());
+        System.out.println(al4.lastIndexOf(2));
+        System.out.println(al3.contains(2));
+        System.out.println(al1.indexOf(2));
+        System.out.println(al1.remove(3));
+        System.out.println(al1.removeAll(al4));
+        System.out.println(al3.set(1, 215));
+        System.out.println(al4.size());
+    }
+}
+------------------------------------------------------------------
+user input wrapper class 
+
+Book :through array list : user input 
+int id;  
+String name,author,publisher;  
+int quantity;  
+
+Ans)
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class A{
+    int id;
+    String name;
+    String auther;
+    String publisher;
+    int quantity;
+    A(int id,String name,String auther,String publisher,int quantity){
+        this.id = id;
+        this.name = name;
+        this.auther = auther;
+        this.publisher = publisher;
+        this.quantity = quantity;
+    }
+}
+public class Exc{
+    public static void main(String[] args) throws Exception{
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the ID");
+        int id = sc.nextInt();
+        System.out.println("Enter your name");
+        String name = sc.nextLine();
+        sc.nextLine();
+        System.out.println("Enter the auther name");
+        String auther = sc.nextLine();
+        System.out.println("Enter the name of the publisher");
+        String publisher = sc.nextLine();
+        System.out.println("Enter the quantity");
+        int quantity = sc.nextInt();
+        A k = new A(id, name, auther, publisher, quantity);
+
+        ArrayList<A> al = new ArrayList<>();
+        al.add(k);
+        for(A p:al){
+            System.out.print(p.id+" ");
+            System.out.print(p.auther+" ");
+            System.out.print(p.name+" ");
+            System.out.print(p.publisher+" ");
+            System.out.print(p.quantity+" ");
+        }
+    }
+}
+-----------------------------------------------
+al1
+Student 
+name
+fname
+mname
+class
+year
+address
+number
+bloodgroup
+
+
+al2
+Employe 
+empname
+id
+empfname
+empmname
+company
+salary 
+
+Ans)
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class A{
+    int id;
+    String name;
+    String auther;
+    String publisher;
+    int quantity;
+    A(int id,String name,String auther,String publisher,int quantity){
+        this.id = id;
+        this.name = name;
+        this.auther = auther;
+        this.publisher = publisher;
+        this.quantity = quantity;
+    }
+}
+class B{
+    String employee;
+    String empname;
+    int idd;
+    String empfname;
+    String empmname;
+    String company;
+    int salary;
+    B(String employee,String empname,int idd,String empfname,String empmname,String company,int salary){
+       this.employee = employee;
+       this.empname = empname;
+       this.idd = idd;
+       this.empfname = empfname;
+       this.empmname = empmname;
+       this.company = company;
+       this.salary = salary; 
+    }
+}
+public class Exc{
+    public static void main(String[] args) throws Exception{
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the ID");
+        int id = sc.nextInt();
+        System.out.println("Enter your name");
+        String name = sc.nextLine();
+        sc.nextLine();
+        System.out.println("Enter the auther name");
+        String auther = sc.nextLine();
+        System.out.println("Enter the name of the publisher");
+        String publisher = sc.nextLine();
+        System.out.println("Enter the quantity");
+        int quantity = sc.nextInt();
+        A k = new A(id, name, auther, publisher, quantity);
+
+        ArrayList<A> al = new ArrayList<>();
+        al.add(k);
+        for(A p:al){
+            System.out.print(p.id+" ");
+            System.out.print(p.auther+" ");
+            System.out.print(p.name+" ");
+            System.out.print(p.publisher+" ");
+            System.out.println(p.quantity+" ");
+        }
+
+        System.out.println("Enter the employee");
+        String employee = sc.nextLine();
+        sc.nextLine();
+        System.out.println("Enter the name of the employee");
+        String empname = sc.nextLine();
+        System.out.println("Enter the ID");
+        int idd = sc.nextInt();
+        System.out.println("Enter the father name of employee");
+        String fname = sc.nextLine();
+        sc.nextLine();
+        System.out.println("Enter the employee mother name");
+        String mname = sc.nextLine();
+        System.out.println("Enter the company name");
+        String company = sc.nextLine();
+        System.out.println("Enter the salary");
+        int salary = sc.nextInt();
+
+        B o = new B(employee, empname, idd, fname, mname, company, salary);
+        ArrayList<B> al1 = new ArrayList<>();
+        al1.add(o);
+        for(B i:al1){
+            System.out.print(i.employee);
+            System.out.print(i.empname);
+            System.out.print(i.idd);
+            System.out.print(i.empfname);
+            System.out.print(i.empmname);
+            System.out.print(i.company);
+            System.out.print(i.salary);
+        }
+    }
+}
+
+--------------------------------------------------------
+aggregation :
+Mobile :oppo realme oneplus apple 
+
+Amazon :shirt jeans shoes watch 
+
+flipcart :agarbati mombati phoolbatti chawal 
+
+JioMart :rice aata daal oil 
+
+Blinkit :choclate softdrink icecream chips 
+
+Main class :
+arraylist 
+al1
+al2
+al3
+al4
+al5
+
+Ans)
+import java.util.*;
+
+// first file
+class Mobile{
+    String phone;
+    Mobile(String phone){
+        this.phone = phone;
+    }
+}
+class Amazon{
+    String product;
+    Amazon(String product){
+        this.product = product;
+    }
+}
+class Flipkart{
+    String agarbati;
+    Flipkart(String agarbati){
+        this.agarbati = agarbati;
+    }
+}
+class Joinmart{
+    String rashan;
+    Joinmart(String rashan){
+        this.rashan = rashan;
+    }
+}
+class Blinkit{
+    String items;
+    Blinkit(String items){
+        this.items = items;
+    }
+}
+
+//second file
+public class Exc{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the name of phone");
+        String phone = sc.nextLine();
+        Mobile k = new Mobile(phone);
+        ArrayList<Mobile> al1 = new ArrayList<>();
+        al1.add(k);
+        for(Mobile o:al1){
+            System.out.println(o.phone+" ");
+        }
+        System.out.println("Enter the product");
+        String product = sc.nextLine();
+        Amazon i = new Amazon(product);
+        ArrayList<Amazon> al2 = new ArrayList<>();
+        al2.add(i);
+        for(Amazon l:al2){
+            System.out.println(l.product);
+        }
+        System.out.println("Enter the name agarbati");
+        String agarbati = sc.nextLine();
+        Flipkart o = new Flipkart(agarbati);
+        ArrayList<Flipkart> al3 = new ArrayList<>();
+        al3.add(o);
+        for(Flipkart e:al3){
+            System.out.println(e.agarbati);
+        }
+        System.out.println("Enter the rashan");
+        String rashan = sc.nextLine();
+        Joinmart p = new Joinmart(rashan);
+        ArrayList<Joinmart> al4 = new ArrayList<>();
+        al4.add(p);
+        for(Joinmart n:al4){
+            System.out.println(n.rashan);
+        }
+        System.out.println("Enter the item");
+        String item = sc.nextLine();
+        Blinkit l = new Blinkit(item);
+        ArrayList<Blinkit> al5 = new ArrayList<>();
+        al5.add(l);
+        for(Blinkit a:al5){
+            System.out.println(a.items);
+        }
+    }
+}

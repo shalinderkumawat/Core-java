@@ -1,0 +1,186 @@
+1)
+NullPointerException Handling:
+
+Write a Java program that intentionally causes a NullPointerException. Implement exception handling to prevent the program from crashing and provide a meaningful error message.
+
+Ans)
+public class Exception {
+    public static void main(String[] args) {
+        try{
+            String a = null;
+            System.out.println(a.length());
+        }
+        catch(NullPointerException ex){
+            System.out.println("The string is have null");
+        }   
+    }
+}
+
+----------------------------------------------------------
+
+2)
+ArrayIndexOutOfBoundsException Handling:
+
+Create a program that attempts to access an element in an array using an index that is out of bounds. Handle the ArrayIndexOutOfBoundsException gracefully to avoid program termination.
+
+Ans)
+public class Exception {
+    public static void main(String[] args) {
+        try{
+            int a[] = {1,2,3,4,5};
+            System.out.println(a[7]);
+        }
+        catch(ArrayIndexOutOfBoundsException ex){
+            System.out.println("The element you want to print is not in the range");
+        }   
+    }
+}
+
+--------------------------------------------------------------
+
+3)
+User Input Validation:
+
+Write a program that takes user input for dividing two numbers. Implement exception handling to deal with the possibility of the user entering non-numeric values or attempting to divide by zero.
+
+Ans)
+import java.util.Scanner;
+
+public class Exception {
+    public static void main(String[] args) {
+        try{
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter the number");
+            int a = sc.nextInt();
+            System.out.println("Enter the number");
+            int b = sc.nextInt();
+            System.out.println(a/b);
+        }
+        catch(ArithmeticException ex){
+            System.out.println("do not divide it by zero");
+        }
+    }
+}
+
+-------------------------------------------------------------
+
+4)
+File Handling with IOException:
+
+Develop a program that reads data from a file. Implement exception handling for IOException to handle scenarios where the file is not found or cannot be read.
+
+Ans)
+file one
+
+public class Main{  
+   static void show() throws IOException{
+        System.out.println("Hello exception");
+    }
+}
+
+second file
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Exc extends Main{
+    public static void main(String[] args) throws Exception{
+        try{
+            show();
+        }
+        catch(Exception ex){
+            System.out.println("handled");
+        }
+    }
+}
+
+--------------------------------------------------------
+
+5)
+
+Custom Exception:
+
+Create a custom exception class called CustomValidationException. Write a program where this exception is thrown when certain validation criteria are not met. Handle this custom exception in your program.
+
+Ans)
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class Exception {
+    static void show(int age){
+        if(age<18){
+            throw new ArithmeticException("Invalid valid age");
+        }
+        else{
+            System.out.println("Valid age");
+        }
+    }
+    public static void main(String[] args) {
+        show(20);
+    }
+}
+
+--------------------------------------------------
+
+6)
+Multiple Exception Types:
+
+Design a program that performs multiple operations (e.g., reading from a file and dividing numbers). Handle multiple types of exceptions that may arise during these operations using appropriate catch blocks.
+
+Ans)
+file one
+
+public class Main{  
+   static void show() throws IOException , ArithmeticException{
+        System.out.println("Hello exception");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number");
+        int a = sc.nextInt();
+        System.out.println("Enter the number");
+        int b = sc.nextInt();
+        int c = a/b;
+    }
+}
+
+second file
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Exc extends Main{
+    public static void main(String[] args) throws Exception{
+        try{
+            show();
+        }
+        catch(Exception ex){
+            System.out.println("handled");
+        }
+    }
+}
+
+
+-------------------------------------------------------------
+
+7)
+Resource Management:
+
+Write a program that uses the try-with-resources statement to automatically close a resource (e.g., a file or a database connection) when it is no longer needed.
+
+8)
+Assertion Usage:
+
+Implement a program that uses assertions to validate certain conditions. Show how assertions can be enabled or disabled during program execution.
+
+9)
+Handling RuntimeExceptions:
+
+Create a program that intentionally causes a RuntimeException (e.g., ArithmeticException or IllegalArgumentException). Handle this exception to gracefully manage the error.
+
+10)
+Exception Propagation:
+
+Write a program with nested method calls where an exception is thrown in a deeply nested method. Demonstrate how exception propagation works and how it can be handled at various levels.

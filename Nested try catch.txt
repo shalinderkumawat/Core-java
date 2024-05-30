@@ -1,0 +1,59 @@
+1)
+try 
+multiple catch 
+
+Ans)
+public class Arry{
+    public static void main(String[] args) {
+        try{
+            int a[] = {1,2,3,4};
+            System.out.println(a[6]);   
+        }
+        catch(ArrayIndexOutOfBoundsException ex){
+            System.out.println("Array is out of bond ");
+        }
+        catch(NullPointerException ex){
+            System.out.println("Wrong String");
+        }
+        catch(Exception ex){
+            System.out.println("All handled");
+        }
+    }
+}
+
+--------------------
+2)
+try 
+	try 
+		try 
+			try :array index out of bound 
+
+Ans)
+public class Arry{
+    public static void main(String[] args) {
+        try{
+            try{
+                try{
+                    try{
+                        int a[] = new int[4];
+                        a[6] = 2;
+                        System.out.println(a[6]);
+                    }
+                    catch(ArithmeticException ex){
+                        System.out.println("Correct it with logic");
+                    }
+                }
+                catch(NullPointerException ex){
+                    System.out.println("Handl it");
+                }
+            }
+            catch(ArrayIndexOutOfBoundsException ex){
+                System.out.println("Array is out of bond");
+            }
+        }
+        catch(Exception ex){
+            System.out.println(ex);
+        }
+    }
+}
+----------------------------------------------------------

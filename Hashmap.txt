@@ -1,0 +1,404 @@
+HashMap :
+int ,string 
+Ans)
+import java.util.Arrays;
+import java.util.HashMap;
+
+public class Exc {
+    public static void main(String[] args) {
+        HashMap<Integer,String> hm = new HashMap<>();
+        hm.put(1, "hELLO");
+        hm.put(2, "hyy");
+        hm.put(3, "Hy");
+        System.out.println(hm);
+    }
+}
+
+------------------------------------------------------------
+
+string ,int 
+Ans)
+import java.util.Arrays;
+import java.util.HashMap;
+
+public class Exc {
+    public static void main(String[] args) {
+        HashMap<String,Integer> hm = new HashMap<>();
+        hm.put("Hy", 1);
+        hm.put("hello", 2);
+        hm.put("how",3);
+        System.out.println(hm);
+    }
+}
+
+------------------------------------------------------------
+
+int , float 
+Ans)
+import java.util.Arrays;
+import java.util.HashMap;
+
+public class Exc {
+    public static void main(String[] args) {
+        HashMap<Integer,Float> hm = new HashMap<>();
+        hm.put(1,1.2f);
+        hm.put(2,1.3f);
+        hm.put(3,1.3f);
+        System.out.println(hm);
+    }
+}
+
+--------------------------------------------------------
+
+float , char
+Ans)
+import java.util.Arrays;
+import java.util.HashMap;
+
+public class Exc {
+    public static void main(String[] args) {
+        HashMap<Float,Character> hm = new HashMap<>();
+        hm.put(1.2f,'a');
+        hm.put(1.3f,'b');
+        hm.put(1.3f,'c');
+        System.out.println(hm);
+    }
+}
+
+--------------------------------------------------------------
+
+char, float 
+Ans)
+import java.util.Arrays;
+import java.util.HashMap;
+
+public class Exc {
+    public static void main(String[] args) {
+        HashMap<Character,Float> hm = new HashMap<>();
+        hm.put('a',1.2f);
+        hm.put('b',1.3f);
+        hm.put('c',1.3f);
+        System.out.println(hm);
+    }
+}
+
+------------------------------------------------------------
+aggregation :
+Mobile :oppo realme oneplus apple 
+
+Amazon :shirt jeans shoes watch 
+
+flipcart :agarbati mombati phoolbatti chawal 
+
+JioMart :rice aata daal oil 
+
+Blinkit :choclate softdrink icecream chips 
+
+Main class :
+HashMap
+al1
+al2
+al3
+al4
+
+Ans)
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+class Mobile{
+    String phone;
+    Mobile(String phone){
+        this.phone = phone;
+    }
+}
+class Amazon{
+    String product;
+    Amazon(String product){
+        this.product = product;
+    }
+}
+class Flipkart{
+    String agarbati;
+    Flipkart(String agarbati){
+        this.agarbati = agarbati;
+    }
+}
+class Jiomart{
+    String item;
+    Jiomart(String item){
+        this.item = item;
+    }
+}
+class Blinkit{
+    String rashan;
+    Blinkit(String rashan){
+        this.rashan = rashan;
+    }
+}
+public class Exc{  
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the name of the phone");
+        String phone = sc.nextLine();
+        Mobile k =  new Mobile(phone);
+        HashMap<Integer,Mobile> al1 = new HashMap<>();
+        al1.put(1, k);
+        for(Map.Entry<Integer,Mobile> m:al1.entrySet()){
+            int key = m.getKey();
+            Mobile b = m.getValue();
+            System.out.println(key+" "+b.phone);
+        }
+        System.out.println("Enter the name of the product");
+        String product = sc.nextLine();
+        Amazon l = new Amazon(product);
+        HashMap<Integer,Amazon> al2 = new HashMap<>();
+        al2.put(2, l);
+        for(Map.Entry<Integer,Amazon> n:al2.entrySet()){
+            int key = n.getKey();
+            Amazon b = n.getValue();
+            System.out.println(key+" "+b.product);
+        }
+        System.out.println("Enter the name of agarbati");
+        String agarbati = sc.nextLine();
+        Flipkart a = new Flipkart(agarbati);
+        HashMap<Integer,Flipkart> al3 = new HashMap<>();
+        al3.put(3, a);
+        for(Map.Entry<Integer,Flipkart> v:al3.entrySet()){
+            int key = v.getKey();
+            Flipkart b = v.getValue();
+            System.out.println(key+" "+b.agarbati);
+        }
+        System.out.println("Enter the name of the item");
+        String item = sc.nextLine();
+        Jiomart s = new Jiomart(item);
+        HashMap<Integer,Jiomart> al4 = new HashMap<>();
+        al4.put(4, s);
+        for(Map.Entry<Integer,Jiomart> c:al4.entrySet()){
+            int key = c.getKey();
+            Jiomart b = c.getValue();
+            System.out.println(key+" "+b.item);
+        }
+        System.out.println("Enter the name of the rashan");
+        String rashan = sc.nextLine();
+        Blinkit d = new Blinkit(rashan);
+        HashMap<Integer,Blinkit> al5 = new HashMap<>();
+        al5.put(5, d);
+        for(Map.Entry<Integer,Blinkit> x:al5.entrySet()){
+            int key = x.getKey();
+            Blinkit f = x.getValue();
+            System.out.println(key+" "+f.rashan);
+        }
+    }
+}
+
+-------------------------------------------------------------
+
+HashMap
+al1
+Student 
+name
+fname
+mname
+class
+year
+address
+number
+bloodgroup 
+
+
+al2
+Employe 
+empname
+id
+empfname
+empmname
+company
+salary 
+
+Ans)
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+class Mobile{
+    String phone;
+    Mobile(String phone){
+        this.phone = phone;
+    }
+}
+class Amazon{
+    String product;
+    Amazon(String product){
+        this.product = product;
+    }
+}
+class Flipkart{
+    String agarbati;
+    Flipkart(String agarbati){
+        this.agarbati = agarbati;
+    }
+}
+class Jiomart{
+    String item;
+    Jiomart(String item){
+        this.item = item;
+    }
+}
+class Blinkit{
+    String rashan;
+    Blinkit(String rashan){
+        this.rashan = rashan;
+    }
+}
+class Emp{
+    int employe;
+    String empname;
+    int id;
+    String empfname;
+    String empmname;
+    String company;
+    int salary;
+    Emp(int employe,String empname,int id,String empfname,String empmname,String company,int salary){
+        this.employe = employe;
+        this.empname = empname;
+        this.id = id;
+        this.empfname = empfname;
+        this.empmname = empmname;
+        this.company = company;
+        this.salary = salary;
+    }
+}
+public class Exc{  
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the name of the phone");
+        String phone = sc.nextLine();
+        Mobile k =  new Mobile(phone);
+        HashMap<Integer,Mobile> al1 = new HashMap<>();
+        al1.put(1, k);
+        for(Map.Entry<Integer,Mobile> m:al1.entrySet()){
+            int key = m.getKey();
+            Mobile b = m.getValue();
+            System.out.println(key+" "+b.phone);
+        }
+        System.out.println("Enter the name of the product");
+        String product = sc.nextLine();
+        Amazon l = new Amazon(product);
+        HashMap<Integer,Amazon> al2 = new HashMap<>();
+        al2.put(2, l);
+        for(Map.Entry<Integer,Amazon> n:al2.entrySet()){
+            int key = n.getKey();
+            Amazon b = n.getValue();
+            System.out.println(key+" "+b.product);
+        }
+        System.out.println("Enter the name of agarbati");
+        String agarbati = sc.nextLine();
+        Flipkart a = new Flipkart(agarbati);
+        HashMap<Integer,Flipkart> al3 = new HashMap<>();
+        al3.put(3, a);
+        for(Map.Entry<Integer,Flipkart> v:al3.entrySet()){
+            int key = v.getKey();
+            Flipkart b = v.getValue();
+            System.out.println(key+" "+b.agarbati);
+        }
+        System.out.println("Enter the name of the item");
+        String item = sc.nextLine();
+        Jiomart s = new Jiomart(item);
+        HashMap<Integer,Jiomart> al4 = new HashMap<>();
+        al4.put(4, s);
+        for(Map.Entry<Integer,Jiomart> c:al4.entrySet()){
+            int key = c.getKey();
+            Jiomart b = c.getValue();
+            System.out.println(key+" "+b.item);
+        }
+        System.out.println("Enter the name of the rashan");
+        String rashan = sc.nextLine();
+        Blinkit d = new Blinkit(rashan);
+        HashMap<Integer,Blinkit> al5 = new HashMap<>();
+        al5.put(5, d);
+        for(Map.Entry<Integer,Blinkit> x:al5.entrySet()){
+            int key = x.getKey();
+            Blinkit f = x.getValue();
+            System.out.println(key+" "+f.rashan);
+        }
+        System.out.println("Enter the employe");
+        int employe = sc.nextInt();
+        System.out.println("Enter the name of the employee");
+        String empname = sc.nextLine();
+        System.out.println("Enter the id");
+        int id = sc.nextInt();
+        System.out.println("Enter the fname of emp");
+        String empfname = sc.nextLine();
+        System.out.println("Enter the mname of emp");
+        String empmname = sc.nextLine();
+        System.out.println("Enter the name of company");
+        String company = sc.nextLine();
+        System.out.println("Enter the salary");
+        int salary = sc.nextInt();
+        Emp o = new Emp(employe, empname, id, empfname, empmname, company, salary);
+        HashMap<Integer,Emp> al6 = new HashMap<>();
+        al6.put(9, o);
+        for(Map.Entry<Integer,Emp> g:al6.entrySet()){
+            int key = g.getKey();
+            Emp z = g.getValue();
+            System.out.println(key);
+            System.out.println(z.employe+z.empname+z.id+z.empfname+z.empmname+z.company+z.salary);
+        }
+    }
+}
+
+
+--------------------------------------------------
+user input wrapper class 
+
+Book :through HashMap  
+ : user input 
+int id;  
+String name,author,publisher;  
+int quantity;
+
+Ans)
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+class Book{
+    int id;
+    String name;
+    String auther;
+    String publisher;
+    int quantity;
+    Book(int id,String name,String auther,String publisher,int quantity){
+        this.id = id;
+        this.name = name;
+        this.auther = auther;
+        this.publisher = publisher;
+        this.quantity = quantity;
+    }
+}
+public class Exc{  
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the id");
+        int id = sc.nextInt();
+        System.out.println("Enter the name of the book");
+        String name = sc.nextLine();
+        System.out.println("Enter the name of the auther");
+        String auther = sc.nextLine();
+        System.out.println("Enter the name of the publisher");
+        String publisher = sc.nextLine();
+        System.out.println("Enter the quantity");
+        int quantity = sc.nextInt();
+        Book p = new Book(id, name, auther, publisher, quantity);
+        HashMap<Integer,Book> al7 = new HashMap<>();
+        al7.put(10, p);
+        for(Map.Entry<Integer,Book> n:al7.entrySet()){
+            int key = n.getKey();
+            Book d = n.getValue();
+            System.out.println(d.id+d.name+d.auther+d.publisher+d.quantity);
+        }
+    }
+}
+
+  

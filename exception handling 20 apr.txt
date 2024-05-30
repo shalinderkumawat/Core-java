@@ -1,0 +1,377 @@
+----------------------------------------------------
+class A 
+method Exe
+
+class B ex A
+method Ari
+
+Main class
+access
+----------------------------------------------------
+
+class A {
+    void show() throws Exception {
+        System.out.print("A class :");
+        throw new Exception("Exception from A class");
+    }
+}
+
+class B extends A {
+    void showsd() throws ArithmeticException {
+        System.out.print("B class :");
+        throw new ArithmeticException("ArithmeticException from B class");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        B sc = new B();
+        // try {
+            sc.showsd();
+        // } catch (Exception e) {
+            // System.out.println("Caught exception: " + e.getMessage());
+        // }
+    }
+}
+	
+----------------------------------------------------
+class A 
+method Ari
+
+class B ex A
+method Ex
+
+Main class
+access
+----------------------
+
+class A{
+    void show() throws  ArithmeticException{
+        System.out.print("A class");
+    }
+}
+class B extends A{
+    void show() throws Exception {
+        System.out.print("B class");
+    }
+}
+public class Main{
+    public static void main(String [] args)
+    {
+        B sc=new B();
+        sc.show();
+    }
+}
+
+error
+
+----------------------------------------------------
+class A 
+method IO
+
+class B ex A
+method Ari
+
+Main class
+access
+-----------------
+
+import java.io.IOException;
+class A{
+    void show() throws IOException{
+        System.out.print("A class ");
+    }
+}
+class B extends A{
+    void show() throws ArithmeticException{
+        System.out.print("B class");
+    }
+}
+public class Main {
+    public static void main(String [] args)
+    {
+        B sc=new B();
+        sc.show();
+    }
+}
+
+
+
+----------------------------------------------------
+class A 
+method Ari
+
+class B ex A
+method IO
+
+Main class
+access
+-------------------------
+
+import java.io.IOException;
+class A{
+    void show() throws ArithmeticException {
+        System.out.print("A class ");
+    }
+}
+class B extends A{
+    void show() throws IOException {
+        System.out.print("B class");
+    }
+}
+public class Main {
+    public static void main(String [] args)
+    {
+        B sc=new B();
+        sc.show();
+    }
+}
+error
+
+
+----------------------------------------------------
+class A 
+method Array
+
+class B ex A
+method Nullpoiner
+
+Main class
+access
+-------------------------------------------------
+
+import java.io.IOException ;
+class A{
+    void show() throws ArrayIndexOutOfBoundsException {
+        System.out.print("A class");
+    }
+}
+class B extends A{
+    void show() throws NullPointerException{
+        super.show();
+        System.out.print("B class");
+    }
+}
+public class Main{
+    public static void main(String [] args)
+    {
+        B sc=new B();
+        sc.show();
+        
+    }
+}
+
+
+class A 
+method Number
+
+class B ex A
+method Nullpoiner
+
+Main class
+access
+--------------------------------
+
+
+class A{
+    void show() throws NumberFormatException{
+        System.out.print("A class");
+    }
+}
+class B extends A{
+    void show() throws NullPointerException {
+        super.show();
+        System.out.print("B class ");
+    }
+}
+public class Main{
+    public static void main(String [] args)
+    {
+        B sc=new B();
+        sc.show();
+    }
+}
+
+----------------------------------------------------
+class A 
+method Ex
+
+class B ex A
+method Nullpointer
+
+Main class
+access
+------------------------
+	
+class A{
+    void show() throws Exception {
+        System.out.print("A class ");
+    }
+}
+class B extends A{
+    void show() throws NullPointerException
+    {
+        System.out.print("B class");
+    }
+}
+public class Main{
+    public static void main(String [] args)
+    {
+         B sc=new B();
+         sc.show();
+    }
+}
+
+class A 
+method Null
+
+class B ex A
+method Ex
+
+Main class
+access
+----------------------------------
+
+
+class A{
+    void show() throws NullPointerException {
+        System.out.print("A class");
+    }
+}
+class B extends A{
+    void show() throws Exception {
+        System.out.print("B class");
+    }
+}
+public class Main{
+    public static void main(String [] args)
+    {
+        
+        B sc=new B();
+        sc.show();
+    }
+} 
+
+error
+
+class A 
+method Numberformat
+
+class B ex A
+method Array
+
+Main class
+access
+------------------------
+
+class A{
+    void show() throws NumberFormatException {
+        System.out.print("A class");
+    }
+}
+class B extends A{
+    void show() throws ArrayIndexOutOfBoundsException{
+        super.show();
+        System.out.print("B class ");
+    }
+}
+public class Main{
+    public static void main(String [] args)
+    {
+         B sc=new B();
+         sc.show();
+    }
+}
+
+
+class A 
+method 
+
+class B ex A
+method Array
+
+Main class
+access
+----------------------
+
+class A{
+    void show() {
+        System.out.print("A class ");
+    }
+}
+class B extends A{
+    void show() throws ArrayIndexOutOfBoundsException{
+        super.show();
+        System.out.print("B class");
+    }
+}
+public class Main{
+    public static void main(String [] args)
+    {
+        B sc=new B();
+        sc.show();
+    }
+}
+
+
+----------------------------------------------------
+class A 
+method Numberformat
+
+class B ex A
+method 
+
+Main class
+access
+-----------------------
+
+class A{
+    void show() throws NumberFormatException{
+        System.out.print("A class");
+    }
+}
+class B extends A{
+    void show(){
+        super.show();
+        System.out.print("B class");
+    }
+}
+public class Main{
+    public static void main(String [] args)
+    {
+        B sc=new B();
+        sc.show();
+    }
+}
+
+----------------------------------------------------
+class A 
+method Numberformat
+
+class B ex A
+method Numberformat
+
+
+Main class
+access
+-------------------------------------------------
+class A{
+    void show() throws NumberFormatException{
+        System.out.print("A class");
+    }
+}
+class B extends A{
+    void show() throws NumberFormatException{
+        super.show();
+        System.out.print("B class");
+    }
+}
+public class Main
+{
+    public static void main(String [] args)
+    {
+        B sc=new B();
+        sc.show();
+    }
+}
+

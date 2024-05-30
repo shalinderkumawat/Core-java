@@ -1,0 +1,635 @@
+shallow copy 
+a[] ={1,2,3,4,5,6,7,8,9};
+b[]=a;
+
+a[2]=98;
+a[4]=56;
+a
+b
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {1,2,3,4,5,6,7,8,9};
+        int b[] = a;
+        a[2] = 98;
+        a[4] = 56;
+        for(int i=0; i<b.length; i++){
+            System.out.print(b[i]+" ");
+        }
+    }
+}
+
+--------------------------------------------------------
+
+a[]={1,2,3,4,5,6,7,8,9};
+b=a
+c=b
+c[2]=98;
+c[4]=56;
+d=c
+a,b,c,d
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {1,2,3,4,5,6,7,8,9};
+        int b[] = a;
+        int c[] = b;
+        int d[];
+        c[2] = 98;
+        c[4] = 56;
+        d=c;
+        for(int i=0; i<d.length; i++){
+            System.out.print(d[i]+" ");
+        }
+    }
+}
+
+----------------------------------------------------
+
+a[]={1,2,3,4,5,6,7,8,9};
+b=a
+c=b
+d=c
+c[2]=98;
+c[4]=56;
+
+a,b,c,d
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {1,2,3,4,5,6,7,8,9};
+        int b[] = a;
+        int c[] = b;
+        int d[];
+        d=c;
+        c[2] = 98;
+        c[4] = 56;
+        for(int i=0; i<d.length; i++){
+            System.out.print(d[i]+" ");
+        }
+    }
+}
+
+-------------------------------------------------------
+
+deep copy 
+a[] ={1,2,3,4,5,6,7,8,9};
+b[]=a;
+
+a[2]=98;
+a[4]=56;
+a
+b
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {1,2,3,4,5,6,7,8,9};
+        int b[] = a.clone();
+        
+        a[2] = 98;
+        a[4] = 56;
+        for(int i=0; i<b.length; i++){
+            System.out.print(b[i]+" ");
+        }
+    }
+}
+
+-----------------------------------------------------------
+
+a[]={1,2,3,4,5,6,7,8,9};
+b=a
+c=b
+c[2]=98;
+c[4]=56;
+d=c
+a,b,c,d
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {1,2,3,4,5,6,7,8,9};
+        int b[] = a.clone();
+        int c[] = b.clone();
+        int d[];
+        c[2] = 98;
+        c[4] = 56;
+        d=c.clone();
+        for(int i=0; i<d.length; i++){
+            System.out.print(d[i]+" ");
+        }
+    }
+}
+
+-----------------------------------------------
+
+a[]={1,2,3,4,5,6,7,8,9};
+b=a
+c=b
+d=c
+c[2]=98;
+c[4]=56;
+
+a,b,c,d
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {1,2,3,4,5,6,7,8,9};
+        int b[] = a.clone();
+        int c[] = b.clone();
+        int d[] = c.clone();
+        c[2] = 98;
+        c[4] = 56;
+        for(int i=0; i<d.length; i++){
+            System.out.print(d[i]+" ");
+        }
+    }
+}
+---------------------------------------------------------
+12,34, 67, 54, 34, 23, 89,34, 76, 45, 34 
+
+target :34 
+count :how many times 
+index :which 
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {12,34, 67, 54, 34, 23, 89,34, 76, 45, 34};
+        int target = 34;
+        int count = 0;
+        for(int i=0; i<a.length; i++){
+            if(a[i]==target){
+                count++;
+            }
+        }
+        System.out.println("The target countr is "+count);
+        for(int i=0; i<a.length; i++){
+            if(a[i]==target){
+                System.out.println("Intex of target is "+i);
+            }
+        }
+    }
+}
+----------------------------------------------------------------------
+12,34, 67, 54, 34, 23, 89,34, 76, 45, 34 
+
+sort : 
+target :34 
+index :which 
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {12,34, 67, 54, 34, 23, 89,34, 76, 45, 34};
+        Arrays.sort(a);
+        int target = 34;
+        for(int i=0; i<a.length; i++){
+            if(a[i]==target){
+                System.out.println("Intex of target is "+i);
+            }
+        }
+    }
+}
+----------------------------------------------------------------------
+12,34, 67, 54, 34, 23, 89,34, 76, 45, 34 
+
+sort : 
+even mid odd 
+odd mid even 
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {12,34, 67, 54, 34, 23, 89,34, 76, 45, 34};
+        Arrays.sort(a);
+        for(int i=0; i<a.length; i++){
+            if(a[i]%2==0){
+                System.out.print(a[i]+" ");
+            }
+        }
+        for(int i=0; i<a.length; i++){
+            if(a[i]%2==1){
+                System.out.print(a[i]+" ");
+            }
+        }
+    }
+}
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {12,34, 67, 54, 34, 23, 89,34, 76, 45, 34};
+        Arrays.sort(a);
+        for(int i=0; i<a.length; i++){
+            if(a[i]%2==1){
+                System.out.print(a[i]+" ");
+            }
+        }
+        for(int i=0; i<a.length; i++){
+            if(a[i]%2==0){
+                System.out.print(a[i]+" ");
+            }
+        }
+    }
+}
+----------------------------------------------------------------------
+12,34, 67, 54, 34, 23, 89,34, 76, 45, 34 
+
+first element last elemet swap 
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arr {
+    static void arrayprint(int a[]){
+        for(int i=0; i<a.length; i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static void swap(int a[],int i,int j){
+        int temp = a[0];
+        a[0] = a[a.length-1];
+        a[a.length-1] = temp;
+    }
+    public static void main(String[] args) {
+        int a[] = {12,34, 67, 54, 34, 23, 89,34, 76, 45, 34};
+        arrayprint(a);
+        swap(a, 0, a.length);
+        arrayprint(a);
+    }
+}
+----------------------------------------------------------------------
+1,2,3,4,5,6,7,8,9,10 
+
+a)mid element 
+b)first -->mid swap 7-->10 swap 
+6 2 3 4 5 1 10 8 9 7 
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arr {
+    static void arrayprint(int a[]){
+        for(int i=0; i<a.length; i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static void swap(int a[],int i,int j){
+        int temp = a[0];
+        a[0] = a[a.length/2];
+        a[a.length/2] = temp;
+    }
+    static void swap1(int a[],int i,int j){
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+    public static void main(String[] args) {
+        int a[] = {1,2,3,4,5,6,7,8,9,10};
+        arrayprint(a);
+        swap(a, 0, a.length);
+        swap1(a, 6, a.length-1);
+        arrayprint(a);
+    }
+}
+----------------------------------------------------------------------
+12,34, 67, 54, 34, 23, 89,34, 76, 45, 34 
+sort : 
+a)mid element 
+b)first -->mid mid+1 --->last swap 
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arr {
+    static void arrayprint(int a[]){
+        for(int i=0; i<a.length; i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static void swap(int a[],int i,int j){
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+    static void swap1(int a[],int i,int j){
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+    public static void main(String[] args) {
+        int a[] = {1,2,3,4,5,6,7,8,9,10};
+        arrayprint(a);
+        swap(a, 0, a.length/2);
+        swap1(a, a.length/2+1, a.length-1);
+        arrayprint(a);
+    }
+}
+ 
+----------------------------------------------------------------------
+1,2,3,4,5,6,7,8,9,10 
+
+a)first even swap last even number 
+1 10 3 4 5 6 7 8 9 2 
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arr {
+    static void arrayprint(int a[]){
+        for(int i=0; i<a.length; i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static void swap(int a[],int i,int j){
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+    public static void main(String[] args) {
+        int a[] = {1,2,3,4,5,6,7,8,9,10};
+        int first = -1;
+        int last = -1;
+        for(int i=0; i<a.length; i++){
+            if(a[i]%2==0){
+                if(first==-1){
+                    first = i;
+                }
+		last = i;
+            }
+        }
+        if(first!=-1 && last != -1){
+            swap(a, first, last);
+        }
+        arrayprint(a);
+    }
+}
+
+
+b)first odd swap last odd number 
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arr {
+    static void arrayprint(int a[]){
+        for(int i=0; i<a.length; i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static void swap(int a[],int i,int j){
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+    public static void main(String[] args) {
+        int a[] = {1,2,3,4,5,6,7,8,9,10};
+        int first = -1;
+        int last = -1;
+        for(int i=0; i<a.length; i++){
+            if(a[i]%2==1){
+                if(first==-1){
+                    first = i;
+                }
+                last = i;
+            }
+        }
+        if(first!=-1 && last != -1){
+            swap(a, first, last);
+        }
+        arrayprint(a);
+    }
+}
+----------------------------------------------------------------------
+12, 67, 54, 34, 23, 89, 76, 45, 34 : 
+user number check :which element 34 se greater  
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {12,34, 67, 54, 34, 23, 89,34, 76, 45, 34};
+        int target = 34;
+        for(int i=0; i<a.length; i++){
+            if(a[i]>=target){
+                System.out.print(i+" ");
+            }
+        }
+    }
+}
+
+----------------------------------------------------------------------
+12, 67, 54, 34, 23, 89, 76, 45, 34 : 
+user number check :which element 34 se less  
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {12,34, 67, 54, 34, 23, 89,34, 76, 45, 34};
+        int target = 34;
+        for(int i=0; i<a.length; i++){
+            if(a[i]<=target){
+                System.out.print(i+" ");
+            }
+        }
+    }
+}
+----------------------------------------------------------------------
+12, 67, 54, 34, 23, 89, 76, 45, 34 : 
+user number check :count element 34 se greater 
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {12,34, 67, 54, 34, 23, 89,34, 76, 45, 34};
+        int target = 34;
+        int count = 0;
+        for(int i=0; i<a.length; i++){
+            if(a[i]<=target){
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+} 
+----------------------------------------------------------------------
+12, 67, 54, 34, 23, 89, 76, 45, 34 : 
+user number check :index element 34 se greater  
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {12,34, 67, 54, 34, 23, 89,34, 76, 45, 34};
+        int target = 34;
+        int count = 0;
+        for(int i=0; i<a.length; i++){
+            if(a[i]>=target){
+                System.out.print(i+" ");
+            }
+        }
+    }
+}
+----------------------------------------------------------------------
+12, 67, 54, 34, 23, 89, 76, 45, 34 : 
+user number check :count element 34 se less  
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {12,34, 67, 54, 34, 23, 89,34, 76, 45, 34};
+        int target = 34;
+        int count = 0;
+        for(int i=0; i<a.length; i++){
+            if(a[i]>target){
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
+----------------------------------------------------------------------
+12, 67, 54, 34, 23, 89, 76, 45, 34 : 
+user number check :index element 34 se less  
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {12,34, 67, 54, 34, 23, 89,34, 76, 45, 34};
+        int target = 34;
+        int count = 0;
+        for(int i=0; i<a.length; i++){
+            if(a[i]>target){
+                System.out.println(a[i]);
+            }
+        }
+    }
+}
+============================================================
+12, 67, 54, 34, 23, 89, 76, 45, 34 : 
+
+not loop used 
+ max and minimum 
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {12,34, 67, 54, 34, 23, 89,34, 76, 45, 34};
+        Arrays.sort(a);
+        System.out.println(a[0]+" Minimum");
+        System.out.println(a[a.length-1]+" Maximum");
+    }
+}
+---------------------------------------------------------
+12, 67, 54, 34, 23, 89, 76, 45, 34 : 
+
+mid 
+not loop used 
+ max and minimum 
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {12,34, 67, 54, 34, 23, 89,34, 76, 45, 34};
+        Arrays.sort(a);
+        System.out.println(a[0]+" Minimum");
+        System.out.println(a[a.length/2]+" Mid element");
+        System.out.println(a[a.length-1]+" Maximum");
+    }
+}
+
+---------------------------------------------------------
+a[]={14,27,38,41,5} 
+sum of all element of a 
+
+b[]={23,67,89,46}
+sum of all element of b
+
+check which array is maximum  
+check which array is minimum   
+
+Ans)
+import java.util.*;
+
+public class Test{
+    
+    public static void main(String[] args) {
+        int a[] = {14,27,38,41,5};
+        int b[] = {23,67,89,46};
+        int sum = 0;
+        int sum1 = 0;
+        for(int i=0; i<a.length; i++){
+            sum += a[i];
+        }
+        for(int i=0; i<b.length; i++){
+            sum1 += b[i];
+        }
+        String name = (sum>sum1)?"Array one is Greater":"Array two is Greater";
+        System.out.println(name);
+    }
+}

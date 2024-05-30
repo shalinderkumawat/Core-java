@@ -1,0 +1,251 @@
+1)
+Print Current Date and Time:
+Write a Java program to print the current date and time.
+
+Ans)
+import java.util.*;
+
+public class Exc {
+    public static void main(String[] args) {
+        Date d = new Date();
+        System.out.println(d);
+    }
+}
+
+-------------------------------------------------------------
+
+2)
+Print Date in a Specific Format:
+Create a program to print the current date in the format "dd/MM/yyyy"
+Ans)
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+public class Exc {
+    public static void main(String[] args) {
+        SimpleDateFormat date = new SimpleDateFormat("dd/mm/yyyy");
+        String todaydate = date.format(new Date());
+        System.out.println(todaydate);
+    }
+}
+
+-------------------------------------------------------
+
+3)
+Print Time in a Specific Format:
+Write a Java code to print the current time in the format "hh:mm:ss".
+Ans)
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+public class Exc {
+    public static void main(String[] args) {
+        SimpleDateFormat date = new SimpleDateFormat("hh:mm:ss");
+        String todaydate = date.format(new Date());
+        System.out.println(todaydate);
+    }
+}
+
+
+----------------------------------------------------------
+
+4)
+Print Day of the Week:
+Develop a program to print the current day of the week
+Ans)
+import java.util.Calendar;
+
+public class Exc {
+    public static void main(String[] args) {
+        // Get a Calendar instance
+        Calendar calendar = Calendar.getInstance();
+        
+        // Get the current day of the week (Sunday = 1, Monday = 2, ..., Saturday = 7)
+        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+        
+        // Convert the numerical representation of the day to a string representation
+        String dayOfWeekString = "";
+        switch (dayOfWeek) {
+            case Calendar.SUNDAY:
+                dayOfWeekString = "Sunday";
+                break;
+            case Calendar.MONDAY:
+                dayOfWeekString = "Monday";
+                break;
+            case Calendar.TUESDAY:
+                dayOfWeekString = "Tuesday";
+                break;
+            case Calendar.WEDNESDAY:
+                dayOfWeekString = "Wednesday";
+                break;
+            case Calendar.THURSDAY:
+                dayOfWeekString = "Thursday";
+                break;
+            case Calendar.FRIDAY:
+                dayOfWeekString = "Friday";
+                break;
+            case Calendar.SATURDAY:
+                dayOfWeekString = "Saturday";
+                break;
+        }
+        
+        // Print the current day of the week
+        System.out.println("Current Day of the Week: " + dayOfWeekString);
+    }
+}
+
+-------------------------------------------------------------
+
+5)
+Print Date After Adding Days:
+Write a Java function that takes an integer input (number of days) and prints the date after adding those days to the current date.
+
+Ans)
+import java.util.Calendar;
+import java.util.Date;
+
+public class Exc {
+    static void printDateAfterAddingDays(int numberOfDays) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_YEAR, numberOfDays);
+        Date newDate = calendar.getTime();
+        System.out.println("Date after adding " + numberOfDays + " days: " + newDate);
+    }
+    public static void main(String[] args) {
+        printDateAfterAddingDays(5);
+    }
+}
+
+
+-------------------------------------------------------------
+
+6)
+Print Time After Adding Hours:
+Create a program that takes an integer input (number of hours) and prints the time after adding those hours to the current time.
+
+Ans)
+import java.util.Calendar;
+import java.util.Date;
+
+public class Exc {
+    static void printDateAfterAddingDays(int numberOfDays) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.HOUR_OF_DAY, numberOfDays);
+        Date newDate = calendar.getTime();
+        System.out.println("Date after adding " + numberOfDays + " days: " + newDate);
+    }
+    public static void main(String[] args) {
+        printDateAfterAddingDays(5);
+    }
+}
+
+-----------------------------------------------------------
+
+7)
+Print Date Difference:
+Write a Java program to find and print the difference between two given dates.
+
+Ans)
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DateDifferenceCalculator {
+    public static void main(String[] args) {
+        String date1 = "2024-05-14";
+        String date2 = "2024-05-21";
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        
+        try {
+            Date startDate = sdf.parse(date1);
+            Date endDate = sdf.parse(date2);
+            
+            long differenceMillis = Math.abs(endDate.getTime() - startDate.getTime());
+            long differenceDays = differenceMillis / (1000 * 60 * 60 * 24);
+            
+            System.out.println("Difference between " + date1 + " and " + date2 + " is " + differenceDays + " days.");
+            
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+---------------------------------------------------------------
+
+8)
+Print Time Difference:
+Develop a program to find and print the difference between two given times.
+
+Ans)
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class TimeDifferenceCalculator {
+    public static void main(String[] args) {
+        String time1 = "10:30:00";
+        String time2 = "15:45:30";
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        
+        try {
+            Date startTime = sdf.parse(time1);
+            Date endTime = sdf.parse(time2);
+            
+            long differenceMillis = Math.abs(endTime.getTime() - startTime.getTime());
+            
+            // Calculate hours
+            long hours = differenceMillis / (1000 * 60 * 60);
+            differenceMillis %= (1000 * 60 * 60);
+            
+            // Calculate minutes
+            long minutes = differenceMillis / (1000 * 60);
+            differenceMillis %= (1000 * 60);
+            
+            // Calculate seconds
+            long seconds = differenceMillis / 1000;
+            
+            System.out.println("Difference between " + time1 + " and " + time2 + " is " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds.");
+            
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+------------------------------------------------------
+
+9)
+Print Date in a Specific Time Zone:
+Create a program that prints the current date and time in a specific time zone.
+Ans)
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class TimeZoneDateTimePrinter {
+    public static void main(String[] args) {
+        String timeZone = "America/New_York";
+        ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone));
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDateTime = zonedDateTime.format(formatter);
+        System.out.println("Current date and time in " + timeZone + ": " + formattedDateTime);
+    }
+}
+
+-----------------------------------------------------------
+
+10)
+Print Epoch Time:
+Write a Java program to print the current epoch time (time in milliseconds since January 1, 1970).
+
+Ans)
+public class Exc {
+    public static void main(String[] args) {
+        long epochTime = System.currentTimeMillis();
+        System.out.println("Current epoch time: " + epochTime + " milliseconds");
+    }
+}

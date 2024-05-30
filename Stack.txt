@@ -1,0 +1,30 @@
+empty()
+push(E item)
+pop()
+peek()
+search(Object o)
+--------------------------------------------------------
+Iterator in Java
+
+Ans)
+import java.util.LinkedHashSet;
+import java.util.Stack;
+import java.util.TreeSet;
+
+public class Exc {
+    public static void main(String[] args) {
+        Stack<Integer> st = new Stack<>();
+        st.push(32);
+        st.push(21);
+        st.push(44);
+        System.out.println(st);
+        st.pop();
+        System.out.println(st);
+        System.out.println(st.peek());
+        System.out.println(st.search(st));
+        System.out.println(st.empty());
+        for(int i: st){
+            System.out.println(i);
+        }
+    }
+}

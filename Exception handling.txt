@@ -1,0 +1,62 @@
+1)
+exception all
+
+arith
+null
+number 
+arrayindex
+
+
+Ans)
+public class Arry{
+    public static void main(String[] args) {
+        try{
+            int a = 8/0;
+            System.out.println(a);   
+        }
+        catch(ArithmeticException ex){
+            System.out.println("Plesae do not divide with 0");
+        }
+    }
+}
+
+
+public class Arry{
+    public static void main(String[] args) {
+        try{
+            String a = null;
+            System.out.println(a.length());   
+        }
+        catch(NullPointerException ex){
+            System.out.println("Can not print null length");
+        }
+    }
+}
+
+
+public class Arry{
+    public static void main(String[] args) {
+        try{
+            String a = null;
+            Integer s = Integer.parseInt(a);
+            System.out.println(s);   
+        }
+        catch(NumberFormatException ex){
+            System.out.println("Can not convert String into int ");
+        }
+    }
+}
+
+
+
+public class Arry{
+    public static void main(String[] args) {
+        try{
+            int a[] = {1,2,3,4};
+            System.out.println(a[6]);   
+        }
+        catch(ArrayIndexOutOfBoundsException ex){
+            System.out.println("Array is out of bond ");
+        }
+    }
+}

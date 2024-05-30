@@ -1,0 +1,843 @@
+1)
+Shape Inheritance Hierarchy:
+
+Create a base class Shape with methods calculateArea() and displayInfo(). Derive two classes Circle and Rectangle inheriting from Shape. Calculate and display their areas.
+
+Ans)
+import java.util.*;
+abstract class Shape{
+    abstract void calculateArea();
+    abstract void displayinfo();
+}
+class Circle extends Shape{
+    public void calculateArea(){
+        System.out.println("The area of the circle is Pie R Square");
+    }
+    public void displayinfo(){
+        System.out.println("Now we have the area of the circle");
+    }
+}
+class Rectangle extends Shape{
+    public void calculateArea(){
+        System.out.println("The area of the Rectangle is L X W");
+    }
+    public void displayinfo(){
+        System.out.println("Now we have the area of the Rectangle");
+    }
+}
+public class Test{
+    
+    public static void main(String[] args) {
+        Circle k = new Circle();
+        k.calculateArea();
+        k.displayinfo();
+        Rectangle i = new Rectangle();
+        i.calculateArea();
+        i.displayinfo();
+    }
+}
+
+-----------------------------------------------------------
+
+2)
+Employee Hierarchy:
+
+Create a base class Employee with attributes name and salary. Derive two classes Manager and Worker inheriting from Employee. Calculate the total salary for a team of one manager and multiple workers.
+
+Ans)
+import java.util.*;
+class Employee{
+    String name;
+    int salary;
+}
+class Manager extends Employee{
+    void team(int salary){
+        this.salary = salary;
+        System.out.println("The salary of the employee "+salary);
+    }
+}
+class Worker extends Employee{
+    void teamw(int Worker,int salary){
+        this.salary = salary;
+        salary = salary*Worker;
+        System.out.println("The total salary of the workers is "+salary);
+    }
+}
+public class Test{
+    
+    public static void main(String[] args) {
+        Manager k = new Manager();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the salary");
+        int salary = sc.nextInt();
+        System.out.println("Enter the number of workers");
+        int worker = sc.nextInt();
+        k.team(salary);
+        Worker i = new Worker();
+        i.teamw(worker,salary);
+
+    }
+}
+
+-----------------------------------------------------------
+
+3)
+Vehicle Inheritance:
+
+Create a base class Vehicle with methods start() and stop(). Derive two classes Car and Bike inheriting from Vehicle. Implement start and stop methods accordingly.
+
+Ans)
+import java.util.*;
+abstract class Vehical{
+    abstract void start(int i);
+    abstract void stop(int i);
+}
+class Car extends Vehical{
+    public void start(int i){
+        if(i==1){
+            System.out.println("Start the car");
+        }
+    }
+    public void stop(int i){
+        if(i==0){
+            System.out.println("Stop the car");
+        }
+    }
+}
+class Bike extends Vehical{
+    public void start(int i){
+        if(i==1){
+            System.out.println("Start the bike");
+        }
+    }
+    public void stop(int i){
+        if(i==0){
+            System.out.println("Stop the bike");
+        }
+    }
+}
+public class Test{
+    
+    public static void main(String[] args) {
+        Car k = new Car();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Press 1 to start and 0 to stop");
+        int i = sc.nextInt();
+        k.start(i);
+        k.stop(i);
+        Bike o = new Bike();
+        o.start(i);
+        o.stop(i);
+    }
+}
+
+
+----------------------------------------------------------
+4)
+Animal Kingdom:
+
+Create a base class Animal with methods eat() and sleep(). Derive two classes Lion and Elephant inheriting from Animal. Implement eat and sleep methods for each.
+
+Ans)
+import java.util.*;
+abstract class Animal{
+    abstract void eat();
+    abstract void sleep();
+}
+class Lion extends Animal{
+    public void eat(){
+        System.out.println("Loin eat other animals");
+    }
+    public void sleep(){
+        System.out.println("Now lion eaten, time to sleep");
+    }
+}
+class Elephant extends Animal{
+    public void eat(){
+        System.out.println("Elephant eat other animals");
+    }
+    public void sleep(){
+        System.out.println("Now Elephant eaten, time to sleep");
+    }
+}
+public class Test{
+    
+    public static void main(String[] args) {
+        Lion k = new Lion();
+        k.eat();
+        k.sleep();
+        Elephant o = new Elephant();
+        o.eat();
+        o.sleep();
+    }
+}
+
+------------------------------------------------------------
+
+5)
+Bank Account Hierarchy:
+
+Create a base class Account with methods deposit() and withdraw(). Derive two classes SavingsAccount and CurrentAccount inheriting from Account. Implement deposit and withdraw methods with appropriate rules.
+
+Ans)
+import java.util.*;
+abstract class Account{
+    abstract void deposit();
+    abstract void withdrow();
+}
+class Savingacc extends Account{
+    public void deposit(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Tell us your account balance");
+        int bal = sc.nextInt();
+        System.out.println("Enter the deposit amount ");
+        int depo = sc.nextInt();
+        int intrest = 5; //5 rs for saving
+        System.out.println(bal+depo+intrest);
+    }
+    public void withdrow(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Tell us your account balance");
+        int bal = sc.nextInt();
+        System.out.println("Enter the withdrow amount ");
+        int withdrow = sc.nextInt();
+        System.out.println(bal-withdrow);
+    }
+}
+class Currentacc extends Account{
+    public void deposit(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Tell us your account balance");
+        int bal = sc.nextInt();
+        System.out.println("Enter the deposit amount ");
+        int depo = sc.nextInt();
+        int intrest = 15; //15 rs for saving
+        System.out.println(bal+depo+intrest);
+    }
+    public void withdrow(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Tell us your account balance");
+        int bal = sc.nextInt();
+        System.out.println("Enter the withdrow amount ");
+        int withdrow = sc.nextInt();
+        System.out.println(bal-withdrow);
+    }
+}
+public class Test{
+    
+    public static void main(String[] args) {
+        Savingacc k = new Savingacc();
+        k.deposit();
+        k.withdrow();
+        Currentacc o = new Currentacc();
+        o.deposit();
+        o.withdrow();
+    }
+}
+
+--------------------------------------------------------
+
+6)
+Geometric Shapes:
+
+Create a base class GeometricShape with methods draw() and area(). Derive two classes Triangle and Square inheriting from GeometricShape. Implement draw and area methods for each.
+
+Ans)
+import java.util.*;
+abstract class GeometricShape{
+    abstract void drow();
+    abstract void area();
+}
+class Triangle extends GeometricShape{
+    public void drow(){
+        System.out.println("The triangle is drown with 3 lines");
+    }
+    public void area(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the base");
+        int base = sc.nextInt();
+        System.out.println("Enter the height");
+        int height = sc.nextInt();
+        System.out.println(1/2*base*height + " is the area of the triangle");
+    }
+}
+class Square extends GeometricShape{
+    public void drow(){
+        System.out.println("The square is drown with 4 lines");
+    }
+    public void area(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the side1");
+        int side1 = sc.nextInt();
+        System.out.println("Enter the side2");
+        int side2 = sc.nextInt();
+        System.out.println(side1*side2 + " is the area of the square");
+    }
+}
+public class Test{
+    
+    public static void main(String[] args) {
+        Triangle k = new Triangle();
+        k.drow();
+        k.area();
+        Square o = new Square();
+        o.drow();
+        o.area();
+    }
+}
+
+---------------------------------------------------------
+
+
+7)
+School Staff Hierarchy:
+
+Create a base class Person with attributes name and age. Derive two classes Teacher and NonTeachingStaff inheriting from Person. Display the details of teachers and non-teaching staff.
+
+Ans)
+import java.util.*;
+class Person{
+    String name;
+    int age;
+}
+class Teacher extends Person{
+    void detailtec(String name,int age){
+        this.name = name;
+        this.age = age;
+        System.out.println("The name is "+name);
+        System.out.println("The age is "+age);
+    }
+
+}
+class NonTeachingStaff extends Person{
+    void nontechtec(String name,int age){
+        this.name = name;
+        this.age = age;
+        System.out.println("The name is non tech teacher "+name);
+        System.out.println("The age is non tech teacher "+age);
+    }
+}
+public class Test{
+    
+    public static void main(String[] args) {
+        Teacher k = new Teacher();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the name of teacher");
+        String name = sc.nextLine();
+        System.out.println("Enter the age of teacher");
+        int age = sc.nextInt();
+        k.detailtec(name, age);
+        NonTeachingStaff o = new NonTeachingStaff();
+        System.out.println("Enter the name of non teacher");
+        String name2 = sc.nextLine();
+        System.out.println("Enter the age of non teacher");
+        int age2 = sc.nextInt();
+        o.nontechtec(name2, age2);
+    }
+}
+
+-------------------------------------------------------------
+
+8)
+Clothing Items:
+
+Create a base class ClothingItem with methods wear() and wash(). Derive two classes Shirt and Jeans inheriting from ClothingItem. Implement wear and wash methods for each.
+
+Ans)
+import java.util.*;
+abstract class ClothingItem{
+    abstract void wear();
+    abstract void wash();
+}
+class Shirt extends ClothingItem{
+    public void wear(){
+        System.out.println("Shirt is wearable at any occation");
+    }
+    public void wash(){
+        System.out.println("It should be washed by the best soap");
+    }
+}
+class Jeans extends ClothingItem{
+    public void wear(){
+        System.out.println("jeans is wearable at most of the parties");
+    }
+    public void wash(){
+        System.out.println("Jeans is washed by the washing powder");
+    }
+}
+public class Test{
+    
+    public static void main(String[] args) {
+        Shirt k = new Shirt();
+        k.wear();
+        k.wash();
+        Jeans o = new Jeans();
+        o.wear();
+        o.wash();
+    }
+}
+
+------------------------------------------------------------
+
+9)
+Create a class Person with a parameterized constructor that takes a name as a parameter.
+
+Ans)
+import java.util.*;
+class Person{
+    Person(String name){
+        System.out.println("The name is "+name);
+    }
+}
+public class Test{
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the name ");
+        String name = sc.nextLine();
+        new Person(name);
+    }
+}
+
+----------------------------------------------------------
+
+10)
+Implement a default constructor for the Rectangle class that sets both length and width to 0.
+
+Ans)
+import java.util.*;
+class Rectangle{
+    int length;
+    int with;
+    Rectangle(){
+        length = 0;
+        with = 0;
+    }
+}
+public class Test{
+    
+    public static void main(String[] args) {
+        new Rectangle();
+    }
+}
+
+----------------------------------------------------------
+
+11)
+Create a class Book with a parameterized constructor that takes the title, author, and ISBN as parameters.
+
+Ans)
+import java.util.*;
+class Book{
+    Book(String title,String auther, int isbm){
+        System.out.println(title);
+        System.out.println(auther);
+        System.out.println(isbm);
+    }
+}
+public class Test{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the award name");
+        String award = sc.nextLine();
+        System.out.println("Enter the auther name");
+        String auther = sc.nextLine();
+        System.out.println("Enter the isbm name");
+        int isbm = sc.nextInt();
+        new Book(award, auther, isbm);
+    }
+}
+
+----------------------------------------------------------
+
+12)
+Implement a default constructor for the Employee class that sets the name to "Unknown" and the salary to 0.
+
+Ans)
+import java.util.*;
+class Employee{
+    Employee(){
+        String name = "Unknown";
+        int salary = 0;
+        System.out.println(name);
+        System.out.println(salary);
+    }
+}
+public class Test{
+    public static void main(String[] args) {
+        new Employee();
+    }
+}
+
+------------------------------------------------------
+
+13)
+Create a class Point with a parameterized constructor that takes the x and y coordinates as parameters.
+
+Ans)
+import java.util.*;
+class Point{
+    Point(int x,int y){
+        System.out.println(x+y+" sum");
+    }
+}
+public class Test{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the value");
+        int a = sc.nextInt();
+        System.out.println("Enter the value");
+        int b = sc.nextInt();
+        new Point(a, b);
+    }
+}
+
+----------------------------------------------------------
+
+14)
+Implement a default constructor for the Dog class that sets the name to "Unknown," breed to "Unknown," and age to 0.
+
+Ans)
+import java.util.*;
+class Dog{
+    Dog(){
+        String name = "Unknown";
+        String breed = "Unknown";
+        int age = 0;
+        System.out.println("The name is "+name);
+        System.out.println("The breed is "+breed);
+        System.out.println("The age is "+age);
+    }
+}
+public class Test{
+    public static void main(String[] args) {
+        new Dog();
+    }
+}
+
+----------------------------------------------------------
+
+15)
+Problem Statement – Ritik wants a magic board, which displays a character for a
+corresponding number for his science project. Help him to develop such an
+application.
+For example when the digits 65,66,67,68 are entered, the alphabet ABCD are to be
+displayed.
+[Assume the number of inputs should be always 4 ]
+Sample Input 1:
+Enter the digits:
+65
+66
+67
+68
+Sample Output 1:
+65-A
+66-B
+67-C
+68-D
+Sample Input 2:
+Enter the digits:
+115
+116
+101
+112
+Sample Output 2:
+115-s
+116-t
+101-e
+112-p
+
+Ans)
+import java.util.Scanner;
+
+public class Test {
+    public static void displayChar() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the digits:");
+        for (int i = 0; i < 4; i++) {
+            int num = sc.nextInt();
+            char ch = (char) num;
+            System.out.println(num + "-" + ch);
+        }
+    }
+    public static void main(String[] args) {
+        displayChar();
+    }
+}
+
+-----------------------------------------------------------
+
+16)
+In a theater, there is a discount scheme announced where one gets a 10% discount
+on the total cost of tickets when there is a bulk booking of more than 20 tickets, and
+a discount of 2% on the total cost of tickets if a special coupon card is submitted.
+Develop a program to find the total cost as per the scheme. The cost of the k class
+ticket is Rs.75 and q class is Rs.150. Refreshments can also be opted by paying an
+additional of Rs. 50 per member.
+Hint: k and q and You have to book minimum of 5 tickets and maximum of 40 at a
+time. If fails display “Minimum of 5 and Maximum of 40 Tickets”. If circle is given a
+value other than ‘k’ or ‘q’ the output should be “Invalid Input”.
+The ticket cost should be printed exactly to two decimal places.
+Sample Input 1:
+Enter the no of ticket:35
+Do you want refreshment:y
+Do you have coupon code:y
+Enter the circle:k
+Sample Output 1:
+Ticket cost:4065.25
+Sample Input 2:
+Enter the no of ticket:1
+Sample Output 2:
+Minimum of 5 and Maximum of 40 Tickets
+
+Ans)
+import java.util.Scanner;
+
+public class Test {
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of ticket you want ");
+        int ticket = sc.nextInt();
+        System.out.println("refresment ");
+        int refres = sc.nextInt();
+        System.out.println("Coupon code ");
+        int coupon = sc.nextInt();
+        System.out.println("Enter the circle ");
+        char circle = sc.next().charAt(0);
+        int cost = 0;
+        if(ticket>5 || ticket <40){
+            if(ticket >=20){
+                cost = ticket*75;
+                cost = cost-(cost/10);
+            }
+            else{
+                cost = ticket*75;
+            }
+        }
+        else{
+            System.out.println("Not valid");
+        }
+        if(refres == 1){
+            ticket = ticket * 50;
+            cost = cost+ticket;
+        }
+        if(coupon == 1){
+            cost = cost-((cost/100)*2);
+        }
+        if(circle=='k'||circle=='q'){
+            System.out.println("valid");
+        }
+        else{
+            System.out.println("not valid");
+        }
+        System.out.println("The total cost is "+ cost);
+    }
+}
+
+--------------------------------------------------------------
+
+17)
+Problem Statement – Goutam and Tanul plays by telling numbers. Goutam says a number
+to Tanul. Tanul should first reverse the number and check if it is same as the original. If yes,
+Tanul should say “Palindrome”. If not, he should say “Not a Palindrome”. If the number is
+negative, print “Invalid Input”. Help Tanul by writing a program.
+Sample Input 1 :
+21212
+Sample Output 1 :
+Palindrome
+Sample Input 2 :
+6186
+Sample Output 2 :
+Not a Palindrome
+
+Ans)
+import java.util.Scanner;
+
+public class Test {
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Goutam is saying a number ");
+        int num = sc.nextInt();
+        int rem;
+        int sum = 0;
+        if(num<0){
+            System.out.println("Invelid input gautam");
+        }
+        else{
+            while(num>0){
+                rem = num%10;
+                sum = sum*10+rem;
+                num = num/10;
+            }
+            if(num==sum){
+                System.out.println("Gautam it is a pallindrom");
+            }
+            else{
+                System.out.println("Gautam its Not a Palindrome");
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------
+
+18)
+XYZ Technologies is in the process of increment the salary of the employees. This
+increment is done based on their salary and their performance appraisal rating.
+If the appraisal rating is between 1 and 3, the increment is 10% of the salary.
+If the appraisal rating is between 3.1 and 4, the increment is 25% of the salary.
+If the appraisal rating is between 4.1 and 5, the increment is 30% of the salary.
+Help them to do this, by writing a program that displays the incremented salary. Write a
+class “IncrementCalculation.java” and write the main method in it.
+Note : If either the salary is 0 or negative (or) if the appraisal rating is not in the range 1 to
+5 (inclusive), then the output should be “Invalid Input”.
+Sample Input 1 :
+Enter the salary
+8000
+Enter the Performance appraisal rating
+3
+Sample Output 1 :
+8800
+Sample Input 2 :
+Enter the salary
+7500
+Enter the Performance appraisal rating
+4.3
+Sample Output 2 :
+9750
+Sample Input 3 :
+Enter the salary
+-5000
+Enter the Performance appraisal rating
+6
+Sample Output 3 :
+Invalid Input
+
+Ans)
+import java.util.Scanner;
+
+public class Test {
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the salary ");
+        int salary = sc.nextInt();
+        System.out.println("Enter the appraisal rate");
+        float appraisal = sc.nextFloat();
+        if(appraisal<0 || appraisal>5){
+            System.out.println("Invalid input");
+        }
+        else{
+            if(appraisal>=1 && appraisal<=3){
+                salary = salary+(salary/100*10);
+                System.out.println("The salary is "+salary);
+            }
+            else if(appraisal>=3.1 && appraisal<=4){
+                salary = salary+(salary/100*25);
+                System.out.println("The salary is "+salary);
+            }
+            else if(appraisal>=4.1 && appraisal<=5){
+                salary = salary+(salary/100*30);
+                System.out.println("The salary is "+salary);
+            }
+        }
+    }
+}
+
+-------------------------------------------------------
+
+
+19)
+Problem Statement – Chaman planned to choose a four digit lucky number for his car. His
+lucky numbers are 3,5 and 7. Help him find the number, whose sum is divisible by 3 or 5 or
+7. Provide a valid car number, Fails to provide a valid input then display that number is not a
+valid car number.
+Note : The input other than 4 digit positive number[includes negative and 0] is considered as
+invalid.
+Refer the samples, to read and display the data.
+Sample Input 1:
+Enter the car no:1234
+Sample Output 1:
+Lucky Number
+Sample Input 2:
+Enter the car no:1214
+Sample Output 2:
+Sorry its not my lucky number
+Sample Input 3:
+Enter the car no:14
+Sample Output 3:
+14 is not a valid car number
+
+Ans)
+import java.util.Scanner;
+
+public class Test {
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number ");
+        int num = sc.nextInt();
+        if(num>=1000 && num<=9999){
+            int sum = 0;
+            int rem;
+            while(num>0){
+                rem = num%10;
+                sum = sum+rem;
+                num = num/10;
+            }
+            if(sum%3==0 && sum%5==0 && sum%7==0){
+                System.out.println("Valid car number ");
+            }
+            else{
+                System.out.println("Not a valid car number");
+            }
+        }
+        else{
+            System.out.println("Invalid input");
+        }
+    }
+}
+
+
+--------------------------------------------------------------
+
+20)
+    *
+   ***
+  *****
+ *******
+*********
+   ***
+   ***
+   ***
+   ***
+
+Ans)
+
+public class Test {
+    public static void main(String[] args) {
+        int rows = 5;
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= rows - i; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 1; k <= 2 * i - 1; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int i = 1; i <= 4; i++) {
+            for (int j = 1; j <= 3; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 1; k <= 3; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}

@@ -1,0 +1,132 @@
+23 
+65
+-23
+1.56
+0.8
+-2.752
+t
+123456
+o
+
+Ans)
+public class Main {
+    public static void main(String[] args){
+        int a = 23,b=65,c=-23;
+        float d=1.58f,e=0.8f,f=-2.753f;
+        char g='t',h='o';
+        int i=12345;
+        System.out.println(a+"\n");
+        System.out.println(b+"\n");
+        System.out.println(c+"\n");
+        System.out.println(d+"\n");
+        System.out.println(e+"\n");
+        System.out.println(f+"\n");
+        System.out.println(g+"\n");
+        System.out.println(h+"\n");
+        System.out.println(i+"\n");
+    }
+}
+
+----------------------------------------------------
+34 +89 
+
+2*2 
+
+67-4
+
+24/2 
+
+Ans)
+public class Main {
+    public static void main(String[] args){
+        int a = 23,b=65,c=a+b;
+        System.out.println(c+"\n");
+        System.out.println(a*b+"\n");
+        System.out.println(b-a+"\n");
+        System.out.println(b/a+"\n");
+    }
+}
+
+---------------------------------------------
+2+6+1 +5+78+12
+
+Ans)
+public class Main {
+    public static void main(String[] args){
+        int a = 23,b=65,c=77;
+        int d = 20,e=66,f=37;
+        int g=a+b+c+d+e+f;
+        System.out.println(g+"\n");
+    }
+}
+
+-------------------------------------------------------
+23*2-9+34 
+
+Ans)
+public class Main {
+    public static void main(String[] args){
+        int a = 23,b=65,c=77;
+        int d = 20;
+        int g=a*b-c+d;
+        System.out.println(g+"\n");
+    }
+}
+
+--------------------------------
+12+(34*2)-45
+
+Ans)
+public class Main {
+    public static void main(String[] args){
+        int a = 23,b=65,c=77;
+        int d = 20;
+        int g=a+(b*c)-d;
+        System.out.println(g+"\n");
+    }
+}
+
+--------------------------------------
+1.2*(34+1)/2+45
+
+Ans)
+public class Main {
+    public static void main(String[] args){
+        int a = 23,b=65,c=77,e=66;
+        float d = 1.02f;
+        float g=d*(a+b)/c+e;
+        System.out.println(g+"\n");
+    }
+}
+
+--------------------------------
+4.5*2+8.9*1.2-89/2+34 
+
+Ans)
+public class Main {
+    public static void main(String[] args){
+        float a = 4.5f,c=8.9f,e=1.2f;
+        int b = 2,h=2,f=89;
+        float g=a*b+c*e/h+f;
+        System.out.println(g+"\n");
+    }
+}
+
+------------------------------------------------------------
+what is java ? 
+Ans) Java is a high level programing language which is use to make software and mobile applications.
+Java is a platform indepandent language.
+
+why java is more secure ?
+Ans) Java is A very secure language because it does not give access momeory to the 
+program and it is done by garbage collector.
+
+why java is independ ?
+Ans) Java is platform independant because it generate byte code which can run at any device which contain
+JVM(java virtual machine).
+
+why pointers does not support in java ?
+Ans) Java do not support pointers becauseof security reasons.
+If any address which is store in a different variable can be accessed easly.
+
+------------------------------

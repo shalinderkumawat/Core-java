@@ -1,0 +1,475 @@
+arraylist :even number
+
+Ans)
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.swing.text.html.HTMLDocument.Iterator;
+
+public class Exc{
+    public static void main(String[] args) throws Exception{
+        ArrayList<Integer> al = new ArrayList<>();
+        al.add(32);
+        al.add(22);
+        al.add(21);
+        al.add(11);
+        for(int a:al){
+            if(a%2==0){
+                System.out.println(a+" is even ");
+            }
+        }
+    }
+}
+
+-----------------------------------------------------------------
+arraylist :odd number
+
+Ans)
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.swing.text.html.HTMLDocument.Iterator;
+
+public class Exc{
+    public static void main(String[] args) throws Exception{
+        ArrayList<Integer> al = new ArrayList<>();
+        al.add(32);
+        al.add(22);
+        al.add(21);
+        al.add(11);
+        for(int a:al){
+            if(a%2==1){
+                System.out.println(a+" is even ");
+            }
+        }
+    }
+}
+-----------------------------------------------------------------
+
+arraylist :table print of every  number
+Ans)
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.swing.text.html.HTMLDocument.Iterator;
+
+public class Exc{
+    public static void main(String[] args) throws Exception{
+        ArrayList<Integer> al = new ArrayList<>();
+        al.add(32);
+        al.add(22);
+        al.add(21);
+        al.add(11);
+        for(int i=1; i<=10; i++){
+            for(int j:al){
+                System.out.print(j*i+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+-----------------------------------------------------------------
+linkedlist : 
+wrapper class :used (all add only 5 element) 
+
+Ans)
+import java.util.*;
+
+public class Exc{
+    public static void main(String[] args){
+        LinkedList<Integer> ll = new LinkedList<>();
+        ll.add(23);
+        ll.add(21);
+        ll.add(11);
+        ll.add(32);
+        ll.add(11);
+        System.out.println(ll);
+        LinkedList<String> li = new LinkedList<>();
+        li.add("Hello");
+        li.add("I");
+        li.add("Am");
+        li.add("Rahul");
+        li.add("Singh");
+        System.out.println(li);
+        LinkedList<Boolean> lb = new LinkedList<>();
+        lb.add(true);
+        lb.add(false);
+        lb.add(true);
+        lb.add(true);
+        lb.add(false);
+        System.out.println(lb);
+        LinkedList<Float> lf = new LinkedList<>();
+        lf.add(2.3f);
+        lf.add(3.2f);
+        lf.add(1.2f);
+        lf.add(3.3f);
+        lf.add(5.4f);
+        System.out.println(lf);
+        LinkedList<Character> lc = new LinkedList<>();
+        lc.add('q');
+        lc.add('w');
+        lc.add('e');
+        lc.add('r');
+        lc.add('t');
+        System.out.println(lc);
+    }
+}
+-----------------------------------------------------------------
+----------------------------------------------------------
+one one example make : 
+
+add(int index, E element)
+addAll(Collection<? extends E> c)
+addFirst(E e)
+addLast(E e)
+clone()
+contains(Object o)
+get(int index)
+getFirst()
+getLast()
+ indexOf(Object o)
+lastIndexOf(Object o)
+listIterator(int index)
+offer(E e)
+offerFirst(E e)
+ offerLast(E e)
+peek()
+peekFirst()
+peekLast()
+poll()
+pollFirst()
+pollLast()
+ remove()
+remove(int index)
+remove(Object o)
+removeFirst()
+removeFirstOccurrence(Object o)
+removeLast()
+removeLastOccurrence(Object o)
+set(int index, E element)
+size()
+
+Ans)
+import java.util.*;
+
+public class Exc{
+    public static void main(String[] args){
+        LinkedList<Integer> ll = new LinkedList<>();
+        ll.add(23);
+        ll.add(21);
+        ll.add(11);
+        ll.add(32);
+        ll.add(11);
+        System.out.println(ll);
+        LinkedList<String> li = new LinkedList<>();
+        li.add("Hello");
+        li.add("I");
+        li.add("Am");
+        li.add("Rahul");
+        li.add("Singh");
+        System.out.println(li);
+        LinkedList<Boolean> lb = new LinkedList<>();
+        lb.add(true);
+        lb.add(false);
+        lb.add(true);
+        lb.add(true);
+        lb.add(false);
+        System.out.println(lb);
+        LinkedList<Float> lf = new LinkedList<>();
+        lf.add(2.3f);
+        lf.add(3.2f);
+        lf.add(1.2f);
+        lf.add(3.3f);
+        lf.add(5.4f);
+        System.out.println(lf);
+        lf.add(2,3);
+        ll.addFirst(2,1);
+        ll.addLast(3,1);
+        ll.clone(lf);
+        ll.contains(lf);
+        System.out.println(ll.get(2));
+        System.out.println(ll.getFirst(2));
+        System.out.println(ll.getLast(4));
+        System.out.println(ll.indexOf(9));
+        
+    }
+}
+------------------------------------------------------------------------
+Java LinkedList Example to reverse a list of elements
+through for loop 
+
+Ans)
+
+--------------------------------------------------
+user input wrapper class 
+
+Book :through LinkedList : user input 
+int id;  
+String name,author,publisher;  
+int quantity;  
+
+Ans)
+import java.util.*;
+import java.lang.Iterable;
+class A{
+    int id;
+    String name;
+    String auther;
+    String publister;
+    int quantity;
+    A(int id,String name,String auther,String publister,int quantity){
+        this.id = id;
+        this.name = name;
+        this.auther = auther;
+        this.publister = publister;
+        this.quantity = quantity;
+    }
+}
+public class Exc{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the ID ");
+        int id = sc.nextInt();
+        System.out.println("Enter the name ");
+        String name = sc.nextLine();
+        sc.nextLine();
+        System.out.println("Enter the auther");
+        String auther = sc.nextLine();
+        System.out.println("Enter the publiher");
+        String publish = sc.nextLine();
+        System.out.println("Enter the quantity");
+        int quantity = sc.nextInt();
+        A k = new A(id, name, auther, publish, quantity);
+        LinkedList<A> ll = new LinkedList<>();
+        ll.add(k);
+        for(A p:ll){
+            System.out.print(p.id+" ");
+            System.out.print(p.name+" ");
+            System.out.print(p.auther+" ");
+            System.out.print(p.publister+" ");
+            System.out.print(p.quantity+" ");
+        }
+    }
+}
+-----------------------------------------------
+LinkedList
+al1
+Student 
+name
+fname
+mname
+class
+year
+address
+number
+bloodgroup 
+
+
+al2
+Employe 
+empname
+id
+empfname
+empmname
+company
+salary 
+
+Ans)
+import java.util.*;
+import java.lang.Iterable;
+class A{
+    String name;
+    String fname;
+    String mname;
+    int classs;
+    int year;
+    String address;
+    int number;
+    String blood;
+    A(String name,String fname,String mname,int classs,int year,String address,int number,String blood){
+        this.name = name;
+        this.fname = fname;
+        this.mname = mname;
+        this.classs = classs;
+        this.year = year;
+        this.address = address;
+        this.number = number;
+        this.blood = blood;        
+    }
+}
+class B{
+    String empname;
+    int id;
+    String empfname;
+    String empmname;
+    String company;
+    int salary;
+    B(String empname,int id,String empfname,String empmname,String company,int salary){
+        this.empname = empname;
+        this.id = id;
+        this.empfname = empfname;
+        this.empmname = empmname;
+        this.company = company;
+        this.salary = salary;
+    }
+}
+public class Exc{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the name");
+        String name = sc.nextLine();
+        System.out.println("Enter the fname");
+        String fname = sc.nextLine();
+        System.out.println("Enter the mname");
+        String mname = sc.nextLine();
+        System.out.println("Enter the class");
+        int classs = sc.nextInt();
+        System.out.println("Enter the year");
+        int year = sc.nextInt();
+        System.out.println("Enter the address");
+        String address = sc.nextLine();
+        sc.nextLine();
+        System.out.println("Enter the number");
+        int number = sc.nextInt();
+        System.out.println("Enter the blood group");
+        String blood = sc.nextLine();
+        sc.nextLine();
+        A k = new A(name, fname, mname, classs, year, address, number, blood);
+        LinkedList<A> ll = new LinkedList<>();
+        ll.add(k);
+        for(A p:ll){
+            System.out.print(p.name+" ");
+            System.out.print(p.fname+" ");
+            System.out.print(p.mname+" ");
+            System.out.print(p.classs+" ");
+            System.out.print(p.year+" ");
+            System.out.print(p.address+" ");
+            System.out.print(p.number+" ");
+            System.out.print(p.blood+" ");
+        }
+        System.out.println("ENter the name of employee");
+        String empname = sc.nextLine();
+        System.out.println("Enter the if");
+        int id = sc.nextInt();
+        System.out.println("Enter the fname");
+        String empfname = sc.nextLine();
+        System.out.println("Enter the mname");
+        String empmname = sc.nextLine();
+        System.out.println("Enter the name of the company");
+        String company = sc.nextLine();
+        System.out.println("Enter the salary");
+        int salary = sc.nextInt();
+        B i = new B(empname, number, fname, mname, company, salary);
+        LinkedList<B> li = new LinkedList<>();
+        li.add(i);
+        for(B l:li){
+            System.out.print(l.empname+" ");
+            System.out.print(l.id+" ");
+            System.out.print(l.empfname+" ");
+            System.out.print(l.empmname+" ");
+            System.out.print(l.company+" ");
+            System.out.print(l.salary+" ");
+        }
+    }
+}
+
+--------------------------------------------------------
+aggregation :
+Mobile :oppo realme oneplus apple 
+
+Amazon :shirt jeans shoes watch 
+
+flipcart :agarbati mombati phoolbatti chawal 
+
+JioMart :rice aata daal oil 
+
+Blinkit :choclate softdrink icecream chips 
+
+Main class :
+LinkedList 
+al1
+al2
+al3
+al4
+
+Ans)
+class Mobile{
+    String phone;
+    Mobile(String phone){
+        this.phone = phone;
+    }
+}
+class Amazon{
+    String product;
+    Amazon(String product){
+        this.product = product;
+    }
+}
+class Flipkart{
+    String agarbati;
+    Flipkart(String agarbati){
+        this.agarbati = agarbati;
+    }
+}
+class Joinmart{
+    String rashan;
+    Joinmart(String rashan){
+        this.rashan = rashan;
+    }
+}
+class Blinkit{
+    String items;
+    Blinkit(String items){
+        this.items = items;
+    }
+}
+
+
+second file
+public class Exc{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the name of phone");
+        String phone = sc.nextLine();
+        Mobile k = new Mobile(phone);
+        LinkedList<Mobile> al1 = new LinkedList<>();
+        al1.add(k);
+        for(Mobile o:al1){
+            System.out.println(o.phone+" ");
+        }
+        System.out.println("Enter the product");
+        String product = sc.nextLine();
+        Amazon i = new Amazon(product);
+        LinkedList<Amazon> al2 = new LinkedList<>();
+        al2.add(i);
+        for(Amazon l:al2){
+            System.out.println(l.product);
+        }
+        System.out.println("Enter the name agarbati");
+        String agarbati = sc.nextLine();
+        Flipkart o = new Flipkart(agarbati);
+        LinkedList<Flipkart> al3 = new LinkedList<>();
+        al3.add(o);
+        for(Flipkart e:al3){
+            System.out.println(e.agarbati);
+        }
+        System.out.println("Enter the rashan");
+        String rashan = sc.nextLine();
+        Joinmart p = new Joinmart(rashan);
+        LinkedList<Joinmart> al4 = new LinkedList<>();
+        al4.add(p);
+        for(Joinmart n:al4){
+            System.out.println(n.rashan);
+        }
+        System.out.println("Enter the item");
+        String item = sc.nextLine();
+        Blinkit l = new Blinkit(item);
+        LinkedList<Blinkit> al5 = new LinkedList<>();
+        al5.add(l);
+        for(Blinkit a:al5){
+            System.out.println(a.items);
+        }
+    }
+}
+--------------------------------------------------------
+	

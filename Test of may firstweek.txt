@@ -1,0 +1,361 @@
+11)
+Problem Statement – An automobile company manufactures both a two wheeler (TW) and a
+four wheeler (FW). A company manager wants to make the production of both types of
+vehicle according to the given data below:
+a)1st data, Total number of vehicle (two-wheeler + four-wheeler)=v
+b)2nd data, Total number of wheels = W
+The task is to find how many two-wheelers as well as four-wheelers need to manufacture as
+per the given data.
+Example :
+Input :
+200 -> Value of V
+540 -> Value of W
+Output :
+TW =130 FW=70
+Explanation:
+130+70 = 200 vehicles
+(70*4)+(130*2)= 540 wheels
+Constraints :
+a)2<=W
+b)W%2=0
+c)V<W
+Print “INVALID INPUT” , if inputs did not meet the constraints.
+The input format for testing
+The candidate has to write the code to accept two positive numbers separated by a new line.
+a)First Input line – Accept value of V.
+b)Second Input line- Accept value for W.
+
+12)
+Problem Statement
+Alex works at a clothing store. There is a large pile of socks that must be paired by
+color for sale. Given an array of integers representing the color of each sock,
+determine how many pairs of socks with matching colors there are.
+For example, there are n=7 socks with colors ar = {1,2,1,2,1,3,2}. There is one pair
+of color 1 and one of color 2. There are three odd socks left, one of each color. The
+number of pairs is 2.
+Function Description
+Complete the sockMerchant function in the editor below. It must return an integer
+representing the number of matching pairs of socks that are available.
+sockMerchant has the following parameter(s):
+n: the number of socks in the pile
+ar: the colors of each sock
+Input Format
+The first line contains an integer n, the number of socks represented in ar.
+The second line contains n space-separated integers describing the colors
+ar[i] of the socks in the pile.
+Constraints
+1 <= n <= 100
+1 <= ar[i] <= 100 & 0 <= i < n
+Output Format
+Return the total number of matching pairs of socks that Alex can sell.
+Sample Input
+9
+10 20 20 10 10 30 50 10 20
+Sample Output
+3
+Explanation
+Alex can match 3 pairs of socks i.e 10-10, 10-10, 20-20
+while the left out socks are 50, 60, 20
+
+13)
+Problem Statement – To speed up his composition of generating unpredictable rhythms,
+Blue Bandit wants the list of prime numbers available in a range of numbers.Can you help
+him out?
+Write a java program to print all prime numbers in the interval [a,b] (a and b, both inclusive).
+Note
+Input 1 should be lesser than Input 2. Both the inputs should be positive.
+Range must always be greater than zero.
+If any of the condition mentioned above fails, then display “Provide valid input”
+Use a minimum of one for loop and one while loop
+Sample Input 1:
+2
+15
+Sample Output 1:
+2 3 5 7 11 13
+Sample Input 2:
+8
+5
+Sample Output 2
+
+Ans)
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class Exc{
+    public static void main(String[] args) throws Exception{
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the starting point");
+        int a = sc.nextInt();
+        System.out.println("Enter the ending point");
+        int b = sc.nextInt();
+        if(a<b && a!=0 && b!=0){
+            for(int i=a; i<=b; i++){
+                int count = 0;
+                for(int j=1; j<=i; j++){
+                    if(i%j==0){
+                        count++;
+                    }
+                }
+                if(count==2){
+                    System.out.println(i+" Prime number");
+                }
+                else{
+                    System.out.println(i+ " Not prime");
+                }
+            }
+        }
+        else{
+            System.out.println("Provide valid input");
+        }
+    }
+}
+
+---------------------------------------------------------
+
+14)
+Problem Statement – Raj wants to know the maximum marks scored by him in each
+semester. The mark should be between 0 to 100 ,if goes beyond the range display “You
+have entered invalid mark.”
+Sample Input 1:
+Enter no of semester:
+3
+Enter no of subjects in 1 semester:
+3
+Enter no of subjects in 2 semester:
+4
+Enter no of subjects in 3 semester:
+2
+Marks obtained in semester 1:
+50
+60
+70
+Marks obtained in semester 2:
+90
+98
+76
+67
+Marks obtained in semester 3:
+89
+76
+Sample Output 1:
+Maximum mark in 1 semester:70
+Maximum mark in 2 semester:98
+Maximum mark in 3 semester:89
+
+15)
+Addition of two numbers a Twist
+Using a method, pass two variables and find the sum of two numbers.
+Test case:
+Number 1 – 20
+Number 2 – 20.38
+Sum = 40.38
+There were a total of 4 test cases. Once you compile 3 of them will be shown to you
+and 1 will be a hidden one. You have to display error message if numbers are not
+numeric.
+
+Ans)
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class Exc{
+    static void sum(float a,float b){
+        float c = a+b;
+        System.out.println("The sum is "+ c);
+    }
+    public static void main(String[] args) throws Exception{
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the first number");
+        float num1 = sc.nextFloat();
+        System.out.println("Enter the second number");
+        float num2 = sc.nextFloat();
+        sum(num1, num2);
+    }
+}
+
+---------------------------------------------------------
+
+16)
+Implement the following Function
+def differenceofSum(n. m)
+The function accepts two integers n, m as arguments Find the sum of all numbers in range
+from 1 to m(both inclusive) that are not divisible by n. Return difference between sum of
+integers not divisible by n with sum of numbers divisible by n.
+Assumption:
+a)n>0 and m>0
+b)Sum lies between integral range
+Example
+Input
+n:4
+m:20
+Output
+90
+Explanation
+a)Sum of numbers divisible by 4 are 4 + 8 + 12 + 16 + 20 = 60
+b)Sum of numbers not divisible by 4 are 1 +2 + 3 + 5 + 6 + 7 + 9 + 10 + 11 + 13 + 14 + 15 +
+17 + 18 + 19 = 150
+c)Difference 150 – 60 = 90
+Sample Input
+n:3
+m:10
+Sample Output
+19
+
+17)
+)Problem Statement
+You are required to implement the following function.
+Int OperationChoices(int c, int n, int a , int b )
+The function accepts 3 positive integers ‘a’ , ‘b’ and ‘c ‘ as its arguments. Implement the
+function to return.
+( a+ b ) , if c=1
+( a – b ) , if c=2
+( a * b ) , if c=3
+(a / b) , if c =4
+Assumption : All operations will result in integer output.
+Example:
+Input
+c :1
+a:12
+b:16
+Output:
+Since ‘c’=1 , (12+16) is performed which is equal to 28 , hence 28 is returned.
+Sample Input
+c : 2
+a : 16
+b : 20
+Sample Output
+-4
+
+Ans)
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class Exc{
+    static void operation(int c,int a,int b){
+        if(c==1){
+            System.out.println("(a+b) is performed which is equal to "+(a+b));
+        }
+        else if(c==2){
+            System.out.println("(a-b) is performed which is equal to "+(a-b));
+        }
+        else if(c==3){
+            System.out.println("(a*b) is performed which is equal to "+(a*b));
+        }
+        else if(c==4){
+            System.out.println("(a/b) is performed which is equal to "+(a/b));
+        }
+    }
+    public static void main(String[] args) throws Exception{
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the value of a");
+        int a = sc.nextInt();
+        System.out.println("Enter the value of b");
+        int b = sc.nextInt();
+        System.out.println("Enter the value of c");
+        int c = sc.nextInt();
+        operation(c, a, b);
+    }
+}
+
+------------------------------------------------------
+
+18)
+1 
+0 1 
+1 0 1 
+0 1 0 1 
+1 0 1 0 1 
+0 1 0 1 0 1 
+
+Ans)
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class Exc{
+    
+    public static void main(String[] args) throws Exception{
+        for(int i=1; i<=6; i++){
+            for(int j=1; j<=i; j++){
+                if(i%2!=0){
+                    if(j%2==0){
+                        System.out.print(0+" ");
+                    }
+                    else{
+                        System.out.print(1+" ");
+                    }
+                }
+                else{
+                    if(j%2==0){
+                        System.out.print(1+" ");
+                    }
+                    else{
+                        System.out.print(0+" ");
+                    }
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+-------------------------------------------------------
+
+19)
+Even or Odd:
+Write a Java program to check if a given number is even or odd.
+
+Ans)
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class Exc{
+    
+    public static void main(String[] args) throws Exception{
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number");
+        int a = sc.nextInt();
+        if(a%2==0){
+            System.out.println("Number "+a+" is even");
+        }
+        else{
+            System.out.println("Number "+a+" is odd");
+        }
+    }
+}
+
+--------------------------------------------------------
+
+20)
+* 
+* * 
+* * * 
+* * * * 
+* * * 
+* * 
+*
+
+Ans)
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class Exc{
+    
+    public static void main(String[] args) throws Exception{
+        for(int i=1; i<=4; i++){
+            for(int j=1; j<=i; j++){
+                System.out.print("*"+" ");
+            }
+            System.out.println();
+        }
+        for(int i=4; i>=1; i--){
+            for(int j=i; j>=1; j--){
+                System.out.print("*"+" ");
+            }
+            System.out.println();
+        }
+    }
+}

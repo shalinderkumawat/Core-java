@@ -1,0 +1,791 @@
+patterns: 
+1) 
+****
+****
+****
+**** 
+while +for loop 
+
+Ans)
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        for(int i=1; i<=4; i++){
+            for(int j=1; j<=4; j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int i=1;
+        while(i<=4){
+            int j=1;
+            while(j<=4){
+                System.out.print("*");
+                j++;
+            }
+            System.out.println();
+            i++;
+        }
+    }
+}
+
+--------------------------------------------------------
+
+2)
+*
+**
+*** 
+
+Ans)
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int i=1;
+        while(i<=3){
+            int j=1;
+            while(j<=i){
+                System.out.print("*");
+                j++;
+            }
+            System.out.println();
+            i++;
+        }
+    }
+}
+
+--------------------------------------------------------------
+ 
+3)
+***
+**
+* 
+
+Ans)
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int i=1;
+        while(i<=3){
+            int j=3;
+            while(j>=i){
+                System.out.print("*");
+                j--;
+            }
+            System.out.println();
+            i++;
+        }
+    }
+}
+
+-----------------------------------------------------------
+
+4)
+*
+**
+***
+***
+**
+*
+
+Ans)
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a=1;
+        while(a<=3){
+            int b=1;
+            while(b<=a){
+                System.out.print("*");
+                b++;
+            }
+            System.out.println();
+            a++;
+        }
+        int i=1;
+        while(i<=3){
+            int j=3;
+            while(j>=i){
+                System.out.print("*");
+                j--;
+            }
+            System.out.println();
+            i++;
+        }
+    }
+}
+
+-------------------------------------------------------------
+
+5)
+*
+**
+***
+**
+*
+Ans)
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a=1;
+        while(a<=3){
+            int b=1;
+            while(b<=a){
+                System.out.print("*");
+                b++;
+            }
+            System.out.println();
+            a++;
+        }
+        int i=1;
+        while(i<=2){
+            int j=2;
+            while(j>=i){
+                System.out.print("*");
+                j--;
+            }
+            System.out.println();
+            i++;
+        }
+    }
+}
+
+--------------------------------------------------------------
+
+6) 
+12345
+12345
+12345
+12345 
+12345 
+
+Ans)
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a=1;
+        while(a<=5){
+            int b=1;
+            while(b<=5){
+                System.out.print(b);
+                b++;
+            }
+            System.out.println();
+            a++;
+        }
+    }
+}
+
+------------------------------------------------------------
+
+7)
+1111
+2222
+3333
+4444 
+
+Ans)
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a=1;
+        while(a<=4){
+            int b=1;
+            while(b<=4){
+                System.out.print(a);
+                b++;
+            }
+            System.out.println();
+            a++;
+        }
+    }
+}
+
+-------------------------------------------------------------
+
+8) 
+1
+12
+123
+1234 
+
+Ans)
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a=1;
+        while(a<=4){
+            int b=1;
+            while(b<=a){
+                System.out.print(b);
+                b++;
+            }
+            System.out.println();
+            a++;
+        }
+    }
+}
+
+-------------------------------------------------------------
+
+9)
+1
+22
+333
+4444 
+
+Ans)
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a=1;
+        while(a<=4){
+            int b=1;
+            while(b<=a){
+                System.out.print(a);
+                b++;
+            }
+            System.out.println();
+            a++;
+        }
+    }
+}
+
+--------------------------------------------------------------
+
+10) 
+54321
+54321
+54321
+54321
+54321 
+
+Ans)
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a=1;
+        while(a<=5){
+            int b=5;
+            while(b>=1){
+                System.out.print(b);
+                b--;
+            }
+            System.out.println();
+            a++;
+        }
+    }
+}
+
+--------------------------------------------------------------
+
+11)
+55555
+44444
+33333
+22222
+11111 
+
+Ans)
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a=5;
+        while(a>=1){
+            int b=5;
+            while(b>=1){
+                System.out.print(a);
+                b--;
+            }
+            System.out.println();
+            a--;
+        }
+    }
+}
+
+-----------------------------------------------------------------
+
+12) 
+  * 
+ **
+***
+
+Ans)
+public class Mnc{
+    public static void main(String[] args) {
+        for(int i=1; i<=3; i++){
+            for(int s=2; s>=i; s--){
+                System.out.print(" ");
+            }
+            for(int j=1; j<=i; j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+------------------------------------------------------------------
+
+13) 
+*** 
+ ** 
+  * 
+
+Ans)
+public class Mnc{
+    public static void main(String[] args) {
+        for(int i=1; i<=3; i++){
+            for(int s=1; s<=i; s++){
+                System.out.print(" ");
+            }
+            for(int j=3; j>=i; j--){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+-----------------------------------------------------------
+
+14)
+  *
+ **
+***
+***
+ **
+  * 
+
+Ans)
+public class Mnc{
+    public static void main(String[] args) {
+        for(int i=1; i<=3; i++){
+            for(int s=2; s>=i; s--){
+                System.out.print(" ");
+            }
+            for(int j=1; j<=i; j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for(int i=1; i<=3; i++){
+            for(int s=2; s<=i; s++){
+                System.out.print(" ");
+            }
+            for(int j=3; j>=i; j--){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+------------------------------------------------------------
+
+15)
+  *
+ **
+***
+ **
+  *
+
+Ans)
+public class Mnc{
+    public static void main(String[] args) {
+        for(int i=1; i<=3; i++){
+            for(int s=2; s>=i; s--){
+                System.out.print(" ");
+            }
+            for(int j=1; j<=i; j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for(int i=1; i<=3; i++){
+            for(int s=1; s<=i; s++){
+                System.out.print(" ");
+            }
+            for(int j=2; j>=i; j--){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+-----------------------------------------------------------------
+
+16) 
+    *   
+   * *
+  * * * 
+ * * * *
+* * * * * 
+
+Ans)
+
+
+17) 
+###*
+##**
+#***
+****
+
+Ans)
+
+
+18) 
+****
+#***
+##**
+###* 
+
+19) 
+1 2 3 4 
+5 6 7 8 
+9 10 11 12 
+13 14 15 16 
+
+20) 
+2 4 6 8 10 
+12 14 16 18 20 
+22 24 26 28 30 
+32 34 36 38 40 
+42 44 46 48 50 
+
+21)
+1 2 3 4 5
+2 4 6 8 10 
+3 6 9 12 15
+4 8 12 16 20 
+5 10 15 20  25 
+
+22)(if else in for loop)
+01010
+10101
+01010
+10101
+
+23)
+1 0 1 0 1
+0 1 0 1 0 
+1 0 1 0 1
+0 1 0 1 0
+
+24)
+0 0 0 0 
+1 1 1 1 
+0 0 0 0 
+1 1 1 1 
+25)
+1 1 1 1 
+0 0 0 0 
+1 1 1 1 
+0 0 0 0 
+-----------------------------------   
+1)
+* * * *
+ * * * 
+  * * 
+   * 
+-------------------------
+2)
+   *
+  * *
+ * * *
+* * * * 
+* * * *
+ * * * 
+  * * 
+   * 
+--------------------------------
+
+9) 
+*
+* * 
+*   *
+* * * *
+
+10) 
+1****
+22***
+333**
+4444*
+55555
+
+11)
+1****
+12***
+123**
+1234*
+12345
+
+12) 
+*
+ *
+  *
+   *
+
+13) 
+* * * *
+*      *
+*      *
+* * * *
+
+14)
+* * * *  *
+*  *      *
+*     *   *
+*       * *
+* * * *  *
+
+15) 
+1 
+4 9 
+16 25 36 
+
+16) 
+1 
+4 4 
+9 9 9 
+16 16 16 16 
+
+17) 
+1 
+8 27 
+64 125 216 
+
+18) 
+* * * * 
+* 
+*
+*
+
+19)
+* * * * * 
+       *  *
+   *      * 
+ *        *
+*         *
+         
+20) 
+    *
+   *
+  *
+*
+
+-----------------
+-----------------------------------------------------------------------------
+pattern : 
+1)
+1 3 5 7 9 
+3 5 7 9 11 
+5 7 9 11 13 
+7 9 11 13 15  
+9 11 13 15 17 
+
+2) 
+1 0 1 0 1 
+0 0 0 0 0 
+1 0 1 0 1 
+0 0 0 0 0 
+1 0 1 0 1 
+
+3) 
+0 1 0 1 0 
+0 0 0 0 0 
+0 1 0 1 0 
+0 0 0 0 0 
+0 1 0 1 0 
+
+4)
+0 1 0 1 0
+0 1 0 1 0
+0 1 0 1 0
+0 1 0 1 0
+0 1 0 1 0 
+
+5)
+1 0 1 0 1 
+1 0 1 0 1 
+1 0 1 0 1 
+1 0 1 0 1 
+1 0 1 0 1 
+
+6)
+1 
+2 4 
+3 6 9 
+4 8 12 16 
+5 10 15 20 25 
+
+7)
+1 
+0 0 
+1 1 1 
+0 0 0 0 
+1 1 1 1 1 
+
+8)
+1
+1 0 
+1 0 1 
+1 0 1 0 
+1 0 1 0 1 
+ ------------------------------------------------------
+      *
+    * * *
+  * * * * *
+* * * * * * *
+----------------------------
+* * * * * * *
+ * * * * *
+   * * *
+     * 
+----------------------------------------------------------
+      *
+    * * *
+  * * * * *
+* * * * * * *
+* * * * * * *
+  * * * * *
+    * * *
+      * 
+---------------------------------------------------------
+a
+bb
+ccc
+dddd
+eeeee
+--------------------------------------
+a 
+ab
+abc
+abcd
+abcde
+------------
+A
+BB
+CCC
+DDDD
+EEEEE
+-----------------
+A
+AB
+ABC
+ABCD
+ABCDE
+------------------------
+a
+bb
+ccc
+dddd
+eeeee
+--------------------------------------
+a ****
+ab***
+abc**
+abcd*
+abcde
+------------
+A****
+BB***
+CCC**
+DDDD*
+EEEEE
+-----------------
+A****
+AB***
+ABC**
+ABCD*
+ABCDE
+-----------------------
+abcde
+abcd*
+abc**
+ab***
+a****
+-----------
+ABCDE
+ABCD*
+ABC**
+AB***
+A****
+-----------------------------------------------------
+eeeee
+ dddd
+   ccc
+    bb
+      a
+-------------
+e e e e e
+* d d d d 
+* * c c c 
+* * *   b b 
+* * *  *  a
+------------------------
+EEEEE
+ DDDD
+   CCC
+      BB
+        A
+---------------------------
+E E E E E
+* D D D D
+* * C C C
+* * *   B B
+* * *  *   A
+----------------------------
+1 2 3 4 *
+1 2 3 * 5 
+1 2 * 4 5 
+1 * 3 4 5 
+* 2 3 4 5 
+------------------
+* 1 * 2 * 
+3 * 4 * 5
+* 6 * 7 *
+8 * 9 * 10 
+* 11 * 12 * 
+-----------------------------------
+1 3 5 7 9 
+11 13 15 17 19 
+21 23 25 27 29 
+31 33 35 37 39 
+41 43 45 47 49 
+--------------------------------------------------
+1 6 11 16 21
+2 7 12 17 22
+3 8 13 18 23
+4 9 14 19 24
+5 10 15 20 25

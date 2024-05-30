@@ -1,0 +1,370 @@
+1)
+Write a Java program that uses regular expressions to validate if a given email address is in the correct format.
+
+Ans)
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Exc {
+    public static void main(String[] args) {
+        String mail = "gajendra12@gmail.com";
+        String regex = "[a-z]{8}[0-9]{2}+@[a-z]{5}[a-z.a-z]{10}";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(mail);
+        if(m.find() && m.group().equals(regex)){
+            System.out.println("Valid");
+        }
+        else{
+            System.out.println("Not Valid");
+        }
+    }
+}
+
+---------------------------------------------------------------
+
+2)
+Write a Java function that checks if a given string is a valid URL using regular expressions.
+
+Ans)
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Exc {
+    public static boolean isvalid(String url){
+        String regex = "https?://(?:www\\\\.)?[a-zA-Z0-9./]+";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(url);
+        return matcher.matches();
+    }
+    public static void main(String[] args) {
+        String url = "https://www.google.com";
+        System.out.println("Is url valid " +isvalid(url));
+    }
+}
+
+----------------------------------------------------------------
+
+
+3)
+Build a Java function that validates if a given string is a valid phone number using regular expressions.
+
+Ans)
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Exc {
+    public static boolean isvalid(String phone){
+        String regex = "(\\\\\\\\+\\\\\\\\d{1,2}\\\\\\\\s?)?((\\\\\\\\(\\\\\\\\d{3}\\\\\\\\)\\\\\\\\s?)|(\\\\\\\\d{3}[-.\\\\\\\\s]?))?\\\\\\\\d{3}[-.\\\\\\\\s]?\\\\\\\\d{4}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(phone);
+        return matcher.matches();
+    }
+    public static void main(String[] args) {
+        String phone = "(123) 456-7890";
+        System.out.println("Phone number is "+ isvalid(phone));
+    }
+}
+
+--------------------------------------------------------------
+
+
+4)
+Write a Java program to find and print all the occurrences of a specific pattern in a given text using regular expressions.
+
+Ans)
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Exc {
+
+    public static void findPatternOccurrences(String text, String pattern) {
+        Pattern compiledPattern = Pattern.compile(pattern);
+        Matcher matcher = compiledPattern.matcher(text);
+        
+        boolean found = false;
+        while (matcher.find()) {
+            System.out.println("Found occurrence at index " + matcher.start() + ": " + matcher.group());
+            found = true;
+        }
+        
+        if (!found) {
+            System.out.println("No occurrences found.");
+        }
+    }
+
+    public static void main(String[] args) {
+        String text = "This is a test. Let's test the pattern finder. Testing is important.";
+        String pattern = "\\btest\\b";
+        
+        findPatternOccurrences(text, pattern);
+    }
+}
+
+------------------------------------------------------------
+
+5)
+Create a Java function that checks if a given string is a valid credit card number using regular expressions.
+
+Ans)
+import java.util.regex.Pattern;
+
+public class Exc {
+
+    public static boolean isValidCreditCardNumber(String cardNumber) {
+        String visaPattern = "^4[0-9]{12}(?:[0-9]{3})?$";
+        String masterCardPattern = "^5[1-5][0-9]{14}$";
+        String amexPattern = "^3[47][0-9]{13}$";
+        String discoverPattern = "^6(?:011|5[0-9]{2})[0-9]{12}$";
+
+        Pattern visa = Pattern.compile(visaPattern);
+        Pattern masterCard = Pattern.compile(masterCardPattern);
+        Pattern amex = Pattern.compile(amexPattern);
+        Pattern discover = Pattern.compile(discoverPattern);
+
+        if (visa.matcher(cardNumber).matches() ||
+            masterCard.matcher(cardNumber).matches() ||
+            amex.matcher(cardNumber).matches() ||
+            discover.matcher(cardNumber).matches()) {
+            return true;
+        }
+        
+        return false;
+    }
+
+    public static void main(String[] args) {
+        String[] testCardNumbers = {
+            "4111111111111111",
+            "5500000000000004",
+            "340000000000009",
+            "6011000000000004",
+            "1234567890123456",
+            "370000000000002",
+            "4000000000000000",
+        };
+
+        for (String cardNumber : testCardNumbers) {
+            System.out.println(cardNumber + ": " + isValidCreditCardNumber(cardNumber));
+        }
+    }
+}
+
+----------------------------------------------------------------
+
+6)
+Build a Java program that extracts all the numbers (integer and decimal) from a given text using regular expressions.
+
+Ans)
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class NumberExtractor {
+
+    public static void extractNumbers(String text) {
+        String numberPattern = "\\b\\d+\\.\\d+|\\b\\d+\\b";
+        Pattern pattern = Pattern.compile(numberPattern);
+        Matcher matcher = pattern.matcher(text);
+        
+        while (matcher.find()) {
+            System.out.println("Found number: " + matcher.group());
+        }
+    }
+
+    public static void main(String[] args) {
+        String text = "The price of the item is 12.50 dollars. There are 20 items in stock. Each item weighs about 0.75 kg. Total cost is 250 dollars.";
+        extractNumbers(text);
+    }
+}
+
+---------------------------------------------------------------
+
+7)
+Create a Java function that checks if a given string is a valid date in the format "YYYY-MM-DD" using regular expressions.
+
+Ans)
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class DateValidator {
+
+    public static boolean isValidDate(String date) {
+        String datePattern = "^(\\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$";
+        Pattern pattern = Pattern.compile(datePattern);
+        Matcher matcher = pattern.matcher(date);
+
+        if (matcher.matches()) {
+            int year = Integer.parseInt(matcher.group(1));
+            int month = Integer.parseInt(matcher.group(2));
+            int day = Integer.parseInt(matcher.group(3));
+            
+            if (month == 2) {
+                boolean isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+                if (isLeapYear && day > 29) {
+                    return false;
+                } else if (!isLeapYear && day > 28) {
+                    return false;
+                }
+            }
+            
+            if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30) {
+                return false;
+            }
+            
+            return true;
+        }
+        
+        return false;
+    }
+
+    public static void main(String[] args) {
+        String[] testDates = {
+            "2024-02-29", // valid leap year date
+            "2023-02-29", // invalid non-leap year date
+            "2023-04-31", // invalid date, April has 30 days
+            "2023-12-25", // valid date
+            "2023-11-31", // invalid date, November has 30 days
+            "2020-02-29", // valid leap year date
+            "1900-02-29", // invalid date, 1900 is not a leap year
+            "2000-02-29", // valid leap year date
+            "2023-13-01", // invalid month
+            "abcd-ef-gh", // invalid format
+            "2023-00-10", // invalid month
+            "2023-01-00"  // invalid day
+        };
+
+        for (String date : testDates) {
+            System.out.println(date + ": " + isValidDate(date));
+        }
+    }
+}
+
+---------------------------------------------------------------
+
+
+8)
+Write a Java function that removes all leading and trailing whitespaces from a given string using regular expressions.
+
+Ans)
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class WhitespaceRemover {
+
+    public static String trimWhitespaces(String input) {
+        if (input == null) {
+            return null;
+        }
+        
+        String trimPattern = "^\\s+|\\s+$";
+        Pattern pattern = Pattern.compile(trimPattern);
+        Matcher matcher = pattern.matcher(input);
+        
+        return matcher.replaceAll("");
+    }
+
+    public static void main(String[] args) {
+        String[] testStrings = {
+            "   leading and trailing spaces   ",
+            "   leading spaces",
+            "trailing spaces   ",
+            "   both ends   ",
+            "no spaces",
+            "     ", // only spaces
+            null // null input
+        };
+
+        for (String str : testStrings) {
+            System.out.println("Original: \"" + str + "\"");
+            System.out.println("Trimmed: \"" + trimWhitespaces(str) + "\"");
+            System.out.println();
+        }
+    }
+}
+
+---------------------------------------------------------------
+
+9)
+Create a Java function that validates if a given string contains at least one uppercase letter, one lowercase letter, and one digit using regular expressions.
+
+Ans)
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class StringValidator {
+
+    public static boolean isValidString(String input) {
+        if (input == null) {
+            return false;
+        }
+
+        String pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$";
+        Pattern compiledPattern = Pattern.compile(pattern);
+        Matcher matcher = compiledPattern.matcher(input);
+
+        return matcher.matches();
+    }
+
+    public static void main(String[] args) {
+        String[] testStrings = {
+            "Password123",
+            "password123",
+            "PASSWORD123",
+            "Password",
+            "1234567890",
+            "Pass123",
+            "pAssword1",
+            "PASSWORD1",
+            "password",
+            "PASSWORD",
+        };
+
+        for (String str : testStrings) {
+            System.out.println(str + ": " + isValidString(str));
+        }
+    }
+}
+
+--------------------------------------------------------------
+
+10)
+Develop a Java function that checks if a given string is a valid time in the format "HH:MM AM/PM" using regular expressions.
+
+Ans)
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class TimeValidator {
+
+    public static boolean isValidTime(String time) {
+        if (time == null) {
+            return false;
+        }
+
+        String timePattern = "^(1[0-2]|0?[1-9]):([0-5][0-9])\\s?(AM|PM)$";
+        Pattern pattern = Pattern.compile(timePattern, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(time);
+
+        return matcher.matches();
+    }
+
+    public static void main(String[] args) {
+        String[] testTimes = {
+            "12:00 PM",
+            "1:00 AM",
+            "01:00 AM",
+            "11:59 PM",
+            "00:00 AM",
+            "13:00 PM",
+            "12:60 PM",
+            "12:30AM",
+            "9:15 pm",
+            "09:05 PM",
+            "5:7 PM",
+            "5:07PM",
+            "5:07 PM"
+        };
+
+        for (String time : testTimes) {
+            System.out.println(time + ": " + isValidTime(time));
+        }
+    }
+}

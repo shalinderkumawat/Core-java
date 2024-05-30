@@ -1,0 +1,168 @@
+----------------------------------------------------------
+1:
+Create a Java program that uses the throws keyword to declare an exception being thrown from a method and handle it in the calling code.
+
+Ans)
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class Exc {
+    static void show() throws Exception {
+        int a = 2/0;
+    }
+    public static void main(String[] args) throws Exception{
+        try{
+            show();
+        }
+        catch(ArithmeticException ex){
+            System.out.println("Error");
+        }
+    }
+}
+
+-----------------------------------------------------------------------
+*************************************************************************************************************
+		MODERATE LEVEL 
+1:
+Write a Java program that reads an integer from the user and handles the InputMismatchException when the user enters a non-integer input.
+
+Ans)
+import java.io.FileReader;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Exc {
+    static void show() throws Exception {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the integer ");
+        int a = sc.nextInt();
+    }
+    public static void main(String[] args) throws Exception{
+        try{
+            show();
+        }
+        catch(InputMismatchException ex){
+            System.out.println("Your input is not integer "+ex);
+        }
+    }
+}
+
+----------------------------------------------------------------
+2:
+Create a Java program that simulates a scenario where an IOException occurs while working with a file and handles it using a custom exception.
+
+Ans)
+File one
+
+public class Main{  
+    void show() throws IOException{
+        System.out.println("Hello");
+    }
+}
+
+second file
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Exc extends Main{
+    public static void main(String[] args) throws Exception{
+        try{
+            Main k = new Main();
+            k.show();
+        }
+        catch(IOException ex){
+            System.out.println("There is io excetion");
+        }
+    }
+}
+
+
+---------------------------------------
+3:
+Create a Java program that defines a method to divide two numbers and handle ArithmeticException. Then, invoke this method and handle the exception in the calling code.
+
+Ans)
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Exc{
+    static void div(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the first num");
+        int a = sc.nextInt();
+        System.out.println("Enter the second num");
+        int b = sc.nextInt();
+        int c = a/b;
+        System.out.println(c);
+    }
+    public static void main(String[] args) throws Exception{
+        try{
+            div();
+        }
+        catch(ArithmeticException ex){
+            System.out.println("The numenator should not be zero");
+        }
+    }
+}
+
+-----------------------------------------------------
+4:
+Write a Java program that demonstrates the use of the try-catch-finally construct for exception handling. The program should read a file and print its content, and then close the file in the finally block.
+
+Ans)
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Exc{
+    static void div(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the first num");
+        int a = sc.nextInt();
+        System.out.println("Enter the second num");
+        int b = sc.nextInt();
+        int c = a/b;
+        System.out.println(c);
+    }
+    public static void main(String[] args) throws Exception{
+        try{
+            div();
+        }
+        catch(ArithmeticException ex){
+            System.out.println("The numenator should not be zero");
+        }
+        finally{
+            System.out.println("The exception is handled");
+        }
+    }
+}
+
+------------------------------------------------------------------------------------
+5:
+Create a Java program that defines a custom unchecked exception. Use this exception to handle a specific situation in the program.
+
+Ans)
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Exc{
+    static void div(){
+        throw new ArithmeticException("Custom excption");
+    }
+    public static void main(String[] args) throws Exception{
+        try{
+            div();
+        }
+        catch(Exception ex){
+            System.out.println("handled");
+        }
+    }
+}

@@ -1,0 +1,450 @@
+1)
+12,67,89,34,125 sort 
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arr {
+    static void arrayprint(int a[]){
+        for(int i=0; i<a.length; i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static void swap(int a[],int i,int j){
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+    static void sorted(int a[]){
+        for(int i=0; i<a.length; i++){
+            for(int j=i+1; j<a.length; j++){
+                if(a[i]>a[j]){
+                    swap(a, i, j);
+                }
+            }
+        }
+        arrayprint(a);
+    }
+    public static void main(String[] args) {
+        int a[] = {12,67,89,34,125};
+        arrayprint(a);
+        sorted(a);
+    }
+}
+
+---------------------------------------------------------------
+
+2)
+-8,9,5,-3,2,-1 
+
+square 
+sort 
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arr {
+    static void arrayprint(int a[]){
+        for(int i=0; i<a.length; i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static void swap(int a[],int i,int j){
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+    static void square(int a[]){
+        for(int i=0; i<a.length; i++){
+            a[i] = a[i]*a[i];
+        }
+        sorted(a);
+    }
+    static void sorted(int a[]){
+        for(int i=0; i<a.length; i++){
+            for(int j=i+1; j<a.length; j++){
+                if(a[i]>a[j]){
+                    swap(a, i, j);
+                }
+            }
+        }
+        arrayprint(a);
+    }
+    public static void main(String[] args) {
+        int a[] = {8,9,5,-3,2,-1};
+        arrayprint(a);
+        square(a);
+    }
+}
+--------------------------------------------------------------
+
+3)
+12,67,89,34,125 sort 
+first even and last even swap 
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arr {
+    static void arrayprint(int a[]){
+        for(int i=0; i<a.length; i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static void swap(int a[],int i,int j){
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+    public static void main(String[] args) {
+        int a[] = {12,67,89,34,125};
+        int first = -1;
+        int last = -1;
+        for(int i=0; i<a.length; i++){
+            if(a[i]%2==0){
+                if(first==-1){
+                    first = i;
+                }
+                last = i;
+            }
+        }
+        if(first!=-1&&last!=-1){
+            swap(a, first, last);
+        }
+        arrayprint(a);
+    }
+}
+
+------------------------------------------------------------
+
+4)
+-8,9,5,-3,2,-1 
+square 
+sort 
+
+first odd last odd se swap 
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arr {
+    static void arrayprint(int a[]){
+        for(int i=0; i<a.length; i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static void swap(int a[],int i,int j){
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+    static void square(int a[]){
+        for(int i=0; i<a.length; i++){
+            a[i] = a[i]*a[i];
+        }
+        sorted(a);
+    }
+    static void doit(int a[]){
+        int first = -1;
+        int last = -1;
+        for(int i=0; i<a.length; i++){
+            if(a[i]%2==1){
+                if(first == -1){
+                    first = i;
+                }
+                last = i;
+            }
+        }
+        arrayprint(a);
+    }
+    static void sorted(int a[]){
+        for(int i=0; i<a.length; i++){
+            for(int j=i+1; j<a.length; j++){
+                if(a[i]>a[j]){
+                    swap(a, i, j);
+                }
+            }
+        }
+        doit(a);
+    }
+    public static void main(String[] args) {
+        int a[] = {8,9,5,-3,2,-1};
+        arrayprint(a);
+        square(a);
+    }
+}
+
+--------------------------------------------------------
+
+5)
+1,2,3,4,5,6,7,8,9,10
+prefix sum problem 
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arr {
+    static void arrayprint(int a[]){
+        for(int i=0; i<a.length; i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static int[] prefix(int a[]) {
+        int pre[] = new int[a.length];
+        pre[0] = a[0];
+        for (int i = 1; i < pre.length; i++) {
+            pre[i] = pre[i - 1] + a[i];
+        }
+        return pre;
+    }
+    public static void main(String[] args) {
+        int a[] = { 1,2,3,4,5,6,7,8,9,10 };
+        int pre[] = prefix(a);
+        arrayprint(pre);
+    }
+}
+
+------------------------------------------------------------
+
+6)
+1,2,3,4,5,6,7,8,9,10
+
+2--->8 prefix sum 
+user input 
+start :2
+ending :8
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arr {
+    static void arrayprint(int a[]){
+        for(int i=0; i<a.length; i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static int[] prefix(int a[]) {
+        int pre[] = new int[a.length];
+        pre[0] = a[0];
+        pre[pre.length-1] = a[a.length-1];
+        pre[pre.length-2] = a[a.length-2];
+        for (int i = 1; i < pre.length-2; i++) {
+            pre[i] = pre[i - 1] + a[i];
+        }
+        return pre;
+    }
+    public static void main(String[] args) {
+        int a[] = { 1,2,3,4,5,6,7,8,9,10 };
+        int pre[] = prefix(a);
+        arrayprint(pre);
+    }
+}
+
+-------------------------------------------------------
+
+7)
+10,7,5,3,2,8,9,4,1 
+prefix sum 
+first even last even 
+first odd last odd swap 
+prefix sum :sort
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arr {
+    static void arrayprint(int a[]){
+        for(int i=0; i<a.length; i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static void swap(int a[],int i,int j){
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+    static void eventoeven(int a[]){
+        int first = -1;
+        int last = -1;
+        for(int i=0; i<a.length; i++){
+            if(a[i]%2==0){
+                if(first==-1){
+                    first = i;
+                }
+                last = i;
+            }
+        }
+        if(first!=-1 && last!= -1){
+            swap(a, first, last);
+        }
+        arrayprint(a);
+    }
+    static void oddtoodd(int a[]){
+        int first = -1;
+        int last = -1;
+        for(int i=0; i<a.length; i++){
+            if(a[i]%2==1){
+                if(first==-1){
+                    first = i;
+                }
+                last = i;
+            }
+        }
+        if(first!=-1 && last!= -1){
+            swap(a, first, last);
+        }
+        arrayprint(a);
+    }
+    static int[] prefix(int a[]) {
+        int pre[] = new int[a.length];
+        pre[0] = a[0];
+        for (int i = 1; i < pre.length; i++) {
+            pre[i] = pre[i - 1] + a[i];
+        }
+        return pre;
+    }
+    static void sorted(int a[]){
+        for(int i=0; i<a.length; i++){
+            for(int j=i+1; j<a.length; j++){
+                if(a[i]>a[j]){
+                    swap(a, i, j);
+                }
+            }
+        }
+        arrayprint(a);
+    }
+    public static void main(String[] args) {
+        int a[] = {10,7,5,3,2,8,9,4,1};
+        int pre[] = prefix(a);
+        arrayprint(pre);
+        eventoeven(pre);
+        oddtoodd(pre);
+        sorted(pre);
+    }
+}
+
+------------------------------------------------------
+
+8)
+second maximum in array 
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arr {
+    static void printarr(int a[]){
+        for(int i=0; i<a.length; i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+        for(int i=a.length-2; i>=0; i--){
+            System.out.print(a[i]+" ");
+            break;
+        }
+    }
+    static void swap(int a[],int i, int j){
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+    static void sorted(int a[]){
+        for(int i=0;i <a.length; i++){
+            for(int j=i+1; j<a.length; j++){
+                if(a[i]>a[j]){
+                    swap(a, i, j);
+                }
+            }
+        }
+        printarr(a);
+    }
+    public static void main(String[] args) {
+        int a[] = {10,7,5,3,2,8,9,4,1};
+        sorted(a);
+    }
+}
+
+-------------------------------------------------------------
+
+9)
+find maximum element and minimum element 
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arr {
+    static void printarr(int a[]){
+        for(int i=0; i<a.length; i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+        System.out.println(a[0]+" is Minimum");
+        System.out.print(a[a.length-1]+" is Maximum");
+    }
+    static void swap(int a[],int i, int j){
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+    static void sorted(int a[]){
+        for(int i=0;i <a.length; i++){
+            for(int j=i+1; j<a.length; j++){
+                if(a[i]>a[j]){
+                    swap(a, i, j);
+                }
+            }
+        }
+        printarr(a);
+    }
+    public static void main(String[] args) {
+        int a[] = {10,7,5,3,2,8,9,4,1};
+        sorted(a);
+    }
+}
+
+10)
+check a array is pallindrome or not 
+1,2,3,2,1 
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arr {
+    static boolean pallindrom(int a[]){
+        int start = 0;
+        int end = a.length-1;
+        while(start<end){
+            if(a[start]!=a[end]){
+                return false;
+            }
+            start++;
+            end--;
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        int a[] = {1,2,3,2,1};
+        if(pallindrom(a)){
+            System.out.println("Pallindrom");
+        }
+        else{
+            System.out.println("Not pallindrom");
+        }
+    }
+}

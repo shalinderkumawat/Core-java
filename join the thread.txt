@@ -1,0 +1,139 @@
+A 
+run
+
+t1
+t2
+t3
+t4
+t5 
+
+simulatenously 
+
+separate
+
+t1 t2 :separate
+
+t3 t4 t5 :simulatenously
+
+Ans)
+class A extends Thread{
+    public void run(){
+        for(int i=1; i<=5; i++){
+            System.out.print(i+" ");
+            try{
+                 Thread.sleep(900);
+            }
+            catch(Exception ex){
+
+            }
+        }
+    }
+}
+public class Exc{
+    
+    public static void main(String[] args) throws Exception{
+        A t1 = new A();
+        t1.start();
+        try{
+            t1.join();
+        }
+        catch(Exception ex){
+
+        }
+        A t2 = new A();
+        t2.start();
+        try{
+            t2.join();
+        }
+        catch(Exception ex){
+
+        }
+        A t3 = new A();
+        t3.start();
+        A t4 = new A();
+        t4.start();
+        A t5 = new A();
+        t5.start();
+    }
+}
+
+
+-----------------------------------------------------
+A 
+run 
+
+main method (): 
+t1 :getName 
+t1.setname
+t1.getname
+
+Ans)
+class A extends Thread{
+    public void run(){
+        for(int i=1; i<=5; i++){
+            System.out.print(i+" ");
+        }
+    }
+}
+public class Exc{
+    
+    public static void main(String[] args) throws Exception{
+        A t1 = new A();
+        t1.setName("Rahul");
+        System.out.println(t1.getName());
+    }
+}
+
+-----------------------------------------------------
+A 
+run 
+
+main method (): 
+t1 :getName 
+t2.getname
+t1.setname
+t2setname
+t1.getname
+t2.getname
+
+Ans)
+class A extends Thread{
+    public void run(){
+        for(int i=1; i<=5; i++){
+            System.out.print(i+" ");
+        }
+    }
+}
+public class Exc{
+    
+    public static void main(String[] args) throws Exception{
+        A t1 = new A();
+        A t2 = new A();
+        System.out.println(t1.getName());
+        System.out.println(t2.getName());
+        t1.setName("Rahul");
+        t2.setName("Pinky");
+        System.out.println(t1.getName());
+        System.out.println(t2.getName());
+    }
+}
+
+--------------------------------------------------------
+class A 
+constructor :A class k constructor thread string ki value change krni hey 
+
+Ans)
+class A extends Thread{
+    A(){
+        super("Pinky ji");
+    }
+}
+public class Exc{
+    
+    public static void main(String[] args) throws Exception{
+        A t1 = new A();
+        System.out.println(t1.getName());
+    }
+}
+
+-------------------------------------------------------

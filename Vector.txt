@@ -1,0 +1,70 @@
+add()
+addAll()
+	addElement()
+	clear()
+clone()
+	contains()
+containsAll()
+	elementAt()
+elements()
+equals()
+	firstElement()
+get()
+	indexOf()
+iterator()
+lastElement()
+lastIndexOf()
+listIterator()
+	remove()
+	removeAll()
+removeAllElements()
+	removeElement()
+removeElementAt()
+replaceAll()
+	set()
+	size()
+	spliterator()
+
+Ans)
+
+import java.util.LinkedHashSet;
+import java.util.Stack;
+import java.util.TreeSet;
+import java.util.Vector;
+
+import javax.sound.midi.Soundbank;
+
+public class Exc {
+    public static void main(String[] args) {
+        Vector<Integer> ct = new Vector<>();
+        ct.add(21);
+        ct.add(11);
+        ct.add(89);
+        ct.add(78);
+        ct.addAll(ct);
+        System.out.println(ct);
+        ct.addElement(44);
+        System.out.println(ct);
+        ct.clone();
+        System.out.println(ct);
+        System.out.println(ct.contains(2));
+        System.out.println(ct.containsAll(ct));
+        System.out.println(ct.elementAt(0));
+        System.out.println(ct.elements());
+        System.out.println(ct.equals(ct));
+        System.out.println(ct.firstElement());
+        System.out.println(ct.get(2));
+        System.out.println(ct.indexOf(89));
+        System.out.println(ct.iterator());
+        System.out.println(ct.lastElement());
+        System.out.println(ct.lastIndexOf(44));
+        System.out.println(ct.listIterator());
+        System.out.println(ct.set(0, 3));
+        System.out.println(ct.size());
+        System.out.println(ct.spliterator());
+        System.out.println(ct.remove(2));
+        System.out.println(ct.remove(5));
+        System.out.println(ct.removeElement(ct));
+        System.out.println(ct.removeAll(ct));
+    }
+}

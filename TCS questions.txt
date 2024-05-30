@@ -1,0 +1,3227 @@
+1) TCS 
+Problem Statement –A chocolate factory is packing chocolates into the packets. The chocolate packets here represent an array  of N number of integer values. The task is to find the empty packets(0) of chocolate and push it to the end of the conveyor belt(array).
+
+Example 1 :
+N=8 and arr = [4,5,0,1,9,0,5,0] There are 3 empty packets in the given set. These 3 empty packets represented as O should be pushed towards the end of the array
+
+Input :
+8  – Value of N
+[4,5,0,1,9,0,5,0] – Element of arr[O] to arr[N-1],While input each element is separated by newline
+
+Output:
+4 5 1 9 5 0 0 0
+
+
+-------------------------------------------------------------------
+Q2) Problem Statement –Joseph is learning digital logic subject which will be for his next semester. He usually tries to solve unit assignment problems before the lecture. Today he got one tricky question. The problem statement is “A positive integer has been given as an input. Convert decimal value to binary representation. Toggle all bits of it after the most significant bit including the most significant bit. Print the positive integer value after toggling all bits”.
+
+Constrains-
+
+1<=N<=100
+
+Example 1:
+
+Input :
+
+10  -> Integer
+
+Output :
+
+5    -> result- Integer
+-------------------------------------------------------------------
+Q3) 
+Jack is always excited about sunday. It is favourite day, when he gets to play all day. And goes to cycling with his friends. 
+
+So every time when the months starts he counts the number of sundays he will get to enjoy. Considering the month can start with any day, be it Sunday, Monday…. Or so on.
+
+Count the number of Sunday jack will get within n number of days.
+
+ Example 1:
+
+Input 
+
+mon-> input String denoting the start of the month.
+
+13  -> input integer denoting the number of days from the start of the month.
+
+Output :
+
+2    -> number of days within 13 days.
+
+Explanation:
+
+The month start with mon(Monday). So the upcoming sunday will arrive in next 6 days. And then next Sunday in next 7 days and so on.
+
+Now total number of days are 13. It means 6 days to first sunday and then remaining 7 days will end up in another sunday. Total 2 sundays may fall within 13 days.
+-------------------------------------------------------------
+Q4)
+Airport security officials have confiscated several item of the passengers at the security check point. All the items have been dumped into a huge box (array). Each item possesses a certain amount of risk[0,1,2]. Here, the risk severity of the items represent an array[] of N number of integer values. The task here is to sort the items based on their levels of risk in the array. The risk values range from 0 to 2.
+
+Example :
+
+Input :
+
+7  -> Value of N
+
+[1,0,2,0,1,0,2]-> Element of arr[0] to arr[N-1], while input each element is separated by new line.
+
+Output :
+
+0 0 0 1 1 2 2  -> Element after sorting based on risk severity 
+
+Example 2:
+
+input : 10  -> Value of N 
+
+[2,1,0,2,1,0,0,1,2,0] -> Element of arr[0] to arr[N-1], while input each element is separated by a new line.
+
+Output : 
+
+0 0 0 0 1 1 1 2 2 2  ->Elements after sorting based on risk severity.
+
+Ans)
+import java.util.Arrays;
+
+public class Arry {
+    public static void main(String[] args){
+        int[] arry = {2,1,0,2,1,0,0,1,2,0};
+        Arrays.sort(arry);
+        for(int i=1; i<arry.length; i++){
+            System.out.print(arry[i]+" ");
+        }
+    }
+}
+
+----------------------------------------------------------------------
+Q5)Given an integer array Arr of size N the task is to find the count of elements whose value is greater than all of its prior elements.
+
+Note : 1st element of the array should be considered in the count of the result.
+For example,
+
+Arr[]={7,4,8,2,9}
+
+As 7 is the first element, it will consider in the result.
+
+8 and 9 are also the elements that are greater than all of its previous elements.
+
+Since total of  3 elements is present in the array that meets the condition.
+
+Hence the output = 3.
+
+Example 1:
+
+Input 
+
+5 -> Value of N, represents size of Arr
+
+7-> Value of Arr[0]
+
+4 -> Value of Arr[1]
+
+8-> Value of Arr[2]
+
+2-> Value of Arr[3]
+
+9-> Value of Arr[4]
+
+Output :
+
+3
+
+Example 2:
+
+5   -> Value of N, represents size of Arr
+
+3  -> Value of Arr[0]
+
+4 -> Value of Arr[1]
+
+5 -> Value of Arr[2]
+
+8 -> Value of Arr[3]
+
+9 -> Value of Arr[4]
+
+Output : 
+
+5
+
+Ans)
+import java.util.Arrays;
+
+public class Arry {
+    public static void main(String[] args){
+        int[] arry = {7,4,8,2,9,5,78,6};
+        int count = 0;
+        for(int i=0; i<arry.length-1; i++){
+            if(arry[i]>arry[i+1]){
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
+
+--------------------------------------------
+Q6)A supermarket maintains a pricing format for all its products. A value N is printed on each product. When the scanner reads the value N on the item, the product of all the digits in the value N is the price of the item. The task here is to design the software such that given the code of any item N the product (multiplication) of all the digits of value should be computed(price).
+
+Example 1:
+
+Input :
+
+5244 -> Value of N
+
+Output :
+160 -> Price 
+
+Explanation:
+
+From the input above 
+
+Product of the digits 5,2,4,4
+
+5*2*4*4= 160
+
+Hence, output is 160.
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arry {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int[] array = new int[5];
+        int multi = 1;
+        for(int i=0; i<array.length; i++){
+            array[i] = sc.nextInt();
+        }
+        for(int i=0; i<array.length; i++){
+           multi *= array[i];
+        }
+        System.out.println("The factor is  : "+multi);
+    }
+}
+
+--------------------------------------------------------------------
+Q7)
+A furnishing company is manufacturing a new collection of curtains. The curtains are of two colors aqua(a) and black (b). The curtains color is represented as a string(str) consisting of a’s and b’s of length N. Then, they are packed (substring) into L number of curtains in each box. The box with the maximum number of ‘aqua’ (a) color curtains is labeled. The task here is to find the number of ‘aqua’ color curtains in the labeled box.
+
+Note :
+
+If ‘L’ is not a multiple of N, the remaining number of curtains should be considered as a substring too. In simple words, after dividing the curtains in sets of ‘L’, any curtains left will be another set(refer example 1)
+
+Example 1:
+
+Input :
+
+bbbaaababa -> Value of str
+
+3    -> Value of L
+
+Output:
+
+3   -> Maximum number of a’s
+
+Example 2:
+
+Input :
+
+abbbaabbb -> Value of str
+
+5   -> Value of L
+
+Output:
+
+2   -> Maximum number of a’s
+
+Explanation:
+
+From the input given above,
+
+Dividing the string into sets of 5 characters each.
+
+Set 1: {a,b,b,b,b}
+
+Set 2: {a,a,b,b,b}
+
+Among both the sets, set 2 has more number of a’s. The number of a’s in set 2 is 2.
+
+Hence, the output is 2.
+
+Constraints:
+
+1<=L<=10
+
+1<=N<=50
+
+The input format for testing 
+
+The candidate has to write the code to accept two inputs separated by a new line.
+
+First input- Accept string that contains character a and b only
+
+Second input- Accept value for N(Positive integer number)
+
+The output  format for testing
+
+The output should be a positive integer number of print the message(if any) given in the problem statement.(Check the output in Example 1, Example 2).
+-------------------------------------------------------
+Q8)
+An international round table conference will be held in india. Presidents from all over the world representing their respective countries will be attending the conference. The task is to find the possible number of ways(P) to make the N members sit around the circular table such that.
+
+The president and prime minister of India will always sit next to each other.
+
+Example 1:
+
+Input :
+
+4   -> Value of N(No. of members)
+
+Output : 
+
+12  -> Possible ways of seating the members
+
+Explanation:
+
+2  members should always be next to each other. 
+
+So, 2 members can be in 2!ways
+
+Rest of the members can be arranged in (4-1)! ways.(1 is subtracted because the previously selected two members will be considered as single members now).
+
+So total possible ways 4 members can be seated around the circular table 2*6= 12.
+
+Hence, output is 12.
+
+Example 2:
+
+Input:
+
+10  -> Value of N(No. of members)
+
+Output :
+
+725760 -> Possible ways of seating the members 
+
+Explanation:
+
+2 members should always be next to each other.
+
+So, 2 members can be in 2! ways 
+
+Rest of the members can be arranged in (10-1)! Ways. (1 is subtracted because the previously selected two members will be considered as a single member now).
+
+
+
+So, total possible ways 10 members can be seated around a round table is 
+
+2*362880 = 725760 ways.
+
+Hence, output is 725760.
+
+The input format for testing
+
+The candidate has to write the code to accept one input 
+
+First input – Accept value of number of N(Positive integer number)
+
+The output format for testing 
+The output should be a positive integer number or print the message(if any) given in the problem statement(Check the output in example 1, example2)
+
+Constraints :
+
+2<=N<=50
+
+----------------------------------------------------------------
+Q9)
+An intelligence agency has received reports about some threats. The reports consist of numbers in a mysterious method. There is a number “N” and another number “R”. Those numbers are studied thoroughly and it is concluded that all digits of the number ‘N’ are summed up and this action is performed ‘R’ number of times. The resultant is also a single digit that is yet to be deciphered. The task here is to find the single-digit sum of the given number ‘N’ by repeating the action ‘R’ number of times.
+
+If the value of ‘R’ is 0, print the output as ‘0’.
+
+Example 1:
+
+Input :
+
+99 -> Value of N
+
+3  -> Value of R
+
+Output :
+
+9  -> Possible ways to fill the cistern.
+Explanation:
+
+Here, the number N=99
+
+1)Sum of the digits N: 9+9 = 18
+2)Repeat step 2 ‘R’ times i.e. 3 tims  (9+9)+(9+9)+(9+9) = 18+18+18 =54
+3)Add digits of 54 as we need a single digit 5+4
+Hence , the output is 9.
+
+Example 2:
+
+Input :
+
+1234   -> Value of N
+
+2      -> Value of R
+
+Output :
+
+2  -> Possible ways to fill the cistern
+
+Explanation:
+
+Here, the number N=1234
+
+1)Sum of the digits of N: 1+2+3+4 =10
+2)Repeat step 2 ‘R’ times i.e. 2 times  (1+2+3+4)+(1+2+3+4)= 10+10=20
+3)Add digits of 20 as we need a single digit. 2+0=2
+Hence, the output is 2.
+
+Constraints:
+
+0<N<=1000
+
+0<=R<=50
+
+The Input format for testing 
+
+The candidate has to write the code to accept 2 input(s)
+
+First input- Accept value for N (positive integer number)
+
+Second input: Accept value for R(Positive integer number)
+
+The output format for testing 
+
+The output should be a positive integer number or print the message (if any) given in the problem statement. (Check the output in Example 1, Example 2).
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arry {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the value of N");
+        int n = sc.nextInt();
+        int r = 3;
+        int rem;
+        int sum=0;
+        while(n>0){
+            rem = n%10;
+            sum = sum+rem;
+            n = n/10;
+        }
+        sum = sum*r;
+        int sum1=0;
+        int rem1;
+        while(sum>0){
+            rem1 = sum%10;
+            sum1 = sum1+rem1;
+            sum = sum/10;
+        }
+        System.out.println("The total ways is "+sum1);
+    }
+}
+
+-----------------------------------------------------
+Q10)
+Problem Statement
+
+Particulate matters are the biggest contributors to Delhi pollution. The main reason behind the increase in the concentration of PMs include vehicle emission by applying Odd Even concept for all types of vehicles. The vehicles with the odd last digit in the registration number will be allowed on roads on odd dates and those with even last digit will on even dates.
+
+Given an integer array a[], contains the last digit of the registration number of N vehicles traveling on date D(a positive integer). The task is to calculate the total fine collected by the traffic police department from the vehicles violating the rules.
+
+Note : For violating the rule, vehicles would be fined as X Rs.
+
+Example 1:
+
+Input :
+
+4 -> Value of N
+
+{5,2,3,7} -> a[], Elements a[0] to a[N-1], during input each element is separated by a new line
+
+12 -> Value of D, i.e. date 
+
+200 -> Value of x i.e. fine
+
+Output :
+
+600  -> total fine collected 
+
+Explanation:
+
+Date D=12 means , only an even number of vehicles are allowed. 
+
+Find will be collected from 5,3 and 7 with an amount of 200 each.
+
+Hence, the output = 600.
+
+Example 2:
+
+Input :
+
+5   -> Value of N 
+
+{2,5,1,6,8}  -> a[], elements a[0] to a[N-1], during input each element is separated by new line
+
+3 -> Value of D i.e. date 
+
+300 -> Value of X i.e. fine 
+
+Output :
+
+900  -> total fine collected 
+
+Explanation:
+
+Date D=3 means only odd number vehicles with are allowed.
+
+Find will be collected from 2,6 and 8 with an amount of 300 each.
+
+Hence, the output = 900 
+
+Constraints:
+
+->0<N<=100
+->1<=a[i]<=9
+->1<=D <=30
+->100<=x<=5000 
+
+The input format for testing 
+
+The candidate has to write the code to accept 4 input(s).
+
+First input – Accept for N(Positive integer) values (a[]), where each value is separated by a new line.
+
+Third input – Accept value for D(Positive integer)
+
+Fourth input – Accept value for X(Positive integer )
+
+The output format for testing 
+
+The output should be a positive integer number (Check the output in Example 1, Example e) if no fine is collected then print ”0”.
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arry {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int[] array = new int[5];
+        for(int i=0; i<array.length; i++){
+            array[i] = sc.nextInt();
+        }
+        System.out.println("Enter the date");
+        int date = sc.nextInt();
+        int count = 0;
+        int count1 = 0;
+        for(int i=0; i<array.length; i++){
+            if(date%2==0 && array[i]%2==0){
+                count++;
+            }
+            if(date%2!=0 && array[i]%2!=0){
+                count1++;
+            }
+        }
+        if(date%2==0){
+            int x = 200;
+            System.out.println("The fine is : "+x*count);
+        }
+        else if(date%2!=0){
+            int x = 200;
+            System.out.println("The fine is : "+x*count1);
+        }
+    }
+}
+
+-------------------------------------------------------------
+Q11)
+Problem Statement – An automobile company manufactures both a two wheeler (TW) and a four wheeler (FW). A company manager wants to make the production of both types of vehicle according to the given data below:
+
+a)1st data, Total number of vehicle (two-wheeler + four-wheeler)=v
+b)2nd data, Total number of wheels = W
+The task is to find how many two-wheelers as well as four-wheelers need to manufacture as per the given data.
+
+Example :
+
+Input :
+200  -> Value of V
+540   -> Value of W
+
+Output :
+TW =130 FW=70
+
+Explanation:
+130+70 = 200 vehicles
+(70*4)+(130*2)= 540 wheels
+
+Constraints :
+
+a)2<=W
+b)W%2=0
+c)V<W
+Print “INVALID INPUT” , if inputs did not meet the constraints.
+
+The input format for testing 
+The candidate has to write the code to accept two positive numbers separated by a new line.
+
+a)First Input line – Accept value of V.
+b)Second Input line- Accept value for W.
+-------------------------------------------------------
+Q12)
+Problem Statement – Given a string S(input consisting) of ‘*’ and ‘#’. The length of the string is variable. The task is to find the minimum number of ‘*’ or ‘#’ to make it a valid string. The string is considered valid if the number of ‘*’ and ‘#’ are equal. The ‘*’ and ‘#’ can be at any position in the string.
+Note : The output will be a positive or negative integer based on number of ‘*’ and ‘#’ in the input string.
+
+a)(*>#): positive integer
+b)(#>*): negative integer
+c)(#=*): 0
+
+Example 1:
+Input 1:
+###***   -> Value of S
+
+Output :
+
+0   → number of * and # are equal
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arry {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the string");
+        String str = sc.nextLine();
+        int count=0;
+        int count1=0;
+        for(int i=0; i<str.length(); i++){
+            if(str.charAt(i)=='*'){
+                count++;
+            }
+            else if(str.charAt(i)=='#'){
+                count1++;
+            }
+        }
+        if(count>count1){
+            System.out.println("Positive Integer");
+        }
+        else if(count<count1){
+            System.out.println("Negative integer");
+        }
+        else if(count==count1){
+            System.out.println(0);
+        }
+    }
+}
+
+---------------------------------------------------------------
+Q13)
+Given an integer array Arr of size N the task is to find the count of elements whose value is greater than all of its prior elements.
+
+Note : 1st element of the array should be considered in the count of the result.
+
+For example,
+Arr[]={7,4,8,2,9}
+As 7 is the first element, it will consider in the result.
+8 and 9 are also the elements that are greater than all of its previous elements.
+Since total of  3 elements is present in the array that meets the condition.
+Hence the output = 3.
+
+Example 1:
+
+Input 
+5 -> Value of N, represents size of Arr
+7-> Value of Arr[0]
+4 -> Value of Arr[1]
+8-> Value of Arr[2]
+2-> Value of Arr[3]
+9-> Value of Arr[4]
+
+Output :
+3
+
+Example 2:
+5   -> Value of N, represents size of Arr
+3  -> Value of Arr[0]
+4 -> Value of Arr[1]
+5 -> Value of Arr[2]
+8 -> Value of Arr[3]
+9 -> Value of Arr[4]
+
+Output : 
+5
+
+Constraints
+
+a)1<=N<=20
+b)1<=Arr[i]<=10000
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arry {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int count=0;
+        System.out.println("Enter the array");
+        int[] array = new int[5];
+        for(int i=0; i<array.length; i++){
+            array[i] = sc.nextInt();
+        }
+        for(int i=1; i<=array.length-1; i++){
+            if(array[i]>array[i-1]){
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
+
+--------------------------------------------------------------------
+Q14)
+A parking lot in a mall has RxC number of parking spaces. Each parking space will either be  empty(0) or full(1). The status (0/1) of a parking space is represented as the element of the matrix. The task is to find index of the prpeinzta row(R) in the parking lot that has the most of the parking spaces full(1).
+
+Note :
+RxC- Size of the matrix
+Elements of the matrix M should be only 0 or 1.
+
+Example 1:
+Input :
+3   -> Value of R(row)
+3    -> value of C(column)
+[0 1 0 1 1 0 1 1 1] -> Elements of the array M[R][C] where each element is separated by new line.
+Output :
+3  -> Row 3 has maximum number of 1’s
+
+Example 2:
+input :
+4 -> Value of R(row)
+3 -> Value of C(column)
+[0 1 0 1 1 0 1 0 1 1 1 1] -> Elements of the array M[R][C]
+Output :
+4  -> Row 4 has maximum number of 1’s
+-----------------------------------------------------------------
+Q14)
+A party has been organised on cruise. The party is organised for a limited time(T). The number of guests entering (E[i]) and leaving (L[i]) the party at every hour is represented as elements of the array. The task is to find the maximum number of guests present on the cruise at any given instance within T hours.
+
+Example 1:
+Input :
+a)5    -> Value of T
+b)[7,0,5,1,3]  -> E[], Element of E[0] to E[N-1], where input each element is separated by new line 
+c)[1,2,1,3,4]   -> L[], Element of L[0] to L[N-1], while input each element is separate by new line.
+
+Output :
+8     -> Maximum number of guests on cruise at an instance.
+
+Explanation:
+
+1st hour:
+Entry : 7 Exit: 1
+No. of guests on ship : 6
+
+2nd hour :
+Entry : 0 Exit : 2
+No. of guests on ship : 6-2=4
+
+Hour 3:
+Entry: 5 Exit: 1
+No. of guests on ship : 4+5-1=8
+
+Hour 4:
+Entry : 1 Exit : 3
+No. of guests on ship : 8+1-3=6
+
+Hour 5:
+Entry : 3 Exit: 4
+No. of guests on ship: 6+3-4=5
+Hence, the maximum number of guests within 5 hours is 8.
+
+Example 2:
+Input:
+4  -> Value of T
+[3,5,2,0]   -> E[], Element of E[0] to E[N-1], where input each element is separated by new line.
+[0,2,4,4]    -> L[], Element of L[0] to L[N-1], while input each element in separated by new line
+
+Output:
+6
+Cruise at an instance
+
+Explanation:
+Hour 1:
+Entry: 3 Exit: 0
+No. of guests on ship: 3
+
+Hour 2:
+Entry : 5 Exit : 2
+No. of guest on ship: 3+5-2=6
+
+Hour 3:
+Entry : 2 Exit: 4
+No. of guests on ship: 6+2-4= 4
+
+Hour 4:
+Entry: 0  Exit : 4
+No. of guests on ship : 4+0-4=0
+
+Hence, the maximum number of guests within 5 hours is 6.
+The input format for testing
+The candidate has to write the code to accept 3 input.
+First input- Accept  value for number of T(Positive integer number)
+Second input- Accept T number of values, where each value is separated by a new line.
+Third input- Accept T number of values, where each value is separated by a new line.
+The output format for testing
+The output should be a positive integer number or a message as given in the problem statement(Check the output in Example 1 and Example 2)
+
+Constraints:
+
+a)1<=T<=25
+b)0<= E[i] <=500
+c)0<= L[i] <=500
+-----------------------------------------
+Q15)
+At a fun fair, a street vendor is selling different colours of balloons. He sells N number of different colours of balloons (B[]). The task is to find the colour (odd) of the balloon which is present odd number of times in the bunch of balloons.
+
+Note: If there is more than one colour which is odd in number, then the first colour in the array which is present odd number of times is displayed. The colours of the balloons can all be either upper case or lower case in the array. If all the inputs are even in number, display the message “All are even”.
+
+Example 1:
+
+a)7  -> Value of N
+b)[r,g,b,b,g,y,y]  -> B[] Elements B[0] to B[N-1], where each input element is sepārated by ṉew line.
+
+Output :
+
+a)r -> [r,g,b,b,g,y,y]  -> “r” colour balloon is present odd number of times in the bunch.
+
+Explanation:
+From the input array above:
+
+a)r: 1 balloon 
+b)g: 2 balloons
+c)b:  2 balloons
+d)y : 2 balloons
+Hence , r is only the balloon which is odd in number.
+
+Example 2:
+Input:
+
+10 -> Value of N
+[a,b,b,b,c,c,c,a,f,c] -> B[], elements B[0] to B[N-1] where input each element is separated by new line.
+
+Output :
+b-> ‘b’ colour balloon is present odd number of times in the bunch.
+
+Explanation:
+From the input array above:
+
+a)a: 2 balloons
+b)b: 3 balloons 
+c)c: 4 balloons 
+d)f: 1 balloons 
+Here, both ‘b’ and ‘f’ have odd number of balloons. But ‘b’ colour balloon occurs first.
+Hence , b is the output.
+
+Input Format for testing
+The candidate has to write the code to accept: 2 input 
+
+a)First input: Accept value for number of N(Positive integer number).
+b)Second Input : Accept N number of character values (B[]), where each value is separated by a new line.
+
+Output format for testing
+The output should be a single literal (Check the output in example 1 and example 2)
+
+Constraints:
+
+a)3<=N<=50
+b)B[i]={{a-z} or {A-Z}}
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arry {
+    public static void main(String[] args){
+        char[] array = {'r','g','b','b','b','y','y'};
+        String str = "";
+        for(int i=0; i<array.length; i++){
+            int count = 0;
+            for(int j=0;j<array.length; j++){
+                if(array[i]==array[j]){
+                    count++;
+                }
+                
+            }
+            if(count%2!=0){
+                str += array[i];
+            }
+        }
+        StringBuilder sb = new StringBuilder("");
+        for(int i=0; i<str.length()-1; i++){
+            while(i<str.length()-1 && str.charAt(i)==str.charAt(i+1)){
+                i++;
+            }
+            sb.append(str.charAt(i));
+        }
+        System.out.println(sb.toString());
+    }
+}
+
+---------------------------------------------------------
+Q16)
+There is a JAR full of candies for sale at a mall counter. JAR has the capacity N, that is JAR can contain maximum N candies when JAR is full. At any point of time. JAR can have M number of Candies where M<=N. Candies are served to the customers. JAR is never remain empty as when last k candies are left. JAR if refilled with new candies in such a way that JAR get full.
+Write a code to implement above scenario. Display JAR at counter with available number of candies. Input should be the number of candies one customer can order at point of time. Update the JAR after each purchase and display JAR at Counter.
+
+Output should give number of Candies sold and updated number of Candies in JAR.
+
+If Input is more than candies in JAR, return: “INVALID INPUT”
+Given,
+N=10, where N is NUMBER OF CANDIES AVAILABLE
+K =< 5, where k is number of minimum candies that must be inside JAR ever.
+Example 1:(N = 10, k =< 5)
+Input Value
+3
+Output Value
+NUMBER OF CANDIES SOLD : 3
+NUMBER OF CANDIES AVAILABLE : 7
+
+Example : (N=10, k<=5)
+
+Input Value
+0
+Output Value
+INVALID INPUT NUMBER OF
+CANDIES LEFT : 10
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arry {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of candies present in JAR");
+        int n = sc.nextInt();
+        System.out.println("Enter the candies sold");
+        int val = sc.nextInt();
+        if(val>0 && val<n){
+            System.out.println("The Number of candies sold : "+val);
+            System.out.println("The Number of candies available : "+(n-val));
+        }
+        else{
+            System.out.println("Invalid input");
+            System.out.println("The Number of candies available : "+n);
+        }
+    }
+}
+
+-----------------------------------------
+Q17)
+Selection of MPCS exams include a fitness test which is conducted on ground. There will be a batch of 3 trainees, appearing for running test in track for 3 rounds. You need to record their oxygen level after every round. After trainee are finished with all rounds, calculate for each trainee his average oxygen level over the 3 rounds and select one with highest oxygen level as the most fit trainee. If more than one trainee attains the same highest average level, they all need to be selected.
+
+Display the most fit trainee (or trainees) and the highest average oxygen level.
+
+Note:
+
+a)The oxygen value entered should not be accepted if it is not in the range between 1 and 100.
+b)If the calculated maximum average oxygen value of trainees is below 70 then declare the trainees as unfit with meaningful message as “All trainees are unfit.
+c)Average Oxygen Values should be rounded.
+
+Example 1:
+INPUT VALUES
+95
+92
+95
+92
+90
+92
+90
+92
+90
+
+OUTPUT VALUES
+Trainee Number : 1
+Trainee Number : 3
+
+Note:
+Input should be 9 integer values representing oxygen levels entered in order as
+
+Round 1
+
+a)Oxygen value of trainee 1
+b)Oxygen value of trainee 2
+c)Oxygen value of trainee 3
+
+Round 2
+
+a)Oxygen value of trainee 1
+b)Oxygen value of trainee 2
+c)Oxygen value of trainee 3
+
+Round 3
+
+a)Oxygen value of trainee 1
+b)Oxygen value of trainee 2
+c)Oxygen value of trainee 3
+
+Output must be in given format as in above example. For any wrong input final output should display “INVALID INPUT”
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arry {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of rows");
+        //this is for number of rows
+        int m = sc.nextInt();
+        System.out.println("Enter the number of columns");
+        //this is for number of columns
+        //please enter n and m same
+        int n = sc.nextInt();
+        System.out.println("Enter the elements now");
+        int arr[][] = new int[m][n];
+        for(int i=0; i<m; i++){
+            for(int j=0; j<n; j++){
+                if(arr[i][j]>1 || arr[i][j]<100){
+                    arr[i][j] = sc.nextInt();
+                }
+            }
+        }
+        System.out.println("Data is entered");
+        int avg=0;
+        int tavg=0;
+        for(int i=0; i<m; i++){
+            int sum = 0;
+            for(int j=0; j<n; j++){
+                sum += arr[i][j];
+            }
+            avg = sum/m;
+            tavg += avg;
+        }
+        if(tavg<70){
+            System.out.println("All the trainees is unfit");
+        }
+        else{
+            System.out.println(tavg/3);
+        }
+    }
+}
+-----------------------------------------------------------------
+Q18)
+Problem Statement
+
+We want to estimate the cost of painting a property. Interior wall painting cost is Rs.18 per sq.ft. and exterior wall painting cost is Rs.12 per sq.ft.
+
+Take input as
+1. Number of Interior walls
+2. Number of Exterior walls
+3. Surface Area of each Interior 4. Wall in units of square feet
+Surface Area of each Exterior Wall in units of square feet
+
+If a user enters zero  as the number of walls then skip Surface area values as User may don’t  want to paint that wall.
+
+Calculate and display the total cost of painting the property
+
+Example 1:
+6
+3
+12.3
+15.2
+12.3
+15.2
+12.3
+15.2
+10.10
+10.10
+10.00
+Total estimated Cost : 1847.4 INR
+Note: Follow in input and output format as given in above example
+
+Ans)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Arry {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of internal wall");
+        int inter = sc.nextInt();
+        System.out.println("Enter the number of external wall");
+        int ext = sc.nextInt();
+        if(inter>0 && ext>0){
+            int costi = 18;
+            int coste = 12;
+            System.out.println("Enter the lenght of inner wall");
+            int lwall = sc.nextInt();
+            System.out.println("Enter the width of inner wall");
+            int wwall = sc.nextInt();
+            int area = (lwall*wwall)*costi;
+            int incost = area*inter;
+            // System.out.println("The total cost of inner wall is : "+incost);
+            System.out.println("Enter the lenght of external wall");
+            int elwall = sc.nextInt();
+            System.out.println("Enter the width of external wall");
+            int ewwall = sc.nextInt();
+            int earea = (elwall*ewwall)*coste;
+            int excost = earea*inter;
+            // System.out.println("The total cost of external wall is : "+excost);
+            System.out.println("The total is : "+(incost+excost));
+        }
+        else{
+            System.out.println("User do not want to print the wall");
+        }
+    }
+}
+------------------------------------------
+Q19)
+Problem Statement
+
+There are total n number of Monkeys sitting on the branches of a huge Tree. As travelers offer Bananas and Peanuts, the Monkeys jump down the Tree. If every Monkey can eat k Bananas and j Peanuts. If total m number of Bananas and p number of Peanuts are offered by travelers, calculate how many Monkeys remain on the Tree after some of them jumped down to eat.
+At a time one Monkeys gets down and finishes eating and go to the other side of the road. The Monkey who climbed down does not climb up again after eating until the other Monkeys finish eating.
+Monkey can either eat k Bananas or j Peanuts. If for last Monkey there are less than k Bananas left on the ground or less than j Peanuts left on the ground, only that Monkey can eat Bananas(<k) along with the Peanuts(<j).
+Write code to take inputs as n, m, p, k, j and return  the number of Monkeys left on the Tree.
+    Where, n= Total no of Monkeys
+        k= Number of eatable Bananas by Single Monkey (Monkey that jumped down last may get less than k Bananas)
+        j = Number of eatable Peanuts by single Monkey(Monkey that jumped down last may get less than j Peanuts)
+        m = Total number of Bananas
+        p  = Total number of Peanuts
+Remember that the Monkeys always eat Bananas and Peanuts, so there is no possibility of k and j having a value zero
+
+Example 1:
+Input Values    
+20
+2
+3
+12
+12
+
+Output Values
+Number of  Monkeys left on the tree:10
+Note: Kindly follow  the order of inputs as n,k,j,m,p as given in the above example. And output must include  the same format  as in above example(Number of Monkeys left on the Tree:)
+For any wrong input display INVALID INPUT
+--------------------------------------------------------------
+Q20)
+Explanation:
+To check whether a year is leap or not
+Step 1:
+
+a)We first divide the year by 4.
+b)If it is not divisible by 4 then it is not a leap year.
+c)If it is divisible by 4 leaving remainder 0 
+
+Step 2:
+
+a)We divide the year by 100
+b)If it is not divisible by 100 then it is a leap year.
+c)If it is divisible by 100 leaving remainder 0
+
+Step 3:
+
+a)We divide the year by 400
+b)If it is not divisible by 400 then it is a leap year.
+c)If it is divisible by 400 leaving remainder 0 
+
+Ans)
+import java.util.Scanner;
+public class Mnc {
+    public int leap(int a){
+        String name = (a%4==0 && a%100!=0 || a%400==0)?"Leap year":"Not a leap year";
+        return 0;
+    }
+    public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the year to check : ");
+       int a = sc.nextInt();
+       Mnc k = new Mnc();
+       System.out.println(k.leap(a));
+    }
+}
+
+-----------------------------------------------------------------
+Q21)
+Ques. Write a code to check whether no is prime or not. Condition use function check() to find whether entered no is positive or negative ,if negative then enter the no, And if yes pas no as a parameter to prime() and check whether no is prime or not?
+
+a)Whether the number is positive or not, if it is negative then print the message “please enter the positive number”
+
+b)It is positive then call the function prime and check whether the take positive number is prime or not. 
+----------------------------------------------------------------
+Q22)
+Number Series with a Twist – 1
+Find the 15th term of the series?
+0,0,7,6,14,12,21,18,28
+
+Explanation :
+In this series the odd term is increment of 7 {0, 7, 14, 21, 28, 35 – – – – – – }
+And even term is a increment of 6 {0, 6, 12, 18, 24, 30 – – – – – – } 
+
+--------------------------------------------------------------
+Q23)
+Number Series with a Twist 2
+
+Consider the following series: 1, 1, 2, 3, 4, 9, 8, 27, 16, 81, 32, 243, 64, 729, 128, 2187 …
+
+This series is a mixture of 2 series – all the odd terms in this series form a geometric series and all the even terms form yet another geometric series. Write a program to find the Nth term in the series.
+
+The value N in a positive integer that should be read from STDIN. The Nth term that is calculated by the program should be written to STDOUT. Other than value of n th term,no other character / string or message should be written to STDOUT. For example , if N=16, the 16th term in the series is 2187, so only value 2187 should be printed to STDOUT.
+
+You can assume that N will not exceed 30. 
+
+------------------------------------------------------------------
+Q24)
+Consider the below series :
+
+0, 0, 2, 1, 4, 2, 6, 3, 8, 4, 10, 5, 12, 6, 14, 7, 16, 8
+
+This series is a mixture of 2 series all the odd terms in this series form even numbers in ascending order and every even terms is derived from the previous  term using the formula (x/2)
+Write a program to find the nth term in this series.
+The value n in a positive integer that should be read from STDIN the nth term that is calculated by the program should be written to STDOUT. Other than the value of the nth term no other characters /strings or message should be written to STDOUT.
+
+For example if n=10,the 10 th term in the series is to be derived from the 9th term in the series. The 9th term is 8 so the 10th term is (8/2)=4. Only the value 4 should be printed to STDOUT.
+
+You can assume that the n will not exceed 20,000.
+--------------------------------------------------------
+Q25)
+The program will recieve 3 English words inputs from STDIN
+
+a)These three words will be read one at a time, in three separate line
+b)The first word should be changed like all vowels should be replaced by %
+c)The second word should be changed like all consonants should be replaced by #
+d)The third word should be changed like all char should be converted to upper case
+e)Then concatenate the three words and print them
+
+Other than these concatenated word, no other characters/string should or message should be written to STDOUT
+
+For example if you print how are you then output should be h%wa#eYOU.
+
+You can assume that input of each word will not exceed more than 5 chars 
+
+
+----------------------------------------------------------------------
+Q26)
+Addition of two numbers a Twist
+Using a method, pass two variables and find the sum of two numbers.
+Test case:
+Number 1 – 20
+Number 2 – 20.38
+Sum = 40.38
+
+There were a total of 4 test cases. Once you compile 3 of them will be shown to you and 1 will be a hidden one. You have to display error message if numbers are not numeric. 
+
+------------------------------------------------------------------------------------
+Q27)
+Number Series with a Twist 3
+
+Consider the below series :
+
+0, 0, 2, 1, 4, 2, 6, 3, 8, 4, 10, 5, 12, 6, 14, 7, 16, 8
+
+This series is a mixture of 2 series all the odd terms in this series form even numbers in ascending order and every even terms is derived from the previous  term using the formula (x/2)
+Write a program to find the nth term in this series.
+The value n in a positive integer that should be read from STDIN the nth term that is calculated by the program should be written to STDOUT. Other than the value of the nth term no other characters /strings or message should be written to STDOUT.
+
+For example if n=10,the 10 th term in the series is to be derived from the 9th term in the series. The 9th term is 8 so the 10th term is (8/2)=4. Only the value 4 should be printed to STDOUT.
+
+You can assume that the n will not exceed 20,000. 
+--------------------------------------
+28)
+The program will recieve 3 English words inputs from STDIN
+1.These three words will be read one at a time, in three separate line
+2.The first word should be changed like all vowels should be replaced by %
+3.The second word should be changed like all consonants should be replaced by #
+4.The third word should be changed like all char should be converted to upper case
+5.Then concatenate the three words and print them
+Other than these concatenated word, no other characters/string should or message should be written to STDOUT
+
+For example if you print how are you then output should be h%wa#eYOU.
+
+You can assume that input of each word will not exceed more than 5 chars 
+
+--------------------------------------------
+29)
+Addition of two numbers a Twist
+Using a method, pass two variables and find the sum of two numbers.
+Test case:
+Number 1 – 20
+Number 2 – 20.38
+Sum = 40.38
+
+There were a total of 4 test cases. Once you compile 3 of them will be shown to you and 1 will be a hidden one. You have to display error message if numbers are not numeric. 
+-------------------------------------------------
+30)
+Find first non-repeating element in a given Array of integers
+Input: {-1, 2, -1, 3, 0}
+Output: 2
+Explanation: The first number that does not repeat is : 2
+
+Input: {9, 4, 9, 6, 7, 4}
+Output: 6
+------------------------------------
+31)
+Given an array of integers arr[] of size N and an integer, the task is to rotate the array elements to the left by d positions.
+
+Input: 
+arr[] = {1, 2, 3, 4, 5, 6, 7}, d = 2
+Output: 3 4 5 6 7 1 2
+
+Input: arr[] = {3, 4, 5, 6, 7, 1, 2}, d=2
+Output: 5 6 7 1 2 3 4
+
+----------------
+32)
+Rat Count House
+
+The function accepts two positive integers ‘r’ and ‘unit’ and a positive integer array ‘arr’ of size ‘n’ as its argument ‘r’ represents the number of rats present in an area, ‘unit’ is the amount of food each rat consumes and each ith element of array ‘arr’ represents the amount of food present in ‘i+1’ house number, where 0 <= i
+
+Note:
+
+a)Return -1 if the array is null
+b)Return 0 if the total amount of food from all houses is not sufficient for all the rats.
+c)Computed values lie within the integer range.
+
+Example:
+
+Input:
+
+->r: 7
+->unit: 2
+->n: 8
+->arr: 2 8 3 5 7 4 1 2
+
+output :
+4 
+
+Explanation:
+Total amount of food required for all rats = r * unit
+
+= 7 * 2 = 14.
+
+The amount of food in 1st houses = 2+8+3+5 = 18. Since, amount of food in 1st 4 houses is sufficient for all the rats. Thus, output is 4.
+
+-------------
+33)Password Checker
+You are given a function.
+int CheckPassword(char str[], int n);
+The function accepts string str of size n as an argument. Implement the function which returns 1 if given string str is valid password else 0.
+str is a valid password if it satisfies the below conditions.
+– At least 4 characters
+– At least one numeric digit
+– At Least one Capital Letter
+– Must not have space or slash (/)
+– Starting character must not be a number
+
+Assumption:
+Input string will not be empty.
+
+Example:
+
+Input 1:
+aA1_67
+
+
+Input 2:
+a987 abC012
+Output 1:
+1
+Output 2:
+0
+---------------------------------------
+34)
+You are given a function,
+int findCount(int arr[], int length, int num, int diff);
+
+The function accepts an integer array ‘arr’, its length and two integer variables ‘num’ and ‘diff’. Implement this function to find and return the number of elements of ‘arr’ having an absolute difference of less than or equal to ‘diff’ with ‘num’.
+Note: In case there is no element in ‘arr’ whose absolute difference with ‘num’ is less than or equal to ‘diff’, return -1.
+
+Example:
+Input:
+
+->arr: 12 3 14 56 77 13
+->num: 13
+->diff: 2
+
+Output:
+3
+
+Explanation:
+Elements of ‘arr’ having absolute difference of less than or equal to ‘diff’ i.e. 2 with ‘num’ i.e. 13 are 12, 13 and 14.
+-----------------------------------------------------------
+35)
+Implement the following Function 
+
+def differenceofSum(n. m)
+
+The function accepts two integers n, m as arguments Find the sum of all numbers in range from 1 to m(both inclusive) that are not divisible by n. Return difference between sum of integers not divisible by n with sum of numbers divisible by n.
+Assumption:
+
+a)n>0 and m>0
+b)Sum lies between integral range
+
+Example
+
+Input
+n:4
+m:20
+
+Output
+90
+
+Explanation
+
+a)Sum of numbers divisible by 4 are 4 + 8 + 12 + 16 + 20 = 60
+b)Sum of numbers not divisible by 4 are 1 +2 + 3 + 5 + 6 + 7 + 9 + 10 + 11 + 13 + 14 + 15 + 17 + 18 + 19 = 150
+c)Difference 150 – 60 = 90
+
+Sample Input
+n:3
+m:10
+
+Sample Output
+19
+-------------------------------------------
+36)
+Implement the following Function
+
+def ProductSmallestPair(sum, arr)
+
+The function accepts an integers sum and an integer array arr of size n. Implement the function to find the pair, (arr[j], arr[k]) where j!=k, Such that arr[j] and arr[k] are the least two elements of array (arr[j] + arr[k] <= sum) and return the product of element of this pair
+
+NOTE
+
+->Return -1 if array is empty or if n<2
+->Return 0, if no such pairs found
+->All computed values lie within integer range
+
+Example
+
+Input
+
+sum:9
+
+size of Arr = 7
+
+Arr:5 2 4 3 9 7 1
+
+Output
+
+2
+
+Explanation
+
+Pair of least two element is (2, 1) 2 + 1 = 3 < 9, Product of (2, 1) 2*1 = 2. Thus, output is 2
+
+Sample Input
+
+sum:4
+
+size of Arr = 6
+
+Arr:9 8 3 -7 3 9
+
+Sample Output
+
+-21
+------------------------------------
+accenture
+37)
+Implement the following functions.a
+
+char*MoveHyphen(char str[],int n);
+
+The function accepts a string “str” of length ‘n’, that contains alphabets and hyphens (-). Implement the function to move all hyphens(-) in the string to the front of the given string.
+
+NOTE:- Return null if str is null.
+
+Example :-
+
+Input:
+  str.Move-Hyphens-to-Front
+Output:
+  —MoveHyphenstoFront
+
+Explanation:-
+
+The string “Move-Hyphens -to-front” has 3 hyphens (-), which are moved to the front of the string, this output is “— MoveHyphen”
+
+Sample Input
+
+Str: String-Compare
+
+Sample Output-
+
+str: -StringCompare
+
+-------------------------------------------------
+38)
+Problem Statement
+
+A carry is a digit that is transferred to left if sum of digits exceeds 9 while adding two numbers from right-to-left one digit at a time
+
+You are required to implement the following function.
+
+Int NumberOfCarries(int num1 , int num2);
+
+The functions accepts two numbers ‘num1’ and ‘num2’ as its arguments. You are required to calculate and return  the total number of carries generated while adding digits of two numbers ‘num1’ and ‘ num2’.
+
+Assumption: num1, num2>=0
+
+Example:
+
+Input
+ Num 1: 451
+ Num 2: 349
+Output
+ 2
+
+Explanation:
+
+Adding ‘num 1’ and ‘num 2’ right-to-left results in 2 carries since ( 1+9) is 10. 1 is carried and (5+4=1) is 10, again 1 is carried. Hence 2 is returned.
+
+Sample Input
+
+Num 1: 23
+
+Num 2: 563
+
+Sample Output
+
+0
+
+---------------------------
+39)
+Problem Statement
+
+You are given a function,
+
+Void *ReplaceCharacter(Char str[], int n, char ch1, char ch2);
+
+The function accepts a string  ‘ str’ of length n and two characters ‘ch1’ and ‘ch2’ as its arguments . Implement the function to modify and return the string ‘ str’ in such a way that all occurrences of ‘ch1’ in original string are replaced by ‘ch2’ and all occurrences of ‘ch2’  in original string are replaced by ‘ch1’.
+
+Assumption: String Contains only lower-case alphabetical letters.
+
+Note:
+
+->Return null if string is null.
+->If both characters are not present in string or both of them are same , then return the string unchanged.
+
+Example:
+
+Input:
+Str: apples
+ch1:a
+ch2:p
+
+Output:
+paales
+
+Explanation:
+
+‘A’ in original string is replaced with ‘p’ and ‘p’ in original string is replaced with ‘a’, thus output is paales.
+------------------------------------------------
+40)
+Problem Statement
+
+You are required to implement the following function.
+
+Int OperationChoices(int c, int n, int a , int b )
+
+The function accepts 3 positive integers ‘a’ , ‘b’ and ‘c ‘ as its arguments. Implement the function to return.
+
+( a+ b ) , if c=1
+( a – b ) , if c=2
+( a * b ) ,  if c=3
+(a / b) ,  if c =4
+Assumption : All operations will result in integer output.
+Example:
+
+Input
+c :1
+a:12
+b:16
+Output:
+Since ‘c’=1 , (12+16) is performed which is equal to 28 , hence 28 is returned.
+
+Sample Input
+
+ c : 2
+
+ a : 16
+
+ b : 20
+
+Sample Output
+
+-4
+------------------------------------------
+41)
+Problem Statement
+
+You are given a function,
+
+Int MaxExponents (int a , int b);
+
+You have to find and return the number between ‘a’ and ‘b’ ( range inclusive on both ends) which has the maximum exponent of 2.
+
+The algorithm to find the number with maximum exponent of 2 between the given range is
+
+1.Loop between ‘a’ and ‘b’. Let the looping variable be ‘i’.
+2.Find the exponent (power) of 2 for each ‘i’ and store the number with maximum exponent of 2 so faqrd in a variable , let say ‘max’. Set ‘max’ to ‘i’ only if ‘i’ has more exponent of 2 than ‘max’.
+3.Return ‘max’.
+
+Assumption: a <b
+
+Note: If two or more numbers in the range have the same exponents of  2 , return the small number.
+
+Example
+
+Input:
+7
+12
+Output:
+8
+
+Explanation:
+
+Exponents of 2 in:
+
+7-0
+
+8-3
+
+9-0
+
+10-1
+
+11-0
+
+12-2
+
+Hence maximum exponent if two is of 8.
+--------------------------------------------------------------------------------
+42)
+Problem Statement
+
+You are required to implement the following function:
+
+Int Calculate(int m, int n);
+
+The function accepts 2 positive integer ‘m’ and ‘n’ as its arguments.You are required to calculate the sum of numbers divisible both by 3 and 5, between ‘m’ and ‘n’ both inclusive and return the same.
+Note
+0 < m <= n
+
+Example
+Input:
+
+m : 12
+
+n : 50
+
+Output
+
+90
+Explanation:
+The numbers divisible by both 3 and 5, between 12 and 50 both inclusive are {15, 30, 45} and their sum is 90.
+Sample Input
+m : 100
+n : 160
+Sample Output
+510
+--------------------------------------------------------------------------------
+43)
+Problem Statement 
+
+You are required to input the size of the matrix then the elements of matrix, then you have to divide the main matrix in two sub matrices (even and odd) in such a way that element at 0 index will be considered as even and element at 1st index will be considered as odd and so on. then you have sort the even and odd matrices in ascending order then print the sum of second largest number from both the matrices.
+
+Example
+
+enter the size of array : 5
+enter element at 0 index : 3
+enter element at 1 index : 4
+enter element at 2 index : 1
+enter element at 3 index : 7
+enter element at 4 index : 9
+
+Sorted even array : 1 3 9
+Sorted odd array : 4 7
+
+7
+
+--------------------------------------------------------------------------------
+44)
+Instructions: You are required to write the code. You can click on compile and run anytime to check compilation/execution status. The code should be logically/syntactically correct.
+
+Problem: Write a program in C to display the table of a number and print the sum of all the multiples in it.
+Test Cases:
+
+Test Case 1:
+Input:
+5
+Expected Result Value:
+5, 10, 15, 20, 25, 30, 35, 40, 45, 50
+275
+
+
+--------------------------------------------------------------------------------
+45)
+Instructions: You are required to write the code. You can click on compile and run anytime to check compilation/execution status. The code should be logically/syntactically correct.
+
+Question: Write a program in C such that it takes a lower limit and upper limit as inputs and print all the intermediate palindrome numbers.
+
+Test Cases:
+
+TestCase 1:
+Input :
+10 , 80
+Expected Result:
+11 , 22 , 33 , 44 , 55 , 66 , 77.
+
+Test Case 2:
+Input:
+100,200
+Expected Result:
+101 , 111 , 121 , 131 , 141 , 151 , 161 , 171 , 181 , 191.
+--------------------------------------------------------------------------------
+
+46)
+Find the maximum value and its index in the array
+Problem Statement :
+
+You are given a function, void MaxInArray(int arr[], int length); The function accepts an integer array ‘arr’ of size ‘length’ as its argument. Implement the function to find the maximum element of the array and print the maximum element and its index to the standard output 
+
+(STDOUT). The maximum element and its index should be printed in separate lines.
+
+Note: 
+a)Array index starts with 0 
+b)Maximum element and its index should be separated by a line in the output 
+c)Assume there is only 1 maximum element in the array 
+d)Print exactly what is asked, do not print any additional greeting messages 
+
+Example: 
+
+Input: 
+
+23 45 82 27 66 12 78 13 71 86 
+
+Output: 
+
+86 
+
+9 
+
+Explanation: 
+
+86 is the maximum element of the array at index 9. 
+--------------------------------------------------------------------------------
+wipro
+47)Autobiographical Number
+Problem Statement :
+
+An Autobiographical Number is a number N such that the first digit of N represents the count of how many zeroes are there in N, the second digit represents the count of how many ones are there in N and so on.
+
+You are given a function, def FindAutoCount(n):
+
+The function accepts string “n” which is a number and checks whether the number is an autobiographical number or not. If it is, an integer is returned, i.e. the count of distinct numbers in ‘n’. If not, it returns 0.
+
+Assumption:
+
+a)The input string will not be longer than 10 characters.
+b)Input string will consist of numeric characters.
+Note:
+
+If string is None return 0.
+
+Example:
+
+Input:
+
+n: “1210”
+
+Output:
+
+3
+
+Explanation:
+
+0th position in the input contains the number of 0 present in input, i.e. 1, in 1st position the count of number of 1s in input i.e. 2, in 2nd position the count of 2s in input i.e. 1, and in 3rd position the count of 3s i.e. 0, so the number is an autobiographical number.
+
+Now unique numbers in the input are 0, 1, 2, so the count of unique numbers is 3. So 3 is returned.
+--------------------------------------------------------------------------------
+48)
+Problem Statement
+
+Alex works at a clothing store. There is a large pile of socks that must be paired by color for sale. Given an array of integers representing the color of each sock, determine how many pairs of socks with matching colors there are.
+
+For example, there are n=7 socks with colors ar = {1,2,1,2,1,3,2}. There is one pair of color 1 and one of color 2. There are three odd socks left, one of each color. The number of pairs is 2.
+Function Description
+Complete the sockMerchant function in the editor below. It must return an integer representing the number of matching pairs of socks that are available.
+sockMerchant has the following parameter(s):
+             n: the number of socks in the pile
+             ar: the colors of each sock
+
+Input Format
+            The first line contains an integer n, the number of socks represented in ar.
+            The second line contains n space-separated integers describing the colors ar[i] of the socks in the pile.
+
+Constraints
+             1 <= n <= 100
+             1 <= ar[i] <= 100 & 0 <= i < n
+
+Output Format
+             Return the total number of matching pairs of socks that Alex can sell.
+
+Sample Input
+             9
+             10 20 20 10 10 30 50 10 20
+Sample Output
+             3
+
+Explanation
+             Alex can match 3 pairs of socks i.e 10-10, 10-10, 20-20
+             while the left out socks are 50, 60, 20
+--------------------------------------------------------------------------------
+49)
+Counting Valleys
+Problem Statement
+
+Gary is an avid hiker. He tracks his hikes meticulously, paying close attention to small details like topography. During his last hike, he took exactly n steps. For every step he took, he noted if it was an uphill or a downhill step. Gary’s hikes start and end at sea level. We define the following terms:
+
+a)A mountain is a non-empty sequence of consecutive steps above sea level, starting with a step up from sea level and ending with a step down to sea level.
+b)A valley is a non-empty sequence of consecutive steps below sea level, starting with a step down from sea level and ending with a step up to sea level.
+
+Given Gary’s sequence of up and down steps during his last hike, find and print the number of valleys he walked through.
+
+Input Format
+
+The first line contains an integer, , denoting the number of steps in Gary’s hike.
+
+The second line contains a single string of characters. Each character belongs to {U, D} (where U indicates a step up and D indicates a step down), and the i(th) cin the string describes Gary’s i(th) step during the hike.
+
+Constraints
+
+2 <= N <= 10^6
+
+Output Format
+
+Print a single integer denoting the number of valleys Gary walked through during his hike.
+
+Sample Input
+
+8
+
+UDDDUDUU 
+
+Sample Output
+
+1
+
+Explanation
+
+If we represent _ as sea level, a step up as / , and a step down as \ , Gary’s hike can be drawn as:
+
+_/\      _
+
+    \    /
+
+     \/\/
+
+It’s clear that there is only one valley there, so we print on a new line
+
+
+--------------------------------------------------------------------------------
+50)
+ Left Rotation
+Problem Statement
+
+A left rotation operation on an array shifts each of the array’s elements unit to the left. For example, if 2 left rotations are performed on array [1, 2, 3, 4, 5], then the array would become [3, 4, 5, 1, 2].
+
+Given an array of integers and a number, , perform left rotations on the array. Return the updated array to be printed as a single line of space-separated integers.
+
+Function Description
+
+Complete the function rotLeft in the editor below. It should return the resulting array of integers.
+
+rotLeft has the following parameter(s):
+a)An array of integers .
+b)An integer , the number of rotations.
+
+Input Format
+
+The first line contains two space-separated integers and , the size of and the number of left rotations you must perform.
+
+The second line contains space-separated integers a[i].
+
+Constraints
+
+1 <= n <= 10^5
+1 <= d <= n
+1 <= a[i] <= 10^8
+
+Output Format
+
+Print a single line of space-separated integers denoting the final state of the array after performing d left rotations.
+
+Sample Input
+5 4
+1 2 3 4 5
+
+Sample Output
+5 1 2 3 4
+Explanation
+When we perform d=4 left rotations, the array undergoes the following sequence of changes:
+
+[1,2,3,4,5] → [2,3,4,5,1] → [3,4,5,1,2] → [4,5,1,2,3] → [5,1,2,3,4]
+
+Test Case : 1
+
+Input (stdin)
+
+5 4
+1 2 3 4 5
+
+Expected Output
+
+5 1 2 3 4
+
+Test Case : 2
+Input (stdin)
+
+20 10
+41 73 89 7 10 1 59 58 84 77 77 97 58 1 86 58 26 10 86 51
+Expected Output
+
+77 97 58 1 86 58 26 10 86 51 41 73 89 7 10 1 59 58 84 77
+--------------------------------------------------------------------------------
+51)
+ Program to check if two given matrices are identical
+
+--------------------------------------------------------------------------------
+52)
+Given a 2D array, print it in spiral form. See the following examples.
+NOTE:-  Please comment down the code in other languages as well below .
+Input:
+        1    2   3   4
+        5    6   7   8
+        9   10  11  12
+        13  14  15  16
+Output: 
+1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10 
+Input:
+        1   2   3   4  5   6
+        7   8   9  10  11  12
+        13  14  15 16  17  18
+Output: 
+1 2 3 4 5 6 12 18 17 16 15 14 13 7 8 9 10 11
+--------------------------------------------------------------------------------
+53)
+Problem Statement – Write a program to calculate the fuel consumption of your truck.The program should ask the user to enter the quantity of diesel to fill up the tank and the distance covered till the tank goes dry.Calculate the fuel consumption and display it in the format (liters per 100 kilometers).
+
+Convert the same result to the U.S. style of miles per gallon and display the result. If the quantity or distance is zero or negative display ” is an Invalid Input”.
+
+[Note: The US approach of fuel consumption calculation (distance / fuel) is the inverse of the European approach (fuel / distance ). Also note that 1 kilometer is 0.6214 miles, and 1 liter is 0.2642 gallons.]
+
+The result should be with two decimal place.To get two decimal place refer the below-mentioned print statement :
+
+float cost=670.23;
+
+System.out.printf(“You need a sum of Rs.%.2f to cover the trip”,cost);
+
+Sample Input 1:
+
+Enter the no of liters to fill the tank
+           20
+
+Enter the distance covered
+           150
+
+Sample Output 1:
+
+Liters/100KM
+          13.33
+
+Miles/gallons
+          17.64
+
+Explanation: 
+
+For 150 KM fuel consumption is 20 liters, 
+Then for 100 KM fuel consumption would be (20/150)*100=13.33,
+Distance is given in KM, we have to convert it to miles (150*0.6214)=93.21,
+Fuel consumption is given in liters, we have to convert it to gallons (20*0.2642)=5.284, 
+Then find (miles/gallons)=(93.21/5.284)=17.64
+
+Sample Input 2:
+
+Enter the no of liters to fill the tank
+         -5
+
+Sample Output 2:
+
+-5 is an Invalid Input
+Sample Input 3:
+
+Enter the no of liters to fill the tank
+           25
+
+Enter the distance covered
+          -21
+
+Sample Output 3:
+
+-21 is an Invalid Input
+--------------------------------------------------------------------------------
+54)
+Vohra went to a movie with his friends in a Wave theatre and during  break time he bought pizzas, puffs and cool drinks. Consider   the following prices : 
+
+Rs.100/pizza
+Rs.20/puffs
+Rs.10/cooldrink
+Generate a bill for What Vohra has bought.
+
+Sample Input 1:
+
+Enter the no of pizzas bought:10
+Enter the no of puffs bought:12
+Enter the no of cool drinks bought:5
+
+Sample Output 1:
+
+Bill Details
+
+No of pizzas:10
+No of puffs:12
+No of cooldrinks:5
+Total price=1290
+ENJOY THE SHOW!!!
+--------------------------------------------------------------------------------
+55)
+Problem Statement – Ritik wants a magic board, which displays a character for a corresponding number for his science project. Help him to develop such an application.
+For example when the digits 65,66,67,68 are entered, the alphabet ABCD are to be displayed.
+[Assume the number of inputs should be always 4 ]
+Sample Input 1:
+
+Enter the digits:
+65
+66
+67
+68
+
+Sample Output 1:
+
+65-A
+66-B
+67-C
+68-D
+
+Sample Input 2:
+
+Enter the digits:
+115
+116
+101
+112
+
+Sample Output 2:
+
+115-s
+116-t
+101-e
+112-p
+--------------------------------------------------------------------------------
+56)
+Problem Statement – FOE college wants to recognize the department which has succeeded in getting the maximum number of placements for this academic year. The departments that have participated in the recruitment drive are CSE,ECE, MECH. Help the college find the department getting maximum placements. Check for all the possible output given in the sample snapshot
+
+Note : If any input is negative, the output should be “Input is Invalid”.  If all department has equal number of placements, the output should be “None of the department has got the highest placement”.
+
+Sample Input 1:
+
+Enter the no of students placed in CSE:90
+Enter the no of students placed in ECE:45
+Enter the no of students placed in MECH:70
+
+Sample Output 1:
+
+Highest placement
+CSE
+
+Sample Input 2:
+
+Enter the no of students placed in CSE:55
+Enter the no of students placed in ECE:85
+Enter the no of students placed in MECH:85
+
+Sample Output 2:
+
+Highest placement
+ECE
+
+MECH
+
+Sample Input 3:
+
+Enter the no of students placed in CSE:0
+Enter the no of students placed in ECE:0
+Enter the no of students placed in MECH:0
+
+Sample Output 3:
+
+None of the department has got the highest placement
+Sample Input 4:
+
+Enter the no of students placed in CSE:10
+Enter the no of students placed in ECE:-50
+Enter the no of students placed in MECH:40
+Sample Output 4:
+
+Input is Invalid
+--------------------------------------------------------------------------------
+57)
+ In a theater, there is a discount scheme announced where one gets a 10% discount on the total cost of tickets when there is a bulk booking of more than 20 tickets, and a discount of 2% on the total cost of tickets if a special coupon card is submitted. Develop a program to find the total cost as per the scheme. The cost of the k class ticket is Rs.75 and q class is Rs.150. Refreshments can also be opted by paying an additional of Rs. 50 per member.
+
+Hint: k and q and You have to book minimum of 5 tickets and maximum of 40 at a time. If fails display “Minimum of 5 and Maximum of 40 Tickets”.  If circle is given a value other than ‘k’ or ‘q’ the output should be “Invalid Input”.
+
+The ticket cost should be printed exactly to two decimal places.
+Sample Input 1:
+
+Enter the no of ticket:35
+Do you want refreshment:y
+Do you have coupon code:y
+Enter the circle:k
+
+Sample Output 1:
+
+Ticket cost:4065.25
+Sample Input 2:
+
+Enter the no of ticket:1
+Sample Output 2:
+
+Minimum of 5 and Maximum of 40 Tickets
+--------------------------------------------------------------------------------
+58)
+Problem Statement – Rhea Pandey’s teacher has asked her to prepare well for the lesson on seasons. When her teacher tells a month, she needs to say the season corresponding to that month. Write a program to solve the above task.
+
+Spring – March to May,
+Summer – June to August,
+Autumn – September to November and,
+Winter – December to February.
+Month should be in the range 1 to 12.  If not the output should be “Invalid month”.
+
+Sample Input 1:
+
+Enter the month:11
+Sample Output 1:
+
+Season:Autumn
+Sample Input 2:
+
+Enter the month:13
+Sample Output 2:
+
+Invalid month
+
+--------------------------------------------------------------------------------
+59)
+Problem Statement – To speed up his composition of generating unpredictable rhythms, Blue Bandit wants the list of prime numbers available in a range of numbers.Can you help him out?
+
+Write a java program to print all prime numbers in the interval [a,b] (a and b, both inclusive).
+
+Note
+
+Input 1 should be lesser than Input 2. Both the inputs should be positive. 
+Range must always be greater than zero.
+If any of the condition mentioned above fails, then display “Provide valid input”
+Use a minimum of one for loop and one while loop
+Sample Input 1:
+
+2
+
+15
+
+Sample Output 1:
+
+2 3 5 7 11 13
+
+Sample Input 2:
+
+8
+
+5
+
+Sample Output 2:
+
+Provide valid input
+--------------------------------------------------------------------------------
+60)
+Problem Statement – Goutam and  Tanul plays  by  telling numbers.  Goutam says a number to Tanul.  Tanul should first reverse the number and check if it is same as the original.  If yes,  Tanul should say “Palindrome”.  If not, he should say “Not a Palindrome”.  If the number is negative, print “Invalid Input”.  Help Tanul by writing a program.
+Sample Input 1 :
+
+21212
+
+Sample Output 1 :
+
+Palindrome
+
+Sample Input 2 :
+
+6186
+
+Sample Output 2 :
+
+Not a Palindrome
+--------------------------------------------------------------------------------
+61)
+XYZ Technologies is in the process of increment the salary of the employees.  This increment is done based on their salary and their performance appraisal rating.
+
+If the appraisal rating is between 1 and 3, the increment is 10% of the salary.
+If the appraisal rating is between 3.1 and 4, the increment is  25% of the salary.
+If the appraisal rating is between 4.1 and 5, the increment is  30% of the salary.
+Help them to do this,  by writing a program that displays the incremented salary. Write a class “IncrementCalculation.java” and write the main method in it.
+
+Note   :   If either the salary is 0 or negative  (or) if the appraisal rating is not in the range 1 to 5 (inclusive), then the output should be “Invalid Input”.
+
+Sample Input 1 :
+
+Enter the salary
+8000
+
+Enter the Performance appraisal rating
+3
+
+Sample Output  1 :
+
+8800
+
+Sample Input  2 :
+
+Enter the salary
+7500
+
+Enter the Performance appraisal rating
+4.3
+Sample Output  2 :
+
+9750
+
+Sample Input  3 :
+
+Enter the salary
+-5000
+
+Enter the Performance appraisal rating
+6
+
+Sample Output  3 :
+
+Invalid Input
+
+--------------------------------------------------------------------------------
+62)
+Problem Statement – Chaman planned to choose a four digit lucky number for his car. His lucky numbers are 3,5 and 7. Help him find the number, whose sum is divisible by  3 or 5 or 7. Provide a valid car number, Fails to provide a valid input then display that number is not a valid car number. 
+
+Note : The input other than 4 digit positive number[includes negative and 0] is considered as invalid.
+Refer the samples, to read and display the data.
+
+Sample Input 1:
+
+Enter the car no:1234
+Sample Output 1:
+
+Lucky Number
+Sample Input 2:
+
+Enter the car no:1214
+Sample Output 2:
+
+Sorry its not my lucky number
+
+Sample Input 3:
+
+Enter the car no:14
+Sample Output 3:
+
+14 is not a valid car number
+--------------------------------------------------------------------------------
+63)
+Problem Statement –
+
+IIHM institution is offering a variety of courses to students. Students have a facility to check whether a particular course is available in the institution. Write a program to help the institution accomplish this task. If the number is less than or equal to zero display “Invalid Range”.
+
+Assume maximum number of courses is 20.
+
+Sample Input 1:
+
+Enter no of course:
+5
+
+Enter course names:
+Java
+
+Oracle
+
+C++
+
+Mysql
+
+Dotnet
+
+Enter the course to be searched:
+C++
+
+Sample Output 1:
+
+C++ course is available
+
+Sample Input 2: 
+
+Enter no of course:
+3
+
+Enter course names:
+Java
+
+Oracle
+
+Dotnet
+
+Enter the course to be searched:
+C++
+
+Sample Output 2:
+
+C++ course is not available
+
+Sample Input 3:
+
+Enter no of course:
+0
+
+Sample Output 3:
+
+Invalid Range
+--------------------------------------------------------------------------------
+64)
+Problem Statement – Raj wants to know the maximum marks scored by him in each semester. The mark should be between 0 to 100 ,if goes beyond the range display “You have entered invalid mark.”
+
+Sample Input 1:
+
+Enter no of semester:
+3
+
+Enter no of subjects in 1 semester:
+3
+
+Enter no of subjects in 2 semester:
+4
+
+Enter no of subjects in 3 semester:
+2
+
+Marks obtained in semester 1:
+50
+60
+70
+
+Marks obtained in semester 2:
+90
+98
+76
+67
+
+Marks obtained in semester 3:
+89
+76
+
+ 
+
+Sample Output 1:
+
+Maximum mark in 1 semester:70
+Maximum mark in 2 semester:98
+Maximum mark in 3 semester:89
+Sample Input 2:
+
+Enter no of semester:
+3
+
+Enter no of subjects in 1 semester:
+3
+
+Enter no of subjects in 2 semester:
+4
+
+Enter no of subjects in 3 semester:
+2
+
+Marks obtained in semester 1:
+55
+67
+98
+
+Marks obtained in semester 2:
+67
+-98
+
+Sample Output 2:
+
+You have entered invalid mark.
+--------------------------------------------------------------------------------
+65)
+Problem Statement – Bela  teaches her daughter  to find the factors of a given number.  When she provides a number to her daughter, she should tell the factors of that number.  Help her to do this, by writing a program.  Write a class FindFactor.java and write the main method in it.
+Note : 
+
+If the input provided is negative, ignore the sign and provide the output. If the input is zero
+If the input is zero the output should be “No Factors”.
+Sample Input 1 :
+
+54
+
+Sample Output 1 :
+
+1, 2, 3, 6, 9, 18, 27, 54
+
+Sample Input 2 :
+
+-1869
+
+Sample Output 2 :
+
+1, 3, 7, 21, 89, 267, 623, 1869
+--------------------------------------------------------------------------------
+66)
+Problem Statement:
+
+Your birthday is coming soon and one of your friends, Alex, is thinking about a gift for you. He knows that you really like integer arrays with interesting properties.
+
+He selected two numbers, N and K and decided to write down on paper all integer arrays of length K (in form a[1], a[2], …, a[K]), where every number a[i] is in range from 1 to N, and, moreover, a[i+1] is divisible by a[i] (where 1 < i <= K), and give you this paper as a birthday present.
+
+Alex is very patient, so he managed to do this. Now you’re wondering, how many different arrays are written down on this paper?
+
+Since the answer can be really large, print it modulo 10000.
+
+Input:
+
+The first line contains an integer, n, denoting the maximum possible value in the arrays.
+The next line contains an integer, k, denoting the length of the arrays.
+Input	Output	Output Description
+2
+1	2	The required length is 1, so there are only two possible arrays: [1] and [2].
+2
+2	3	All possible arrays are [1, 1], [1, 2], [2, 2].
+		[2, 1] is invalid because 1 is not divisible by 2.
+3
+2	5	All possible arrays are [1, 1], [1, 2], [1, 3], [2, 2], [3, 3].
+--------------------------------------------------------------------------------
+67)
+Problem Statement :
+
+Andy wants to go on a vacation to de-stress himself. Therefore he decides to take a trip to an island. It is given that he has as many consecutive days as possible to rest, but he can only make one trip to the island. Suppose that the days are numbered from 1 to N. Andy has M obligations in his schedule, which he has already undertaken and which correspond to some specific days. This means that ith obligation is scheduled for day Di. Andy is willing to cancel at most k of his obligations in order to take more holidays.
+
+Your task is to find out the maximum days of vacation Andy can take by canceling at most K of his obligations.
+
+Input Format
+
+The first line contains an integer N, denoting the total number of days
+The next line contains an integer M denoting the total number of obligations.
+The next line contains an integer K denoting the largest number of obligations he could cancel 
+Each line i of the M subsequent lines (where 0<=i<=M) contains an integer describing Di.
+Constraints
+
+1<=N<=10^6
+1<=M<=2*10^6
+1<=K<=2*10^6
+1<=D[i]<=10^6
+Sample Input 1:
+
+10
+5
+2
+6
+9
+3
+2
+7
+
+Sample Output 1 :
+
+5
+
+Explanation:
+
+Here he could cancel his 3rd and 4th obligation which makes vacation length 5.
+
+Sample input 2:
+
+7
+2
+0
+3
+4
+
+Sample Output 2:
+
+3
+
+Explanation:
+
+Here he could not cancel any obligation since K=0, so the vacation length is 3.
+--------------------------------------------------------------------------------
+68)HCL
+Move Hash to Front
+Problem Statement : You have write a function that accepts, a string which length is “len”, the string has some “#”, in it you have to move all the hashes to the front of the string and return the whole string back and
+print it.
+
+char* moveHash(char str[],int n);
+
+Example :
+Sample Test Case
+
+Input:
+Move#Hash#to#Front
+Output:
+###MoveHashtoFront
+--------------------------------------------------------------------------------
+69)
+ Borrow Number
+Problem statement : You have two numbers number1 and number2, your job is to check the number of borrow operations needed for subtraction of number1 from number2. If the subtraction is not possible
+then return the string not possible.
+
+Example :
+754
+658
+Answer :
+2
+654
+666
+Answer:
+Not possible
+--------------------------------------------------------------------------------
+70)
+Capitalize/Decapitalize
+Problem statement : You’re given a function that accepts the following, a string1, its length and a character c. Your job is to replace all the occurrences of character c in string1 and capitalize it or decapitalize it based on the character c.
+
+Input :
+
+hello world
+
+l
+
+Output :
+
+heLLo worLd
+
+Input :
+
+prepinsta
+
+p
+
+Output :
+
+PrePinsta
+--------------------------------------------------------------------------------
+71)
+Problem statement : You’re given a string where multiple characters are repeated consecutively. You’re supposed to reduce the size of this string using mathematical logic given as in the example below :
+
+Input :
+abbccccc
+
+Output:
+ab2c5
+
+Input :
+aabbbbeeeeffggg
+
+Output:
+a2b4e4f2g3
+--------------------------------------------------------------------------------
+72)
+Problem statement : You will be given a 2d matrix. Write the code to traverse the matrix in a spiral format. Check the input and output for better understanding.
+
+Input :
+
+5 4
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+17 18 19 20
+
+Output :
+
+1 2 3 4 8 12 16 20 19 18 17 13 9 5 6 7 11 15 12 14 10
+--------------------------------------------------------------------------------
+		DELL
+73)
+ Reach the Channel
+Problem Statement – Sahil watches TV all day and gets bored. He started playing this dumb game of identifying minimum number of inputs needed to reach a channel. As his cousin, you have to help him, but you live far from his house. So you decide to write a code that will ask Sahil for some inputs and give outputs respectively.
+
+Here are the problems you need to keep in mind,
+->There are 13 buttons on his remote: 10 buttons for the numbers (0-9) to form integers denoting respective channel index, “Up channel” button and  “ Down channel” button for going i +1th channel and i-1th channel from i respectively, and  a “Last viewed” button to see what’s the last channel before it. 
+->The number buttons allow you to jump directly to a specific channel  (Ex: to go to channel 172 by typing 1,7,2).
+->If the channel which you are in is ith and that is the max channel index possible, by Up channel, you will reach the first channel possible. Same goes for the down channel button. You can go to the highest channel possible if you go down from the lowest channel possible.
+
+Sahil can get from one channel to the next in one of the two ways.
+
+Sahil’s parents have set some parental control on some channels on Aniruth’s television. The “Up Channel “ and “Down buttons” buttons skip these channels as these channels are not viewable.
+
+Given a list of channels to view, the lowest channel, the highest channel, and a list of blocked channels, your program should return the minimum number of clicks necessary to get through all the shows that Anirudh would like to match.
+
+Input Format
+
+->First line is the lowest Channel
+->Second-line is the highest Channel
+->Followed by a number of blocked channels B, 
+and the next B lines contain the actual blocked channels.
+->Followed by the number of Channels to view V, and the next V lines contain the actual channels to view.
+
+Constraints 
+
+->The lowest channel on the television will be greater than 0. and less than or equal to 10,000.
+->The highest channel on the television will be greater than or equal to the lowest channel. and less than or equal to 10.000. 
+->The list of channels that are blocked on Anirudh’s television. All the channels in this list will be valid channels (greater than or equal to lowest channel, less than or equal 1 to highest channel). Duplicates may be Ignored. The blocked list can be a maximum of 40 channels.  
+->The sequence that Sahil must view contains between 1 and 50 elements. inclusive. All channels in this sequence are not in the blocked list and are between lowest channel and highest channel. Inclusive
+
+Sample Input 0:
+
+1
+
+20
+
+2
+
+18
+
+19
+
+5
+
+15
+
+14
+
+17
+
+1
+
+17
+
+Sample output 0:
+
+7
+--------------------------------------------------------------------------------
+74)
+ Total Distance Covered by the Beetle
+Problem Description
+
+A 10cm x 10cm x 10cm solid cube rests on the ground. It has a beetle on it, as well as some sweet honey spots on the cube’s surface. The beetle begins at a point on the cube’s surface and moves in a clockwise direction along the cube’s surface to the honey spots.
+
+->If it goes from one point on the same face to another (say, X to Y), it goes in an arc of a circle that subtends an angle of 60 degrees at the circle’s center.
+->If it travels from one point to another on a different face, it takes the shortest path on the cube’s surface, except that it never travels along its bottom.
+The beetle is a Cartesian geometry student who knows the coordinates (x, y, z) of all the points it needs to visit. Its coordinate origin is one of the cube’s corners on the ground, and the z-axis points up. As a result, z=0 is the bottom surface (on which it does not crawl), and z=10 is the top. The beetle keeps track of all distances traveled and rounded the distance to two decimal places when it arrives at the following location so that the final distance is a sum of the rounded distances from spot to spot.
+
+Input
+
+The first line returns an integer N, the total number of points visited by the beetle (including the starting point).
+
+The second line contains 3N non-negative numbers, each with two decimal places. These are to be interpreted as the x, y, and z coordinates of the points the beetle must visit in the given order.
+
+Output
+
+One line containing a number representing the total distance traveled by the beetle to two decimal places. Even if the travel distance is an integer, the output should have two decimal places.
+
+Constraints
+
+None of the points visited by the beetle are on the bottom face (z=0) or on any of the cube’s edges (the lines where two faces meet)
+
+2<=N<=10
+
+--------------------------------------------------------------------------------
+75)
+Find the homeless 
+Problem Statement -:  There are N Homeless people in the community and N houses in the community. It will be given in the array (people) , height of the person and in the array house capacity of the house is given.
+
+Government decided to give homes for people on the basis of following conditions:
+
+Priority is given for the people from left to right of the array
+Each person is allotted to a house if and only if the capacity of house is greater than or equal to persons height
+Nearby empty Houses are alloted to the person( starting from extreme left)
+You need to find the number of homeless people who have not allotted any home if the government follows the above conditions.So that government will have an idea for how many people they need to allot home for next time.
+
+Constraints:
+
+1 <= N <= 10^3
+1 <= people[i] <= 10^5
+1 <= house[i] <= 10^5
+Input Format for Custom Testing:
+
+The first line contains an integer, N, denoting the number of  people and number of houses.
+Each line i of the N subsequent lines (where 0 <= i <= N) contains an integer describing peoplei.
+Each line i of the N subsequent lines (where 0 <= i <= N) contains an integer describing housei.
+Sample Test Cases
+
+Sample Input 1
+3  
+4
+2
+7
+3
+5
+10
+Sample Output 1
+0
+Explanation
+people=[4,2,7]
+house=[3,5,10]
+People[0] has more priority , from left to right order in houses 5 is the nearest one which fits for people[0]
+people[1]=2 will fit in 3 which is nearer from left
+people[2]=7 will fit in remaining house of capacity of 10
+So no homeless people left so return 0 
+Sample Input 2
+3
+3
+8
+5
+1
+9
+4
+Sample Output 2
+2
+Explanation
+people=[3,8,5]
+house=[1,9,4]
+people[0]=3 can fit in 9 which is nearest from left in array house
+people[1]=8  cannot fit in any home which is left (i.e, 1 and 4)
+people[2]=5 cannot fit in any home which is left (i.e, 1 and 4)
+So return 2,which is number of homeless people
+--------------------------------------------------------------------------------
+76)
+Game Of Clicks
+Problem Statement  :
+
+Sahil watches TV all day and gets bored. He started playing this dumb game of identifying minimum number of inputs needed to reach a channel. As his cousin, you have to help him, but you live far from his house. So you decide to write a code that will ask Sahil for some inputs and give outputs respectively.
+
+Here are the problems you need to keep in mind :
+
+->There are 13 buttons on his remote: 10 buttons for the numbers (0-9) to form integers denoting respective channel index, “Up channel” button and “ Down channel” button for going i +1th channel and i-1th channel from i respectively, and a “Last viewed” button to see what’s the last channel before it.
+->The number buttons allow you to jump directly to a specific channel (Ex: to go to channel 172 by typing 1,7,2).
+->If the channel which you are in is ith and that is the max channel index possible, by Up channel, you will reach the first channel possible. Same goes for the down channel button. You can go to the highest channel possible if you go down from the lowest channel possible.
+->Sahil can get from one channel to the next in one of the two ways.
+->Sahil’s parents have set some parental control on some channels on Aniruth’s television. The “Up Channel “ and “Down buttons” buttons skip these channels as these channels are not viewable.
+->Given a list of channels to view, the lowest channel, the highest channel, and a list of blocked channels, your program should return the minimum number of clicks necessary to get through all the shows that Anirudh would like to match.
+Input Format :
+
+->First line is the lowest Channel
+->Second-line is the highest Channel
+->Followed by a number of blocked channels B,
+and the next B lines contain the actual blocked channels.
+->Followed by the number of Channels to view V, and the next V lines contain the actual channels to view.
+Constraints :
+
+->The lowest channel on the television will be greater than 0. and less than or equal to 10,000.
+->The highest channel on the television will be greater than or equal to the lowest channel. and less than or equal to 10.000.
+->The list of channels that are blocked on Anirudh’s television. All the channels in this list will be valid channels (greater than or equal to lowest channel, less than or equal 1 to highest channel). Duplicates may be Ignored. The blocked list can be a maximum of 40 channels.
+->The sequence that Sahil must view contains between 1 and 50 elements. inclusive. All channels in this sequence are not in the blocked list and are between lowest channel and highest channel. Inclusive.
+Sample Input 0:
+1
+20
+2
+18
+19
+5
+15
+14
+17
+1T
+17
+Sample output 0:
+7
+--------------------------------------------------------------------------------
+77
+Spiral Matrix
+Problem Statement :
+
+You will be given a 2d matrix. Write the code to traverse the matrix in a spiral format. Check the input and output for better understanding.
+
+Sample Input :
+Input :
+5 4
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+17 18 19 20
+Output :
+
+1 2 3  4 5 6 7 8 9 10 11 12 13 14  15 16 17 18 19 20
+--------------------------------------------------------------------------------
+78) Share Holder (R -> Hard)
+Problem statement :
+
+Ratan is a crazy rich person. And he is blessed with luck, so he always made the best profit possible with the shares he bought. That means he bought a share at a low price and sold it at a high price to maximize his profit. Now you are an income tax officer and you need to calculate the profit he made with the given values of stock prices each day. You have to calculate only the maximum profit Ratan earned.
+Note that:
+Ratan never goes into loss.
+
+Example 1 :
+
+Price=[1,6,2]
+Ratan buys it on the first day and sells it on the second.
+
+Example 2 :
+
+Price=[9,8,6]
+
+The Price always went down, Ratan never bought it.
+
+Input Format:
+First line with an integer n, denoting the number days with the value of the stack
+Next n days, telling the price of the stock on that very day.
+
+Output Format:
+Maximum profit done by Ratan in a single line.
+Constraints:
+Number of days <=10^8
+
+Sample Input for Custom Testing
+
+STDIN
+———–
+7
+1
+9
+2
+11
+1
+9
+2
+
+Sample Output
+
+10
+
+Explanation
+
+The maximum profit possible is when Ratan buys it in 1 rupees and sells it in 11.
+--------------------------------------------------------------------------------
+79)
+ Total Distinct Money
+Problem Statement  :
+
+You woke up from sleep and found yourself in the 0th row and 0th column of a grid. every other square in a grid has some amount of money kept there. If you are given the matrix with all the values left in the cells, you have to find how many different ways are there to rich the r-1 th , c-1 th cell and the sum of all possible amount of money you will have each time if you bring all the money kept in places in the cell.
+
+Note that, if you are in i,j th cell, either you can go i+1, j th cell or you can go i,j+1 cell. 
+
+Again, the 0,0th grid and the n-1,m-1 th grid will have 0 value.
+
+Input Format:
+
+Two integers R and C meaning the number of rows and columns.
+
+Next R lines C space separated integers denoting the total grid.
+
+Output Format:
+
+First Line denoting the distinct ways to rich.
+
+Next line denotes the total money if you use all possible distinct ways (Given that if you take the money from a cell, the money is readded in the cell).
+
+Sample Input:
+
+3 3
+
+0 2 3
+
+1 3 2
+
+1 1 0
+
+Sample Output:
+
+4
+
+21
+
+Explanation:
+
+The all possible totals are:
+
+0 -> 2 -> 3 -> 2 -> 0  Total = 7
+
+0 -> 2 -> 3 -> 2 -> 0  Total = 7
+
+0 -> 2 -> 3 -> 1 -> 0  Total = 6
+
+0 -> 1 -> 3 -> 2 -> 0  Total = 6
+
+0 -> 1 -> 3 -> 1 -> 0  Total = 5
+
+0 -> 1 -> 1 -> 1 -> 0  Total = 3
+
+There are 4 distinct ways and the total is 21
+--------------------------------------------------------------------------------
+80)Help Anirudh
+Problem Statement  :
+Anirudh loves to play games but his father is very strict. But one day his father agreed to get him a new game if he solves the following problem –
+Given an array of Integers, determine the number of moves to make all elements equal. Each move consists of choosing all but 1 element and Incrementing their values by 1. Can you help Anirudh?
+
+Example :
+numbers= [3, 4, 6, 6, 3]
+Choose 4 of the 5 elements during each move and Increment each of their values by one. Indexing begins at 1. It takes 7 moves as follows:
+Returns: long: the minimum number of moves required
+
+Constraints
+1<=n<=10^5
+1<=numbers(i)<=10^6
+
+Sample case 0:
+Sample input 0:
+5 → size of numbers[]
+3 → numbers[]=[3,4,6,6,3]
+4
+6
+6
+3
+Sample output 0:
+7
+
+Sample input 1:
+4
+4
+3
+4
+
+Sample Output 1:
+2
+--------------------------------------------------------------------------------
+81)
+Coin Game
+Raman was playing a game,  he starts with x coins. Now in every step, he wins and loses and he has to get the money or pay the money as needed. He came in contact with a psychic who can see the future and the Psychic predicted the outcomes after each step. Now Raman wants to start the game with the minimum wage where he doesn’t run out of money.  Help Raman to find what money he should start with. The only rule to keep playing is not going in a credit situation.
+
+Input Format:
+
+First line with n, number of steps in the game
+Next n lines, n integers denoting outcomes of every game. Positive means winning and negative means losing that money.
+Output Format:
+
+One single integer denoting the minimum amount to start with
+Constraints:
+
+Number of steps<=10^9
+-1000<=Money needed in each step<=1000
+Sample Input:
+
+4
+2
+-9
+15
+2
+
+Sample Output:
+
+7
+
+Explanation:
+
+If he starts with 7 rupees, then after steps : 7 ->9 -> 0-> 15 -> 17.
+
+--------------------------------------------------------------------------------
+82) Device Name System
+Problem statement: Rocky is a software engineer and he is creating his own operating system called “myFirst os”. myFirst os is a GUI (Graphical user interface) based operating system where everything is stored in files and folders. He is facing issues on  creating unique folder names for the operating system . Help rocky to create the unique folder name for it’s os.If folder name already exists in the system and integer number is added at the name to make it unique. The integer added starts with 1 and is incremented by 1 for each new request of an existing folder name. Given a list of folder names , process all requests and return an array of corresponding folder names.
+
+Example 
+n=5
+foldername= [‘home’ , ‘myfirst’ ,’downloads’, ‘myfirst’, ‘myfirst’]
+Foldername[0] = ‘home’ is unique.
+Foldername[1] = ‘myfirst’ is unique.
+foldername [2] =’downloads’ is unique.
+Foldername[3] =’myfirst’ already exists in our system. So Add1 at the end of the folder name i.e foldername[3] =”myfirst1″
+Foldername[4 ]=’myfirst’ also already exists in our system.So add 2 at the end of the folder name i.e. foldername[4]=”myfirst2″.
+Function description 
+Complete the function folderNameSystem In the editor below
+folderNameSystem has the following parameters
+string foldername[n]: an array of folder name string in the order requested
+Returns:
+String[n]:  an array of strings usernames in the order assigned
+Constraints
+    1<=n<=10^4
+    1<=length of foldername[i]<20
+    foldername[i] contains only lowercase english letter in the range ascii[a-z]
+Input Format:
+The first line contains an integer n , denoting the size of the array usernames Each line i of the n subsequent lines (where i<=0<=n) contains a string usernames[i] representing a username request in the order received.
+Sample case 0
+4
+home 
+download
+first
+first
+Sample Output 0
+home
+download
+first
+first1
+Explanation 0
+   foldername[0] = ‘home’ is unique
+   foldername[1]=’download’ is unique
+   foldername[2]= ‘first’ is unique
+   foldername[3]=’first’ is already existing . so add 1 to it and it become first1
+--------------------------------------------------------------------------------
+83)Coloured Zenga
+Problem Statement :
+
+Rahul is playing a game, wherein he has multiple coloured wooden blocks, stacked one above the other, his task is to remove all the wooden blocks from the stack, without letting it fall and in the minimum number of steps. He can remove one block of a colour at a time, but he can remove multiple blocks of the same colour together. Determine the minimum number of steps in which he can perform this task.
+
+For example, if you remove [red,red] from (white,red,red,white), the resulting array is [white,white].
+
+Note- there are only two colour blocks – red and white
+
+Function description :
+
+Complete the minMoves function in the provided editor. It contains the following parameters:
+
+Parameters:
+--------------------------------------------------------------------------------
+84) :Make It Palindrome
+Problem Statement  :
+
+You’re given a string, you’ve to print additional characters needed to make that string a palindrome.
+
+A Palindrome is a sequence of characters that has the property of reading the same in either direction.
+
+Input :
+abede
+Output :
+ba
+
+Sample Input :
+abcfe
+
+Sample output :
+fcba
+--------------------------------------------------------------------------------
+85)Seating Arrangement in Exam Hall
+Problem Statement  :
+
+Semester exams are going on for university students. Examiners noticed that a group of people are trying to cheat. They marked students of that group as ‘1’ and students of another group ( who are not cheating ) as ‘0’ 
+
+We can reduce cheating by not allowing students from group 1 to sit together, means no two students from group 1 can sit together. Seatings are marked using above conditions. Your task is to give the seating placement of nth possibility Possibility order from 1 to 10 is given below
+
+[1  10  100  101  1000  1001  1010  10000  10001  10010]
+
+Sample input :
+
+3 → number of test cases
+
+4
+
+6
+
+9
+
+Sample output :
+
+101
+
+1001
+
+10001
+
+Explanation :
+
+4th possibility is 101 
+
+6th possibility is 1001
+
+9th possibility is 10001
+--------------------------------------------------------------------------------
+86)Class Monitor
+Problem Statement :
+
+After JEE Mains, some students got admission into an engineering college. Now there is a class consisting of such n students, and the HOD came to say it is time to select the class monitor. But He never gets all of them at one time. So he brought a register, every time he gets someone with less rank than the previous time he cut the name and wrote the name of the student and the rank.
+For a given number of ranks he gets each time, you have to predict how many names are cut in the list.
+
+Constraints:
+Number of Visiting<=10^9
+ranks <=10000
+
+Input Format:
+Number of Visiting N in their first line
+N space separated ranks the HOD gets each time
+
+Output Format:
+Number of ranks cut in the list
+
+Sample Input:
+6
+4 3 7 2 6 1
+
+Sample Output:
+3
+--------------------------------------------------------------------------------
+87) Corona for Computer  
+Problem Statement :
+
+Every decimal number can be changed into its binary form. Suppose your computer has it’s own CoronaVirus, that eats binary digits from the right side of a number. Suppose a virus has 6 spikes, it will eat up 6 LSB binary digits in your numbers.
+You will have a bunch of numbers, and your machine will have a virus with n spikes, you have to calculate what will be the final situation of the final numbers.
+
+Input Format:
+First line, a single Integer N
+Second line N space separated integers of the bunch of values as array V
+Third line a single integer n, the number of spikes in Corona for Computer
+
+Output Format:
+Single N space separated integers denoting the final situation with the array v.
+
+Sample Input:
+5
+1 2 3 4 5
+2
+
+Output:
+0 0 0 1 1
+
+Explanation:
+5 is 101 in binary, when you cut the last two binary digits, its 1.
+--------------------------------------------------------------------------------
+88)Momentum LinkedList
+Problem Statement :
+
+Ratul made a linked list, a list made of n nodes, where every node has two variables, the velocity and the mass of a particle.
+Since all the particles have the velocity in the same direction, find the total momentum of the entity made by the particles from the linked list.
+
+Constraints :
+1<=n<=10000
+1<=m,v<=100
+Input format:
+First line containing n, number of nodes
+Then n lines containing the mass and the velocity space separated.
+Output Format:
+Single integer denoting the momentum
+
+Sample Input:
+4
+1 3
+2 4
+2 3
+4 5
+
+Sample Output:
+37
+--------------------------------------------------------------------------------
+89)Lazy String
+Problem Statement :
+
+Anish is the laziest person you can ever see. He is tasked to write the name of the winner in a game where two people take part. And he just writes the longest common subsequence over there, so that with minimum chane or no backspace he can edit the name to the winner’s name.
+For two given names, you have to predict what Anish will write in his computer before the start of the name. If there are more than two longest subsequences possible,write the one with less lexicographic value.
+Input Format:
+Two lines including two strings of name(All with capital letters)
+
+Output Format:
+A single line with the lexicographically smallest possible longest common subsequence.
+
+Sample Input:
+ABCD
+BACD
+Sample Output:
+ACD
+Exclamation:
+ACD and BCD these are the two possible biggest substring
+--------------------------------------------------------------------------------
+90)Median of Two Sorted Arrays
+There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays.
+
+nums1 = [1, 3]
+nums2 = [2]
+Median = 2.0
+
+--------------------------------------------------------------------------------
+91)Rotate Array
+Rotate an array to the right by k steps, where k is non-negative.
+Input: [1, 2, 3, 4, 5, 6, 7], k = 3
+Output: [5, 6, 7, 1, 2, 3, 4]
+
+--------------------------------------------------------------------------------
+92) Product of Array Except Self
+Problem Description:
+Given an array nums of length n, where n > 1, we need to find an output array output such that each output[i] is equal to the product of all elements in the original array nums, except nums[i].
+Example:
+Input: nums = [1, 2, 3, 4]
+
+Output: [24, 12, 8, 6]
+
+Explanation:
+
+output[0] is the product of 2 * 3 * 4 = 24
+output[1] is the product of 1 * 3 * 4 = 12
+output[2] is the product of 1 * 2 * 4 = 8
+output[3] is the product of 1 * 2 * 3 = 6
+Approach:
+To solve this problem efficiently, we can use two auxiliary arrays: leftProducts and rightProducts. These arrays will store the products of elements to the left and right of each element, respectively.
+
+a)Compute leftProducts:
+
+Initialize an array leftProducts of the same length as nums and set leftProducts[0] = 1 since there are no elements to the left of the first element.
+Iterate from left to right through nums, updating leftProducts[i] as the product of all elements to the left of nums[i].
+
+
+b)Compute rightProducts:
+
+Initialize an array rightProducts of the same length as nums and set rightProducts[n-1] = 1 since there are no elements to the right of the last element.
+Iterate from right to left through nums, updating rightProducts[i] as the product of all elements to the right of nums[i].
+
+
+c)Compute the final result output:
+
+For each index i, the product of all elements except nums[i] is given by leftProducts[i] * rightProducts[i].
+Populate the output array accordingly.
+--------------------------------------------------------------------------------
+93)Problem: Find Peak Element
+Problem Description:
+A peak element in an array is an element that is greater than or equal to its neighbors. Given an input array nums, find a peak element and return its index. If there are multiple peaks, return any peak index.
+
+Example:
+Input: [1,2,3,1]
+
+Output: 2
+
+Explanation: In this example, 3 is a peak element, and its index is 2.
+--------------------------------------------------------------------------------
+94)Problem: Set Matrix Zeroes
+Problem Description:
+Given a matrix matrix, modify it in-place such that if an element is 0, set its entire row and column to 0. Do it in such a way that modifies the matrix in constant space.
+
+Example:
+Input:
+[
+  [1, 2, 3],
+  [4, 0, 6],
+  [7, 8, 9]
+]
+
+Output:
+[
+  [1, 0, 3],
+  [0, 0, 0],
+  [7, 0, 9]
+]
+
+Explanation: In the input matrix, the element at position (1,1) is 0. Hence, its entire row and column are set to 0 in the output matrix.
+--------------------------------------------------------------------------------
+95)
+--------------------------------------------------------------------------------
+96)
+--------------------------------------------------------------------------------
+97)
+--------------------------------------------------------------------------------
+98)
+--------------------------------------------------------------------------------
+99)
+--------------------------------------------------------------------------------
+100)
+--------------------------------------------------------------------------------
+

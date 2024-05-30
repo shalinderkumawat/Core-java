@@ -1,0 +1,252 @@
+Q1)
+Problem Statement – Chaman planned to choose a four digit lucky number for his car. His
+lucky numbers are 3,5 and 7. Help him find the number, whose sum is divisible by 3 or 5 or
+7. Provide a valid car number, Fails to provide a valid input then display that number is not a
+valid car number.
+Note : The input other than 4 digit positive number[includes negative and 0] is considered as
+invalid.
+Refer the samples, to read and display the data.
+
+Ans)
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number for car");
+        int num = sc.nextInt();
+        if(num>=1000 && num<=9999){
+            int rem;
+            int sum = 0;
+            while(num>0){
+                rem = num%10;
+                sum = sum+rem;
+                num = num/10;
+            }
+            if(sum%3==0 || sum%5==0 || sum%7==0){
+                System.out.println("This is lucky number");
+            }
+            else{
+                System.out.println("This is not lucky number");
+            }
+        }
+        else{
+            System.out.println("Not vaild input");
+        }
+    }
+}
+
+2nd way)
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number for car");
+        int num = sc.nextInt();
+        int count = 0;
+        while(num>0){
+            count++;
+            num = num/10;
+        }
+        if(count==4){
+            int rem;
+            int sum = 0;
+            while(num>0){
+                rem = num%10;
+                sum = sum+rem;
+                num = num/10;
+            }
+            if(sum%3==0 || sum%5==0 || sum%7==0){
+                System.out.println("This is lucky number");
+            }
+            else{
+                System.out.println("This is not lucky number");
+            }
+        }
+        else{
+            System.out.println("Not vaild input");
+        }
+    }
+}
+
+-----------------------------------------------------------------
+
+Q4)
+Problem Statement – To speed up his composition of generating unpredictable rhythms,
+Blue Bandit wants the list of prime numbers available in a range of numbers.Can you help
+him out?
+Write a java program to print all prime numbers in the interval [a,b] (a and b, both inclusive).
+Note
+Input 1 should be lesser than Input 2. Both the inputs should be positive.
+Range must always be greater than zero.
+If any of the condition mentioned above fails, then display “Provide valid input”
+Use a minimum of one for loop and one while loop
+
+Ans)
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the starting number ");
+        int a = sc.nextInt();
+        System.out.println("Enter the ending number ");
+        int b = sc.nextInt();
+        for(;a<=b;){
+            int count = 0;
+            for(int i=2; i<a; i++){
+                if(a%i==0){
+                    count++;
+                }
+            }
+            if(count==0){
+                System.out.print(a+" ");
+            }
+            else{
+                count++;
+            }
+            a++;
+        }
+    }
+}
+
+
+5)
+Problem Statement – Rhea Pandey’s teacher has asked her to prepare well for the
+lesson on seasons. When her teacher tells a month, she needs to say the season
+corresponding to that month. Write a program to solve the above task.
+Spring – March to May,
+Summer – June to August,
+Autumn – September to November and,
+Winter – December to February.
+Month should be in the range 1 to 12. If not the output should be “Invalid month”.
+
+Ans)
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Write the month");
+        String name = sc.nextLine();
+        if(name.equals("march to may")){
+            System.out.println("spring");
+        }
+        else if(name.equals("june to august")){
+            System.out.println("summer");
+        }
+        else if(name.equals("sept to nov")){
+            System.out.println("autumn");
+        }
+        else if(name.equals("dec to feb")){
+            System.out.println("winter");
+        }
+        else{
+            System.out.println("invalid");
+        }
+    }
+}
+
+7)
+Problem Statement – FOE college wants to recognize the department which has
+succeeded in getting the maximum number of placements for this academic year.
+The departments that have participated in the recruitment drive are CSE,ECE,
+MECH. Help the college find the department getting maximum placements. Check
+for all the possible output given in the sample snapshot
+Note : If any input is negative, the output should be “Input is Invalid”. If all
+department has equal number of placements, the output should be “None of the
+department has got the highest placement”.
+
+Ans)
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of placement number in CSE ");
+        int cse = sc.nextInt();
+        System.out.println("Enter the number of placement number in ECE ");
+        int ece = sc.nextInt();
+        System.out.println("Enter the number of placement number in MECH ");
+        int mech = sc.nextInt();
+        if(ece>0 || cse>0 || mech>0){
+            if(cse>ece && cse>mech){
+                System.out.println("Highest placement cse "+cse);
+            }
+            else if(ece>cse && ece>mech){
+                System.out.println("Highest palcement ece "+ece);
+            }
+            else if(mech>ece && mech>cse){
+                System.out.println("Highest palcement mech "+mech);
+            }
+            else{
+                System.out.println("None of the department has got the highest placement");
+            }
+        }
+        else{
+            System.out.println("Input is invalid");
+        }
+    }
+}
+
+9)
+Vohra went to a movie with his friends in a Wave theatre and during break time he
+bought pizzas, puffs and cool drinks. Consider the following prices :
+Rs.100/pizza
+Rs.20/puffs
+Rs.10/cooldrink
+Generate a bill for What Vohra has bought.
+
+Ans)
+import java.util.Scanner;
+
+public class Mnc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of pizza ");
+        int piz = sc.nextInt();
+        System.out.println("Enter the number of puff ");
+        int puf  = sc.nextInt();
+        System.out.println("Enter the number of cold drink ");
+        int cold = sc.nextInt();
+        int pizrate = 100*piz;
+        int pufrate = 20*puf;
+        int coldrate = 10*cold;
+        System.out.println("No of pizza "+piz);
+        System.out.println("No of puffs "+puf);
+        System.out.println("No of coldrink "+cold);
+        System.out.println("Total price "+ (pizrate+pufrate+coldrate)); 
+        System.out.println("ENJOY THE SHOW!");
+    }
+}
+
+-------------------------------------------------------------
+
+10)
+Problem Statement – Write a program to calculate the fuel consumption of your
+truck.The program should ask the user to enter the quantity of diesel to fill up the
+tank and the distance covered till the tank goes dry.Calculate the fuel consumption
+and display it in the format (liters per 100 kilometers).
+Convert the same result to the U.S. style of miles per gallon and display the result. If
+the quantity or distance is zero or negative display ” is an Invalid Input”.
+[Note: The US approach of fuel consumption calculation (distance / fuel) is the
+inverse of the European approach (fuel / distance ). Also note that 1 kilometer is
+0.6214 miles, and 1 liter is 0.2642 gallons.]
+
+Ans)
+import java.util.*;
+
+    public class Main{
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter the quantity of fuel");
+            float fuel = sc.nextFloat();
+            System.out.println("Enter the distance covered");
+            float dist = sc.nextFloat();
+            double mile = dist*0.6214;
+            double gallen = fuel*0.2642;
+            double fcon = mile/gallen;
+            System.out.println("The fuel consumption is "+fcon);
+        }
+    }

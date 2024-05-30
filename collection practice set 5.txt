@@ -1,0 +1,16 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class Exc{  
+    
+    public static void main(String[] args) {
+        HashMap<String,Integer> hm = new HashMap<>();
+        hm.put("Java full stack", 150);
+        hm.put("Python full stack", 150);
+        hm.put("Ui full stack", 80);
+        for(Map.Entry<String,Integer> v:hm.entrySet()){
+            System.out.println(v.getKey()+" "+v.getValue());
+        }
+    }
+}
+

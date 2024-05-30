@@ -1,0 +1,79 @@
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main{
+    public static void main(String [] args){
+
+        Scanner inputs= new Scanner (System.in);
+        System.out.println("Enter the PAN number : ");
+
+
+        String input=inputs.nextLine();
+        String re="[A-Z]{5}[1-9]{4}[A-Z]{1}";
+
+        Pattern p=Pattern.compile(re);
+        Matcher m=p.matcher(input);
+
+        if(m.find()&&m.group().equals(input))
+        {
+            System.out.println("This is valide");
+        }
+        else {
+            System.out.println("This is not valide");
+        }
+
+        inputs.nextLine();
+
+        System.out.println("Enter the number of your Passprt");
+        String passport=inputs.nextLine();
+        String regex="[A-Z]{1}[1-9]{7}";
+    
+        Pattern p1=Pattern.compile(regex);
+        Matcher s=p1.matcher(regex);
+        if(s.find()&&s.group().equals(passport))
+        {
+            System.out.println("Your Passport Number is valide ");
+        }
+        else 
+        {
+            System.out.println("Your Passport Number is not valide ");
+        }
+
+        inputs.nextLine();
+
+        System.out.println("Enter the your Asdhar number :");
+        String aadhar=inputs.nextLine();
+        String ad="[1-9]{4}[2-9]{4}[3-9]{4}[4-9]";
+
+        Pattern p2=Pattern.compile(ad);
+        Matcher aa=p2.matcher(aadhar);
+
+        if(aa.find()&&aa.group().equals(aadhar))
+        {
+            System.out.println("This Aadhar Number is valide ");
+        }
+        else 
+        {
+            System.out.println("This Aashar number is not valide ");
+        }
+
+        inputs.nextLine();
+
+        System.out.println("Enter the your city pin code ");
+        String pincod=inputs.nextLine();
+        String pc="[1-9]{6}";
+
+        Pattern p3=Pattern.compile(pc);
+        Matcher scc=p3.matcher(pincod);
+
+        if(scc.find()&&scc.group().equals(pincod))
+        {
+            System.out.println("This is you city pincode is valide");
+        }
+        else 
+        {
+            System.out.println("Your city pincode is not valide ");
+        }
+    }
+}
