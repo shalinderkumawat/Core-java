@@ -1,0 +1,217 @@
+1)
+Write a Java program that uses regular expressions to validate if a given email address is in the correct format.
+
+Ans)
+import java.util.regex.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String email = "example@example.com";
+        String pattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+
+        Pattern r = Pattern.compile(pattern);
+        Matcher m = r.matcher(email);
+
+        if (m.find()) {
+            System.out.println("The email address is valid.");
+        } else {
+            System.out.println("The email address is not valid.");
+        }
+    }
+}
+
+2)
+Write a Java function that checks if a given string is a valid URL using regular expressions.
+
+
+import java.util.regex.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String url = "https://www.example.com";
+        String pattern = "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w.-]*)*\\/?$";
+
+        Pattern r = Pattern.compile(pattern);
+        Matcher m = r.matcher(url);
+
+        if (m.find()) {
+            System.out.println("The URL is valid.");
+        } else {
+            System.out.println("The URL is not valid.");
+        }
+    }
+}
+
+3)
+Build a Java function that validates if a given string is a valid phone number using regular expressions.
+
+
+import java.util.regex.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String phoneNumber = "1234567890";
+        String pattern = "[0-9]{10}";
+        
+
+        Pattern r = Pattern.compile(pattern);
+        Matcher m = r.matcher(phoneNumber);
+
+        if (m.find()) {
+            System.out.println("The phone number is valid.");
+        } else {
+            System.out.println("The phone number is not valid.");
+        }
+    }
+}
+
+4)
+Write a Java program to find and print all the occurrences of a specific pattern in a given text using regular expressions.
+
+import java.util.regex.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String text = "The quick brown fox jumps over the lazy dog. The quick brown fox jumps again.";
+        String pattern = "\\bquick\\b";
+
+        Pattern r = Pattern.compile(pattern);
+        Matcher m = r.matcher(text);
+
+        System.out.println("The occurrences of the pattern 'quick' in the text are:");
+        while (m.find()) {
+            System.out.println(m.start() + " " + m.group());
+        }
+    }
+}
+
+
+5)
+Create a Java function that checks if a given string is a valid credit card number using regular expressions.
+
+
+import java.util.regex.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String creditCardNumber = "4532015123648702";
+        String pattern = "^(?:4\\d{3}|5[1-5]\\d{2}|6011)-?\\d{4}-?\\d{4}-?\\d{4}$";
+
+        Pattern r = Pattern.compile(pattern);
+        Matcher m = r.matcher(creditCardNumber);
+
+        if (m.find()) {
+            System.out.println("The credit card number is valid.");
+        } else {
+            System.out.println("The credit card number is not valid.");
+        }
+    }
+}
+
+6)
+Build a Java program that extracts all the numbers (integer and decimal) from a given text using regular expressions.
+
+import java.util.regex.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String text = "The price of the book is $12.99. The price of the pen is $1.50. The price of the notebook is $3.00.";
+        String pattern = "\\d+(\\.\\d+)?";
+
+        Pattern r = Pattern.compile(pattern);
+        Matcher m = r.matcher(text);
+
+        System.out.println("The numbers in the text are:");
+        while (m.find()) {
+            System.out.println(m.group());
+        }
+    }
+}
+
+	
+7)
+Create a Java function that checks if a given string is a valid date in the format "YYYY-MM-DD" using regular expressions.
+
+
+import java.util.regex.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String date = "2022-12-31";
+        String pattern = "^(19|20)\\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$";
+
+        Pattern r = Pattern.compile(pattern);
+        Matcher m = r.matcher(date);
+
+        if (m.find()) {
+            System.out.println("The date is valid.");
+        } else {
+            System.out.println("The date is not valid.");
+        }
+    }
+}
+
+8)
+Write a Java function that removes all leading and trailing whitespaces from a given string using regular expressions.
+
+import java.util.regex.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String text = "   Hello, World!   ";
+        String pattern = "^\\s*|(\\s*$)";
+
+        Pattern r = Pattern.compile(pattern);
+        Matcher m = r.matcher(text);
+
+        String result = m.replaceAll("$1");
+        System.out.println("The text without leading and trailing whitespaces is: " + result);
+    }
+}
+
+9)
+Create a Java function that validates if a given string contains at least one uppercase letter, one lowercase letter, and one digit using regular expressions.
+
+
+import java.util.regex.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String text = "Hello123";
+        String pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
+
+        Pattern r = Pattern.compile(pattern);
+        Matcher m = r.matcher(text);
+
+        if (m.find()) {
+            System.out.println("The string is valid.");
+        } else {
+            System.out.println("The string is not valid.");
+        }
+    }
+}
+
+
+10)
+Develop a Java function that checks if a given string is a valid time in the format "HH:MM AM/PM" using regular expressions.
+
+Ans)
+import java.util.regex.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String time = "12:30 PM";
+        String pattern = "^(1[0-2]|0[1-9]):[0-5][0-9] (AM|PM)$";
+
+        Pattern r = Pattern.compile(pattern);
+        Matcher m = r.matcher(time);
+
+        if (m.find()) {
+            System.out.println("The time is valid.");
+        } else {
+            System.out.println("The time is not valid.");
+        }
+    }
+}
+
+
