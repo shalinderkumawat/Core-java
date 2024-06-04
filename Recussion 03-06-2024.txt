@@ -1,0 +1,139 @@
+Q1. Fibonacci series in recursion :
+
+Ans)
+public class Main{
+  public static int Number(int n)
+  {
+    if(n==1||n==0)
+    {
+      return n;
+    }
+    int ans=Number(n-1);
+    int answ=Number(n-2);
+    return ans+answ;
+  }
+  public static void main(String [] args)
+  {
+    int n=6;
+    System.out.print(Number(n));
+
+
+  }
+}
+
+Q2.
+ print series :
+
+Ans)
+   public class Main{
+  public static int Number(int n)
+  {
+    if(n==1||n==0)
+    {
+      return n;
+    }
+    int ans=Number(n-1);
+    int answ=Number(n-2);
+    return ans+answ;
+  }
+  public static void Sum(int n)
+  {
+    if(n==0)
+    {
+      return ;
+    }
+    Sum(n-1);
+    System.out.print(Number(n)+" ");
+  }
+  public static void main(String [] args)
+  {
+    int n=6;
+    Sum(n);
+
+
+  }
+}
+
+Q3. sum of n number digit :
+Ans)
+    public class Main{
+  public static int Number(int n)
+  {
+    if(n>=0&&n<=9)
+    {
+      return n;
+    }
+    Number(n-1);
+
+    int rem,sum;
+    rem=n%10;
+    sum=rem+Number(n/10);
+    return sum;
+  }
+  public static void main(String[] args) {
+  int n=12345;
+  System.out.println(Number(n));
+  }
+}
+
+Q4. table print :
+Ans)
+    public class Main{
+  public static void Number(int table ,int need)
+  {
+    if(need==0)
+    {
+      return;
+    }
+    Number(table, need-1);
+    System.out.println(table + " * " + need + " = " + table*need );
+  }
+  public static void main(String [] args)
+  {int table=12;
+    int need=10;
+    Number(table, need);
+  }
+}
+
+Q5.  Armstrong number :
+
+Ans)
+    public class Main{
+  public static int Number(int n)
+  {
+    if(n>0&&n<=9)
+    {
+      return n;
+    }
+    int rem,num;
+    int sum=Number(n/10);
+    rem=n%10;
+    sum=sum+rem*rem*rem;
+    return sum;
+    }
+    public static boolean sc(int n)
+    {
+        Number(n);
+        if(n==Number(n))
+        { return true;
+        }
+        else 
+        {
+          return false;
+        }
+      
+    }
+    public static void main(String [] args)
+    {
+      int n=133;
+      // System.out.println(Number(n));
+
+      System.out.println(sc(n));
+
+      }
+      
+  }
+
+
+
+ 
