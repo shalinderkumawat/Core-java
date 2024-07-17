@@ -109,6 +109,26 @@ Question 4: Time of Day Greeting
 Create a program that asks for the time of day (morning, afternoon, evening) and then greets the user accordingly. For example, "Good morning!" if the time is morning.
 
 Ans)
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String [] args)
+    {
+        Scanner input=new Scanner(System.in);
+        System.out.println("Enter your name");
+        String name=input.nextLine();
+        System.out.println("Enter the time of day");
+        int a=input.nextInt();
+        System.out.println("am or pm");
+        String b=input.next();
+        if(a<24||b=="am")
+        {
+            System.out.println("Good morning "+name);
+            System.out.println("Hope your day is good");
+        }
+    }
+}
 ------------------------------------------------------------
 
 Question 5: Menu Selection
