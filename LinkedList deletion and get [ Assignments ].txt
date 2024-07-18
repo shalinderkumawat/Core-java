@@ -1,0 +1,203 @@
+first element and last element find in a linkedlist :
+
+Ans)
+
+import java.util.Scanner;
+
+public class Main {
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+    static class LinkedList {
+        Node head = null;
+        Node tail = null;
+
+        
+        public void insert(int val) {
+            Node temp = new Node(val);
+            if (head == null) {
+                head = temp;
+                
+            } else {
+                tail.next = temp;
+                
+            }
+            tail=temp;
+        }
+
+        void display() {
+            Node temp = head;
+            while (temp != null) {
+                System.out.print(temp.data + " ");
+                temp = temp.next;
+            }
+        }
+
+        
+        void get(int index) {
+            Node temp = head;
+            for (int i = 1; i < index ; i++) {
+                temp = temp.next;
+            }
+            System.out.println(temp.data);
+        }
+    }
+
+    public static void main(String[] args) {
+        LinkedList sc = new LinkedList();
+        sc.insert(1);
+        sc.insert(2);
+        sc.insert(3);
+        sc.insert(4);
+        sc.insert(5);
+        sc.insert(6);
+        sc.insert(7);
+        sc.insert(8);
+        // first and last
+        sc.display();
+        System.out.println("This is want you");
+        System.out.println("head data " + sc.head.data);
+        System.out.println("tail" + sc.tail.data);
+        Scanner input=new Scanner (System.in);
+        System.out.println("Enter the the index value like what you want");
+        int index=input.nextInt();
+        sc.get(index);
+    }
+}
+
+
+
+Q2. get element at particular index :
+
+
+Ans)
+
+public class Main{
+    static class Node{
+        int data;
+        Node next;
+        Node(int data){
+            this.data=data;
+        }
+    }
+    static class Linkedlist{
+        Node head=null;
+        Node tail=null;
+        public void add(int val){
+            Node tamp=new Node(val);
+            if(head==null){
+                head=tamp;
+            }
+            else {
+                tail.next=tamp;
+            }
+            tail=tamp;
+        }
+        public void print(int index){
+            Node temp=head;
+            for(int i=1;i<index;i++)
+            {
+                
+                temp=temp.next;
+            }
+            System.out.print(temp.data+" ");
+        }
+    }
+    public static void main(String[] args)
+    {
+        Linkedlist s=new Linkedlist();
+        s.add(1);
+        s.add(2);
+        s.add(3);
+        s.add(4);
+        s.add(5);
+        s.add(2);
+        s.print(3);
+    }
+}
+
+
+
+Q3. delete of the linked list :
+
+Ans)
+
+public class Main {
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+    static class LinkedList {
+        Node head = null;
+        Node tail = null;
+        int size = 0;
+
+        // insertion of data at the end of the linkedlist
+        public void insert(int val) {
+            Node temp = new Node(val);
+            if (head == null) {
+                head = temp;
+                tail = temp;
+            } else {
+                tail.next = temp;
+                tail = temp;
+            }
+        }
+
+        void display() {
+            Node temp = head;
+            while (temp != null) {
+                System.out.print(temp.data + " ");
+                temp = temp.next;
+                size++;
+            }
+        }
+
+        // get element
+        void get(int index) {
+            Node temp = head;
+            for (int i = 1; i < index - 1; i++) {
+                temp = temp.next;
+            }
+            System.out.println(temp.next.data);
+        }
+
+        void delete(int index) {
+            Node temp = head;
+            for (int i = 1; i < index - 1; i++) {
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+            size--;
+        }
+    }
+
+    public static void main(String[] args) {
+        LinkedList ll = new LinkedList();
+        ll.insert(1);
+        ll.insert(2);
+        ll.insert(3);
+        ll.insert(4);
+        ll.delete(3);
+        ll.display();
+    }
+}
+
+
+
+
+
+
+
+
