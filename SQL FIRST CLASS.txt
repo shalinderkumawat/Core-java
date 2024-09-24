@@ -1,0 +1,59 @@
+SQL  
+	#RELATIONL DATA-----ROW AND COLUMNS
+
+	COLUMNS---FIELDS/ATTRIBUTES 
+
+	ROW --- RECORD 
+
+	STUDENT ID      STUDENT NAME     COURSE
+	1		A		BCA
+	2		B		ENGLISH
+	3		C		HINDI
+
+
+#CREATE 
+
+
+DATABASE
+CREATE TABLE
+INSERT
+SELECT(RETRIVE)
+UPDATE
+DELETE
+DROP
+
+	     #sql case insensitive 
+		
+		CREATE DEATABASE database_name;
+		CREATE TABLE table_name(Student_id  datatype, student_name datatype, student_course datatype);
+		INSERT INTO table_name(student_id , student_name , student_course) values (1,'a',"DS"),(2,'b',"English"),(3,'c',"hindi");
+
+ 	#DATA TYPE 
+	
+  	--int(integer0
+	--varchar(character alphabets)
+	--date
+	--float(decimal numbers)
+
+
+this is work day number 10-09-2024
+
+	CREATE DATABASE Students;
+USE Students;
+CREATE TABLE Student123(Student_id int, Student_name varchar(50),
+ Address varchar(50), date_of_enrolling date);
+--  retrive (select) 
+-- Select colum_name from table_name
+select * from Student123;
+select Student_id,Student_name from Student123; 
+-- select date_of_enrolling from Student123;
+-- Insert into
+-- data is insert through insert into
+-- Insert into tablename(colum1,colum2,colum3,............)
+insert into Student123(Student_id,Student_name,Address,date_of_enrolling) value(1,'kumawat' , 'jaipu' , '2024-09-10'),(2,'kumawat1' , 'jaipu1' , '2024-09-10');
+
+Select * from Student123;
+select * from Student123;
+
+insert into Student123(Student_id,Student_name) value(4,'this');
+select * from Student123;

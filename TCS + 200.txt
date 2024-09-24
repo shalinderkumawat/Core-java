@@ -1,0 +1,61 @@
+     							This is TCS questions
+
+1) TCS 
+Problem Statement –A chocolate factory is packing chocolates into the packets. The chocolate packets here represent an array  of N number of integer values. The task is to find the empty packets(0) of chocolate and push it to the end of the conveyor belt(array).
+
+Example 1 :
+N=8 and arr = [4,5,0,1,9,0,5,0] There are 3 empty packets in the given set. These 3 empty packets represented as O should be pushed towards the end of the array
+
+Input :
+8  – Value of N
+[4,5,0,1,9,0,5,0] – Element of arr[O] to arr[N-1],While input each element is separated by newline
+
+Output:
+4 5 1 9 5 0 0 0
+
+Ans
+    public class Main{
+    public static void swap(int a[],int i,int j)
+    {
+        int temp=a[i];
+        a[i]=a[j];
+        a[j]=temp;
+    }
+    public static void main(String [] args)
+    {
+        int packets[]={4,5,0,1,9,0,5,0};
+        for(int i=0;i<packets.length;i++)
+        {
+            for(int j=i+1;j<packets.length;j++)
+            {
+                if(packets[i]==0)
+                {
+                    swap(packets, i, j);
+                }
+            }
+        }
+        for(int i=0;i<packets.length;i++)
+        {
+            System.out.print(packets[i]+" ");
+        }
+    }
+  }
+
+----------------------------------------------------------
+
+Q2) Problem Statement –Joseph is learning digital logic subject which will be for his next semester. He usually tries to solve unit assignment problems before the lecture. Today he got one tricky question. The problem statement is “A positive integer has been given as an input. Convert decimal value to binary representation. Toggle all bits of it after the most significant bit including the most significant bit. Print the positive integer value after toggling all bits”.
+
+Constrains-
+
+1<=N<=100
+
+Example 1:
+
+Input :
+
+10  -> Integer
+
+Output :
+
+5    -> result- Integer
+-------------------------------------------------------------------
